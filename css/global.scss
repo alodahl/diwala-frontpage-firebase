@@ -1,0 +1,33 @@
+$screen-breakpoint-medium: 980px;
+
+#allrecords {
+  .t228__list {
+    margin: 20px 0;
+    .t228__list_item {
+      padding-left: 0;
+      a {
+        color: #58449e;
+        font-size: 23px;
+        font-weight: 600;
+      }
+    }
+  }
+  .t228__social_links {
+    @media screen and (min-width: $screen-breakpoint-medium + 1px) {
+      white-space: nowrap;
+      a {
+        line-height: 32px;
+        vertical-align: bottom;
+        img {
+          width: 16px;
+        }
+      }
+    }
+  }
+}
+
+.t228__leftcontainer,
+.t228__centercontainer,
+.t228__rightcontainer {
+  padding: 0;
+}

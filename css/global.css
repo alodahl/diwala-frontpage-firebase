@@ -1,0 +1,23 @@
+#allrecords .t228__list {
+  margin: 20px 0; }
+  #allrecords .t228__list .t228__list_item {
+    padding-left: 0; }
+    #allrecords .t228__list .t228__list_item a {
+      color: #58449e;
+      font-size: 23px;
+      font-weight: 600; }
+@media screen and (min-width: 981px) {
+  #allrecords .t228__social_links {
+    white-space: nowrap; }
+    #allrecords .t228__social_links a {
+      line-height: 32px;
+      vertical-align: bottom; }
+      #allrecords .t228__social_links a img {
+        width: 16px; } }
+
+.t228__leftcontainer,
+.t228__centercontainer,
+.t228__rightcontainer {
+  padding: 0; }
+
+/*# sourceMappingURL=global.css.map */
