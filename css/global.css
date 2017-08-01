@@ -8,16 +8,23 @@
       font-weight: 600; }
 @media screen and (min-width: 981px) {
   #allrecords .t228__social_links {
+    margin-top: 15px;
     white-space: nowrap; }
     #allrecords .t228__social_links a {
       line-height: 32px;
       vertical-align: bottom; }
       #allrecords .t228__social_links a img {
+        padding: 0 3px;
         width: 16px; } }
 
 .t228__leftcontainer,
 .t228__centercontainer,
 .t228__rightcontainer {
   padding: 0; }
+  @media screen and (min-width: 981px) {
+    .t228__leftcontainer.t228__centercontainer,
+    .t228__centercontainer.t228__centercontainer,
+    .t228__rightcontainer.t228__centercontainer {
+      margin-top: 43px; } }
 
 /*# sourceMappingURL=global.css.map */

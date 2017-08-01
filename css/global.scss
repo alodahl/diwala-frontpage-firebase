@@ -14,11 +14,13 @@ $screen-breakpoint-medium: 980px;
   }
   .t228__social_links {
     @media screen and (min-width: $screen-breakpoint-medium + 1px) {
+      margin-top: 15px;
       white-space: nowrap;
       a {
         line-height: 32px;
         vertical-align: bottom;
         img {
+          padding: 0 3px;
           width: 16px;
         }
       }
@@ -30,4 +32,9 @@ $screen-breakpoint-medium: 980px;
 .t228__centercontainer,
 .t228__rightcontainer {
   padding: 0;
+  @media screen and (min-width: $screen-breakpoint-medium + 1px) {
+    &.t228__centercontainer {
+      margin-top: 43px;
+    }
+  }
 }
