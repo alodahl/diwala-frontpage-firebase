@@ -6,6 +6,8 @@
       color: #58449e;
       font-size: 23px;
       font-weight: 600; }
+#allrecords .t228__maincontainer .t228__leftpadding {
+  width: 14px; }
 @media screen and (min-width: 981px) {
   #allrecords .t228__social_links {
     margin-top: 15px;
@@ -26,6 +28,18 @@
     .t228__centercontainer.t228__centercontainer,
     .t228__rightcontainer.t228__centercontainer {
       margin-top: 43px; } }
+
+.t228__list_item {
+  padding-right: 28px; }
+
+.t228__leftcontainer .t228__imglogo {
+  max-width: 290px;
+  width: 290px;
+  height: auto;
+  display: block; }
+
+.t228__rightside {
+  padding-left: 13px; }
 
 .t-title {
   font-size: 32px;

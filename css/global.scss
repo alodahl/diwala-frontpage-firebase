@@ -12,6 +12,9 @@ $screen-breakpoint-medium: 980px;
       }
     }
   }
+  .t228__maincontainer .t228__leftpadding {
+    width: 14px;
+  }
   .t228__social_links {
     @media screen and (min-width: $screen-breakpoint-medium + 1px) {
       margin-top: 15px;
@@ -37,6 +40,21 @@ $screen-breakpoint-medium: 980px;
       margin-top: 43px;
     }
   }
+}
+
+.t228__list_item {
+  padding-right: 28px;
+}
+
+.t228__leftcontainer .t228__imglogo {
+  max-width: 290px;
+  width: 290px;
+  height: auto;
+  display: block;
+}
+
+.t228__rightside {
+  padding-left: 13px;
 }
 
 .t-title {
