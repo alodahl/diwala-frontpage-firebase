@@ -1,8 +1,31 @@
 $screen-breakpoint-medium: 980px;
+$screen-breakpoint-small: 600px;
 
 #recorddiv21296462 {
-  height:85vh;
-  background-image:url('images/tild3839-3464-4765-a338-613337326334__-__resize__20x__Webpage_Landingpage_Merspace010101.png');
+  display: none;
+  height: 85vh;
+  background-image: url('../images/tild3839-3464-4765-a338-613337326334__-__resize__20x__Webpage_Landingpage_Merspace010101.png');
+  @media screen and (min-width: $screen-breakpoint-small + 1px) {
+    display: block;
+  }
+}
+
+#recorddiv21296462_mobile {
+  background-color: #7d64d1;
+  background-image: url('../images/Landingpage-01-1.png');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-family: 'Agenda', sans-serif;
+  font-size: 20px;
+  height: 90vh;
+  line-height: 1em;
+  padding: 5vh 5%;
+  text-align: center;
+  word-break: normal;
+  @media screen and (min-width: $screen-breakpoint-small + 1px) {
+    display: none;
+  }
 }
 
 #allrecords {
