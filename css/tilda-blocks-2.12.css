@@ -2292,7 +2292,6 @@ img:not([src]) {
 
 .t154 {
     padding-bottom: 80px;
-    text-align: center;
 }
 
 .t154__uptitle {
@@ -4092,6 +4091,7 @@ img:not([src]) {
     }
 
     .t677__descr {
+        font-size: 26px;
         margin-top: 14px
     }
 }
