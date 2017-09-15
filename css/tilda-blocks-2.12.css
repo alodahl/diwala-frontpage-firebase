@@ -2291,7 +2291,8 @@ img:not([src]) {
 }
 
 .t154 {
-    padding-bottom: 80px
+    padding-bottom: 80px;
+    text-align: center;
 }
 
 .t154__uptitle {
@@ -2330,10 +2331,10 @@ img:not([src]) {
     }
 
     .t154__descr {
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 14px;
-        line-height: 20px
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        font-size: 28px;
+        line-height: 1.5em;
     }
 }
 
