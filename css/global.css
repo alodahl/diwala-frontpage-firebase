@@ -1,3 +1,32 @@
+#recorddiv21296462 {
+  display: none;
+  height: 85vh;
+  background-image: url("../images/tild3839-3464-4765-a338-613337326334__-__resize__20x__Webpage_Landingpage_Merspace010101.png"); }
+  @media screen and (min-width: 641px) {
+    #recorddiv21296462 {
+      display: block; } }
+
+#recorddiv21296462_mobile {
+  background-color: #7d64d1;
+  color: #fff;
+  font-family: 'Agenda', sans-serif;
+  font-size: 20px;
+  line-height: 1.5em;
+  text-align: center;
+  word-break: normal; }
+  #recorddiv21296462_mobile .mobile-content {
+    padding: 2.5em 2em; }
+  #recorddiv21296462_mobile .mobile-background {
+    background-image: url("../images/VP_PAGE-01_12crop.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    max-height: 500px; }
+  @media screen and (min-width: 641px) {
+    #recorddiv21296462_mobile {
+      display: none; } }
+
 #allrecords .t228__list {
   margin: 20px 0; }
   #allrecords .t228__list .t228__list_item {
@@ -6,6 +35,8 @@
       color: #58449e;
       font-size: 23px;
       font-weight: 600; }
+#allrecords .t228__maincontainer .t228__leftpadding {
+  width: 14px; }
 @media screen and (min-width: 981px) {
   #allrecords .t228__social_links {
     margin-top: 15px;
@@ -26,5 +57,25 @@
     .t228__centercontainer.t228__centercontainer,
     .t228__rightcontainer.t228__centercontainer {
       margin-top: 43px; } }
+
+.t228__list_item {
+  padding-right: 28px; }
+
+.t228__leftcontainer .t228__imglogo {
+  max-width: 290px;
+  width: 290px;
+  height: auto;
+  display: block; }
+
+.t228__rightside {
+  padding-left: 13px; }
+
+.t032__wrapper {
+  padding-top: 48px; }
+
+.t-title {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1em; }
 
 /*# sourceMappingURL=global.css.map */
