@@ -22,6 +22,9 @@
 }
 
 @media (max-width: $min-size) {
+  .Header {
+    align-items: center;
+  }
   .Header-logo {
     height: 150px;
   }
@@ -29,19 +32,22 @@
   .Header-text {
     width: 100%;
     margin-bottom: 50px;
-    margin: 0 auto;
   }
 }
 
 
 @media (min-width: $min-size) and (max-width: $medium-size) {
+  .Header {
+    align-items: center;
+  }
+  
   .Header-logo {
     height: 180px;
   }
 
   .Header-text {
     width: 400px;
-    margin: 0 auto;
+    margin-bottom: 50px;
   }
 }
 
