@@ -1,0 +1,56 @@
+@import "../../core.scss";
+
+.Diwala-bold {
+  font-family: "Proxima Nova Bold", serif;
+  font-weight: 600;
+}
+
+.MainText {
+  padding: 10px;
+}
+
+.Button-holder {
+  margin-top: 37px;
+  margin-bottom: 37px;
+}
+
+@media (max-width: $min-size) {
+  .MainText {
+    margin: 0 auto;
+  }
+  .Look-figure {
+    height: 200px;
+    margin-top: -50px;
+  }
+}
+
+@media (min-width: $min-size) and (max-width: $medium-size) {
+  .Look-figure {
+    height: 200px;
+    margin-top: -50px;
+  }
+}
+
+@media (min-width: $medium-size) and (max-width: $max-size) {
+  .MainText {
+    margin-left: 32%;
+  }
+  .Look-figure {
+    height: 200px;
+    position: absolute;
+    left: 7%;
+    margin-top: -50px;
+  }
+}
+
+@media (min-width: $max-size) {
+  .MainBox {
+    display: flex;
+    flex-direction: row;
+  }
+  .Look-figure{
+    margin-left: 250px;
+    height: 300px;
+    margin-top: -50px;
+  }
+}

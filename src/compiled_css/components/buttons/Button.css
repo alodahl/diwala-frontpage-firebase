@@ -1,0 +1,16 @@
+.Button-link {
+  border-radius: 50px;
+  padding: 25px;
+  font-size: 15px;
+  margin: 8px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none; }
+
+.yellow {
+  background-color: #FAEE83;
+  color: #534898; }
+
+.purple {
+  background-color: #534898;
+  color: white; }
