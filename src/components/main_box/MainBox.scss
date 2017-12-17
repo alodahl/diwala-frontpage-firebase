@@ -1,12 +1,8 @@
-@import "../../core.scss";
-
-.Diwala-bold {
-  font-family: "Proxima Nova Bold", serif;
-  font-weight: 600;
-}
+@import "../../variables.scss";
 
 .MainText {
   padding: 10px;
+  color: #58449e;
 }
 
 .Button-holder {
@@ -34,6 +30,7 @@
 @media (min-width: $medium-size) and (max-width: $max-size) {
   .MainText {
     margin-left: 32%;
+    padding-top: 30px;
   }
   .Look-figure {
     height: 200px;
@@ -47,6 +44,9 @@
   .MainBox {
     display: flex;
     flex-direction: row;
+  }
+  .MainText {
+    padding-top: 30px;
   }
   .Look-figure{
     margin-left: 250px;

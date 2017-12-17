@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../compiled_css/components/main_box/MainBox.css';
+import '../../compiled_css/components/core/Core.css';
 import ButtonLink from '../buttons/ButtonLink';
 import look from '../../graphics/look.png'
 
@@ -9,7 +10,7 @@ export default function MainText() {
         <img className="Look-figure" src={look} alt="Look" />
         <div className="MainText">
           <p>We are currently working on our new webpage, which will be <span className="Diwala-bold">released early 2018</span></p>
-          <p><span className="Diwala-bold">More qurious or got any questions?</span></p>
+          <p><span className="Diwala-bold">More curious or got any questions?</span></p>
           <div className="Button-holder">
             <ButtonLink
               href="mailto:hello@diwala.org"

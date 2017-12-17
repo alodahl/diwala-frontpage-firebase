@@ -1,5 +1,5 @@
 
-@import "../../core.scss";
+@import "../../variables.scss";
 
 .Header {
   background-image: url("../../../graphics/header.png");
@@ -40,13 +40,13 @@
   .Header {
     align-items: center;
   }
-  
+
   .Header-logo {
     height: 180px;
   }
 
   .Header-text {
-    width: 400px;
+    width: 440px;
     margin-bottom: 50px;
   }
 }
@@ -60,11 +60,17 @@
   }
 
   .Header-text {
-    width: 400px;
+    width: 440px;
     position: absolute;
     top:18%;
     left:13%;
   }
+
+  .Header-text h1{
+    font-size: 3.4em;
+    margin-top: -20px;
+  }
+
   .Header {
     height: 430px;
   }
@@ -80,6 +86,11 @@
   .Header-logo {
     margin-top: -150px;
     height: 200px;
+  }
+
+  .Header-text h1{
+    font-size: 3.4em;
+    margin-top: -20px;
   }
 
   .Header-text {
