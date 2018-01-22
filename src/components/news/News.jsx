@@ -7,14 +7,15 @@ import getNews from '../../api/news'
 class News extends React.Component {
   constructor(props) {
     super(props)
-    console.log(props)
     props.getNews(loadNews)
   }
 
   render () {
+    const firstNews = this.props.news[0]
+    const newsBody = firstNews ? firstNews.fields.body : ""
     return (
         <div className="News">
-          Heyyyyaaaa
+          { newsBody }
         </div>
         )
       }
@@ -22,7 +23,7 @@ class News extends React.Component {
 
 const mapApiToState = (dispatch) => {
   return {
-    getNews: getNews.bind(dispatch)
+    getNews: (action) => getNews(dispatch, action)
   }
 }
 
