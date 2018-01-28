@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './components/header/Header';
 import MainBox from './components/main_box/MainBox';
 import NoMatch from './components/no_match/NoMatch';
 import News from './components/news/News';
+import Team from './components/team/Team';
+import Partners from './components/partners/Partners';
 import './compiled_css/App.css';
 import './compiled_css/fonts/font-faces.css'
 import {
@@ -17,18 +19,7 @@ import { createStore } from 'redux';
 
 const store = createStore(diwalaFrontpageApp);
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <MainBox />
-      </div>
-    );
-  }
-}
-
-const BasicExample = () => (
+const App = () => (
   <Provider store={store}>
     <Router>
       <div className="App">
@@ -36,6 +27,8 @@ const BasicExample = () => (
         <Switch>
           <Route exact path="/" component={MainBox}/>
           <Route exact path="/news" component={News}/>
+          <Route exact path="/team" component={Team}/>
+          <Route exact path="/partners" component={Partners}/>
           <Route component={NoMatch}/>
         </Switch>
       </div>
@@ -43,4 +36,4 @@ const BasicExample = () => (
   </Provider>
 )
 
-export default BasicExample;
+export default App;
