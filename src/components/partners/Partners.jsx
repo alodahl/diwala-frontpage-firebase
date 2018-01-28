@@ -12,7 +12,7 @@ class Partners extends React.Component {
 
   render () {
     const firstPartners = this.props.partners[0]
-    const partners = firstPartners ? firstPartners.fields.title : ""
+    const partners = firstPartners ? firstPartners.name : ""
     return (
         <div className="partners">
           { partners }
