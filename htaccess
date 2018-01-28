@@ -1,6 +1,0 @@
-ErrorDocument 403 /404.html
-ErrorDocument 404 /404.html
-
-DirectoryIndex page966044.html
-
-Header add Access-Control-Allow-Origin "https://diwala.org"

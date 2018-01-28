@@ -1,4 +1,0 @@
-User-Agent: *
-Disallow:
-Sitemap: http://diwala.org/sitemap.xml
-Host: diwala.org
