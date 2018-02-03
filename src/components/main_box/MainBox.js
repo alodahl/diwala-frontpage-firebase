@@ -23,7 +23,7 @@ export default function MainText() {
           <div className='Button-holder'>
             <ButtonLink
               href='mailto:hello@diwala.org'
-              text='Send us an mail'
+              text='Send us a mail'
               color='purple' />
             <span className='Diwala-bold'>or</span>
             <ButtonLink
