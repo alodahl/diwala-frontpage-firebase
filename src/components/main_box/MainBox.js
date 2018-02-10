@@ -15,6 +15,7 @@ export default function MainText() {
   ];
 
   return (
+    <div>
       <div className='MainBox'>
         <img className='Look-figure' src={look} alt='Look' />
         <div className='MainText'>
@@ -40,5 +41,6 @@ export default function MainText() {
           </div>
         </div>
       </div>
+    </div>
       )
 }
