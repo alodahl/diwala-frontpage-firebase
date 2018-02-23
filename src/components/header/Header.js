@@ -13,15 +13,13 @@ export default function Header(props) {
 }
 
 function HeaderText() {
+  const text= "We are building a decentralized platform that verifies the skills of people in displacement"
   return (
     <div className="Header-text">
       <h1>Hi !</h1>
       <p>Thank you for stopping by our webpage</p>
-      <p className="no-default-p-space">Diwala is a <span className="Diwala-bold">digital economy platform</span>, powered by blockchain,</p>
-      <p className="no-default-p-space">that enables refugees to build their <span className="Diwala-bold">identity</span>, <span className="Diwala-bold">skills</span> and <span className="Diwala-bold">resources</span>.</p>
-      <p></p>
-      <p className="no-default-p-space">By developing an <span className="Diwala-bold">identity for refugees</span>, Diwala will improve</p>
-      <p className="no-default-p-space">the supply chain for <span className="Diwala-bold">impact</span> organisations with <span className="Diwala-bold">data driven reporting</span>.</p>
+      <p className="no-default-p-space">We are building a <span className="Diwala-bold">decentralized platform</span></p>
+      <p className="no-default-p-space">that <span className="Diwala-bold">verifies</span>, the <span className="Diwala-bold">skills</span> of people in displacement</p>
     </div>
 
   )
