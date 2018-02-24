@@ -4,12 +4,12 @@ import '../../compiled_css/components/core/Core.css';
 import Hero from '../hero/Hero';
 import SlackButton from '../slack_button/SlackButton';
 import { loadTexts } from '../../actions/texts';
-import getTexts from '../../api/texts';
+import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
 
 class MainBox extends React.Component {
-  public props: any;
+  public props: { texts: TextData[] };
 
   constructor(props: any) {
     super(props);
@@ -17,6 +17,7 @@ class MainBox extends React.Component {
   }
 
   render() {
+    const benefits = this.props.texts.find(text => text.id === 'benefits');
     return (
       <div className="MainBox">
         <section className="MainBox__section">
@@ -24,7 +25,7 @@ class MainBox extends React.Component {
           <SlackButton />
         </section>
         <section className="MainBox__section">
-          <Benefits />
+          {benefits ? <Benefits text={benefits} /> : ''}
         </section>
       </div>
     );
