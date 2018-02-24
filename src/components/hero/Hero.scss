@@ -1,7 +1,6 @@
 @import "../../core/styles/index";
 
 .website-hero {
-  height: 100vh;
 }
 
 .website-hero__logo {
@@ -18,7 +17,7 @@
 }
 
 .website-hero__text {
-  color: $color-hero;
+  color: $diwala-background;
   margin: 0 auto;
   width: 250px;
 }

@@ -1,4 +1,7 @@
-$font-family-base: "Arial";
+@import "colors";
+@import "functions";
+
+$font-family-base: "Proxima Nova Regular", serif;
 
 $font-size-base: 16px;
 $font-size-scale: 1.2;

@@ -1,0 +1,12 @@
+@import "colors";
+@import "typography";
+@import "variables";
+
+@mixin button {
+  @include typography-title-h5;
+  background: $diwala-purple;
+  border-radius: $font-size-title-h5;
+  color: $diwala-background;
+  display: inline-block;
+  padding: $base-space-size $base-space-size * 3;
+}
