@@ -11,8 +11,8 @@ class Benefits extends React.Component {
         <h2>Benefits</h2>
         <dl className="benefits__list">
           {this.props.text.value.map((item, key) => [
-            <dt key={key + 'dt'}>{item.label}</dt>,
-            <dd key={key + 'dd'}>{item.value}</dd>
+            <dt key={key + 'dt'} className="benefits__list-item-label">{item.label}</dt>,
+            <dd key={key + 'dd'} className="benefits__list-item-value">{item.value}</dd>
           ])}
         </dl>
       </div>

@@ -1,7 +1,17 @@
+@import "../../core/styles/index";
+
 .benefits {
 }
 
 .benefits__list {
   text-align: start;
+}
+
+.benefits__list-item-label {
+  @include typography-title-h4;
+}
+
+.benefits__list-item-value {
+  margin-left: 0;
 }
 
