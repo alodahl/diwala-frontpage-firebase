@@ -1,6 +1,6 @@
 export const LOAD_PARTNERS = 'LOAD_PARTNERS';
 
-const news =  (state = [], action) => {
+const news = (state = [], action: any) => {
   switch (action.type) {
     case LOAD_PARTNERS:
       if (!action.partners) {
@@ -12,6 +12,6 @@ const news =  (state = [], action) => {
   }
 };
 
-export default news
+export default news;
 
 export const InitialPartnersState = [];

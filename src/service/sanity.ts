@@ -6,10 +6,9 @@ const client = SanityClient({
   dataset: 'production'
 });
 
-
-export default async function (query) {
+export default async function (query: any) {
   return new Promise((resolve, reject) => client
     .fetch(query)
-    .then(data => resolve(data))
-    .catch(error => reject(error)));
+    .then((data: any) => resolve(data))
+    .catch((error: any) => reject(error)));
 }

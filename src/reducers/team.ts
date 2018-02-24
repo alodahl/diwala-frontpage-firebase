@@ -1,6 +1,6 @@
 export const LOAD_TEAM = 'LOAD_TEAM';
 
-const news =  (state = [], action) => {
+const news = (state = [], action: any) => {
   switch (action.type) {
     case LOAD_TEAM:
       if (!action.team) {
@@ -12,6 +12,6 @@ const news =  (state = [], action) => {
   }
 };
 
-export default news
+export default news;
 
 export const InitialTeamState = [];
