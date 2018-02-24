@@ -2,18 +2,9 @@ import * as React from 'react';
 import '../../compiled_css/components/main_box/MainBox.css';
 import '../../compiled_css/components/core/Core.css';
 import ButtonLink from '../buttons/ButtonLink';
-import { SocialIcons } from 'react-social-icons';
 import Hero from '../hero/Hero';
 
 export default function MainText() {
-  const urls = [
-    'http://twitter.com/diwalaorg',
-    'https://www.linkedin.com/company/18089037/',
-    'https://www.instagram.com/diwala_/',
-    'https://www.facebook.com/diwalaorg/',
-    'https://diwala.org/'
-  ];
-
   return (
     <div className="MainBox">
       <Hero />
@@ -32,9 +23,6 @@ export default function MainText() {
         </div>
         <p>Looking forward to hear from you</p>
         <p><span className="Diwala-bold">The Diwala Team</span></p>
-        <div className="social-icons">
-          <SocialIcons urls={urls}/>
-        </div>
       </div>
     </div>
   );
