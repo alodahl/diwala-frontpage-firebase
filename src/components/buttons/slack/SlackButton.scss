@@ -1,0 +1,5 @@
+@import "../../../core/styles/index";
+
+.slack-button {
+  @include button;
+}

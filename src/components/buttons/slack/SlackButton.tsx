@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../../compiled_css/components/slack_button/SlackButton.css';
+import '../../../compiled_css/components/buttons/slack/SlackButton.css';
 
 const slackUrl = 'https://join.slack.com/t/diwala-org/shared_invite/enQtMjIyODA4OTQ0MjEzLTZkMmU5MmNkNDg1YWEzNmM5Y2Q3NGYwYmMxMzkzMDJlMzBmZDdhOWUxNzNkZWJjNGEyZDhhYWY4NjA1ZDY2MTk';
 

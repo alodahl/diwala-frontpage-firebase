@@ -2,12 +2,13 @@ import * as React from 'react';
 import '../../compiled_css/components/main_box/MainBox.css';
 import '../../compiled_css/components/core/Core.css';
 import Hero from '../hero/Hero';
-import SlackButton from '../slack_button/SlackButton';
+import SlackButton from '../buttons/slack/SlackButton';
 import { loadTexts } from '../../actions/texts';
 import getTexts from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
 import Mission from '../mission/Mission';
+import NewsletterButton from '../buttons/newsletter/NewsletterButton';
 
 class MainBox extends React.Component {
   public props: any;
@@ -29,6 +30,7 @@ class MainBox extends React.Component {
         </section>
         <section className="MainBox__section">
           <Mission />
+          <NewsletterButton />
         </section>
       </div>
     );

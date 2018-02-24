@@ -1,0 +1,5 @@
+@import "../../../core/styles/index";
+
+.newsletter-button {
+  @include button;
+}
