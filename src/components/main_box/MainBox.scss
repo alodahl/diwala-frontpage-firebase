@@ -1,4 +1,4 @@
-@import "../../core/styles/variables.scss";
+@import "../../core/styles/index";
 
 .MainText {
   padding: 10px;
@@ -11,6 +11,7 @@
 }
 
 .MainBox__section {
+  padding: 0 $base-space-size;
   height: 100vh;
 }
 
