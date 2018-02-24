@@ -4,8 +4,6 @@ import '../../compiled_css/components/core/Core.css';
 import ButtonLink from '../buttons/ButtonLink';
 import { SocialIcons } from 'react-social-icons';
 
-const look = require('../../graphics/look.png');
-
 export default function MainText() {
   const urls = [
     'http://twitter.com/diwalaorg',
@@ -17,7 +15,6 @@ export default function MainText() {
 
   return (
     <div className="MainBox">
-      <img className="Look-figure" src={look} alt="Look" />
       <div className="MainText">
         <p>We are currently working on our new webpage, which will be <span className="Diwala-bold">released early 2018</span></p>
         <p><span className="Diwala-bold">More curious or got any questions?</span></p>

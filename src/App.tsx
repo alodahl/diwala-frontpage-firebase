@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import MainBox from './components/main_box/MainBox';
 import NoMatch from './components/no_match/NoMatch';
 import News from './components/news/News';
@@ -38,6 +39,8 @@ const App = () => (
           <Route exact={true} path="/partners" component={Partners}/>
           <Route component={NoMatch}/>
         </Switch>
+        <Footer />
+
       </div>
     </Router>
   </Provider>
