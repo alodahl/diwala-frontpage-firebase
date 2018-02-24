@@ -7,6 +7,7 @@ import Team from './components/team/Team';
 import Partners from './components/partners/Partners';
 import './compiled_css/App.css';
 import './compiled_css/fonts/font-faces.css';
+import './compiled_css/menu-styles.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -17,13 +18,19 @@ import { diwalaFrontpageApp } from './reducers/index';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
+import { slide as Menu } from 'react-burger-menu';
+
 const store = createStore(diwalaFrontpageApp);
 
 const App = () => (
   <Provider store={store}>
     <Router>
       <div className="App">
-        <Header/>
+        <Menu right={true}>
+          <a id="home" className="menu-item" href="/">Home</a>
+          <a id="about" className="menu-item" href="/about">About</a>
+        </Menu>
+        <Header />
         <Switch>
           <Route exact={true} path="/" component={MainBox}/>
           <Route exact={true} path="/news" component={News}/>
