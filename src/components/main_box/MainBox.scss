@@ -1,15 +1,8 @@
-@import "../../variables.scss";
+@import "../../core/styles/variables.scss";
 
 .MainText {
   padding: 10px;
   color: #58449e;
-}
-
-.social-icons {
-  margin-top: 20px;
-  a {
-    margin: 5px;
-  }
 }
 
 .Button-holder {
