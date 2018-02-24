@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import news, { InitialNewsState } from './news';
 import team, { InitialTeamState } from './team';
 import partners, { InitialPartnersState } from './partners';
-import texts, { InitialTextState } from './text';
+import texts, { InitialTextState } from './texts';
 
 export const diwalaFrontpageApp = combineReducers({
   news,
