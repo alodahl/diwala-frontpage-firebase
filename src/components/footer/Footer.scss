@@ -2,17 +2,15 @@
 @import "../../core/styles/colors.scss";
 
 .Footer {
-   position:absolute;
-   bottom:0;
-   width:100%;
    background: $diwala-background;
-   margin-bottom: 5px;
+   padding-bottom: 5px;
+   width:100%;
 }
 
 .social-icons {
   a {
-    margin: 5px;
     height: 35px !important;
+    margin: 5px;
     width: 35px !important;
   }
 }
