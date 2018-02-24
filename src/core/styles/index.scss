@@ -1,13 +1,11 @@
-@import "./colors.scss";
+// variables, functions, and mixins
+@import "colors";
+@import "functions";
+@import "typography";
+@import "variables";
 
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  background-color: $diwala-background;
-  font-family: "Proxima Nova Regular", serif;
-}
+// core styles
+@import "base";
+@import "core";
+@import "menu-styles";
 
-html {
-  height: 100%;
-}

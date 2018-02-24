@@ -13,21 +13,21 @@ $font-size-small: ceil($font-size-base / pow($font-size-scale, 2)); // 12px
 $font-line-height: 1.25;
 
 @mixin typography-base() {
-  color: $color-base;
+  color: $diwala-purple;
   font-size: $font-size-base;
   font-family: $font-family-base;
   line-height: 1em * $font-line-height;
 }
 
 @mixin typography-button() {
-  color: $color-base;
+  color: $diwala-purple;
   font-size: $font-size-base;
   font-family: $font-family-base;
   line-height: 1em * $font-line-height;
 }
 
 @mixin typography-ingress() {
-  color: $color-base;
+  color: $diwala-purple;
   font-size: $font-size-title-h5;
   font-family: $font-family-base;
   font-weight: 300;
@@ -35,7 +35,7 @@ $font-line-height: 1.25;
 }
 
 @mixin typography-label() {
-  color: $color-base;
+  color: $diwala-purple;
   font-size: $font-size-base;
   font-family: $font-family-base;
   font-weight: 600;
@@ -43,7 +43,7 @@ $font-line-height: 1.25;
 }
 
 @mixin typography-title-h1() {
-  color: $color-title;
+  color: $diwala-purple;
   font-size: $font-size-title-h1;
   font-family: $font-family-base;
   line-height: 1em * $font-line-height;
@@ -52,7 +52,7 @@ $font-line-height: 1.25;
 }
 
 @mixin typography-title-h2() {
-  color: $color-title;
+  color: $diwala-purple;
   font-size: $font-size-title-h2;
   font-family: $font-family-base;
   line-height: 1em * $font-line-height;
@@ -61,7 +61,7 @@ $font-line-height: 1.25;
 }
 
 @mixin typography-title-h3() {
-  color: $color-title;
+  color: $diwala-purple;
   font-size: $font-size-title-h3;
   font-family: $font-family-base;
   line-height: 1em * $font-line-height;
@@ -70,7 +70,7 @@ $font-line-height: 1.25;
 }
 
 @mixin typography-title-h4() {
-  color: $color-title;
+  color: $diwala-purple;
   font-size: $font-size-title-h4;
   font-family: $font-family-base;
   line-height: 1em * $font-line-height;
@@ -79,7 +79,7 @@ $font-line-height: 1.25;
 }
 
 @mixin typography-title-h5() {
-  color: $color-title;
+  color: $diwala-purple;
   font-size: $font-size-title-h5;
   font-family: $font-family-base;
   line-height: 1em * $font-line-height;
@@ -88,7 +88,7 @@ $font-line-height: 1.25;
 }
 
 @mixin typography-title-h6() {
-  color: $color-title;
+  color: $diwala-purple;
   font-size: $font-size-title-h6;
   font-family: $font-family-base;
   line-height: 1em * $font-line-height;
@@ -97,7 +97,7 @@ $font-line-height: 1.25;
 }
 
 @mixin typography-small() {
-  color: $color-title;
+  color: $diwala-purple;
   font-size: $font-size-small;
   font-family: $font-family-base;
   line-height: 1em * $font-line-height;
