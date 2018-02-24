@@ -1,0 +1,24 @@
+@import "../../styles/index";
+
+.website-hero {
+  height: 100vh;
+}
+
+.website-hero__logo {
+  align-items: center;
+  background-image: url("../../../graphics/New-Logo_Sketching-27__cropped.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 309px;
+  margin: 40px auto;
+  text-align: center;
+  vertical-align: center;
+  width: 308px;
+}
+
+.website-hero__text {
+  color: $color-hero;
+  margin: 0 auto;
+  width: 250px;
+}

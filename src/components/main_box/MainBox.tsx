@@ -3,6 +3,7 @@ import '../../compiled_css/components/main_box/MainBox.css';
 import '../../compiled_css/components/core/Core.css';
 import ButtonLink from '../buttons/ButtonLink';
 import { SocialIcons } from 'react-social-icons';
+import Hero from '../hero/Hero';
 
 export default function MainText() {
   const urls = [
@@ -15,6 +16,7 @@ export default function MainText() {
 
   return (
     <div className="MainBox">
+      <Hero />
       <div className="MainText">
         <p>We are currently working on our new webpage, which will be <span className="Diwala-bold">released early 2018</span></p>
         <p><span className="Diwala-bold">More curious or got any questions?</span></p>
