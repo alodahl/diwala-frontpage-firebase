@@ -7,10 +7,8 @@ import { loadTexts } from '../../actions/texts';
 import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
-import Mission from '../mission/Mission';
 import NewsletterSignup from '../newsletter_signup/NewsletterSignup';
 import StaticPicture from '../static_picture/StaticPicture';
-
 
 class MainBox extends React.Component {
   public props: { texts: TextData[] };
@@ -23,7 +21,6 @@ class MainBox extends React.Component {
   render() {
     const hero = this.props.texts.find(text => text.id === 'hero-text');
     const benefits = this.props.texts.find(text => text.id === 'benefits');
-    const mission = this.props.texts.find(text => text.id === 'mission');
     return (
       <div className="MainBox">
         {hero ? (
@@ -47,7 +44,6 @@ class MainBox extends React.Component {
           {/* tslint:enable*/}
         </section>
         <section className="MainBox__section">
-          <Mission text={mission} />
           <NewsletterSignup />
         </section>
       </div>
