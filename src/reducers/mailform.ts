@@ -2,23 +2,29 @@ export const SEND_PERSON = 'SEND_PERSON';
 export const EXISTING_MEMBER = 'EXISTING_MEMBER';
 export const SIGNED_UP = 'SIGNED_UP';
 export const UNKNOWN_ERROR = 'UNKNOWN_ERROR';
+export const LOADING = 'LOADING';
 
-const profile = (state = {}, action: any) => {
+export const InitialFormState = {
+  loading: false
+};
+
+const profile = (state = InitialFormState, action: any) => {
   switch (action.type) {
     case EXISTING_MEMBER:
       return {
-        sent: true,
         action: EXISTING_MEMBER
       };
     case SIGNED_UP:
       return {
-        sent: true,
         action: SIGNED_UP
       };
     case UNKNOWN_ERROR:
       return {
-        sent: true,
         action: UNKNOWN_ERROR
+      };
+    case LOADING:
+      return {
+        loading: true
       };
     default:
       return {};
@@ -26,7 +32,3 @@ const profile = (state = {}, action: any) => {
 };
 
 export default profile;
-
-export const InitialFormState = {
-  sent: false
-};

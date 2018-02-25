@@ -5,13 +5,15 @@ import postPerson from '../../api/mailform';
 import { sendPerson, updateFormStatus } from '../../actions/mailform';
 import '../../compiled_css/components/newsletter_form/NewsletterForm.css';
 import ResponseNewsletterForm from './DesignedResponse';
+import Loader from '../loader/Loader';
 
 class FormBox extends React.Component {
   props: {
     sendPerson: (action: any, values: any) => void,
     injectedClasses: string,
     form: {
-      action: string
+      action: string,
+      loading: boolean
     }
     restartForm: (action: any) => void,
   };
@@ -22,6 +24,22 @@ class FormBox extends React.Component {
 
   restartForm = () => {
     this.props.restartForm(updateFormStatus(''));
+  }
+
+  buttonOrLoading = () => {
+    if (!this.props.form.loading) {
+      return (
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      );
+    } else {
+      return (
+        <button type="submit" className="btn btn-primary">
+          <Loader />
+        </button>
+      );
+    }
   }
 
   getForm () {
@@ -37,9 +55,7 @@ class FormBox extends React.Component {
               <Text placeholder="Email" field="email" id="email"/>
               <Text placeholder="Firstname" field="firstname" id="first"/>
               <Text placeholder="Lastname" field="lastname" id="last"/>
-              <button type="submit" className="btn btn-primary">
-                Submit
-              </button>
+              {this.buttonOrLoading()}
             </form>
           )}
       </Form>
