@@ -18,17 +18,21 @@ class MainBox extends React.Component {
   }
 
   render() {
+    const hero = this.props.texts.find(text => text.id === 'hero-text');
     const benefits = this.props.texts.find(text => text.id === 'benefits');
-    const mission = this.props.texts.find(text => text.id === 'frontpage-missionstatement');
     return (
       <div className="MainBox">
-        <section className="MainBox__section">
-          {mission ? <Hero text={mission}/> : ''}
-          <SlackButton/>
-        </section>
-        <section className="MainBox__section">
-          {benefits ? <Benefits text={benefits}/> : ''}
-        </section>
+        {hero ? (
+          <section className="MainBox__section">
+            <Hero text={hero}/>
+            <SlackButton/>
+          </section>
+        ) : ''}
+        {benefits ? (
+          <section className="MainBox__section">
+            <Benefits text={benefits}/>
+          </section>
+        ) : ''}
         <section className="MainBox__section MainBox__section--full-width">
           {/* tslint:disable*/}
           <StaticPicture
