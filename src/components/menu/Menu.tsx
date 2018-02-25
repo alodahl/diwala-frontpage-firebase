@@ -14,7 +14,7 @@ export default class MainBox extends React.Component {
     super(props);
     this.animationSpeed = 600;
     this.state = {
-      menuOpen: true
+      menuOpen: false
     };
   }
 
