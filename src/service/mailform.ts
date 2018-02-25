@@ -1,7 +1,13 @@
 const rp = require('request-promise');
 
-export const post = async (dispatch: any, action: any, data: any)  => {
-  const url = 'http://localhost:5000/diwala-frontpage-dev/us-central1/mailChimSignup';
+interface FormPerson {
+  email: string;
+  firstname: string;
+  lastname: string;
+}
+
+export const post = async (dispatch: any, action: any, data: FormPerson)  => {
+  const url = 'https://us-central1-diwala-frontpage-dev.cloudfunctions.net/mailChimSignup';
   const options = {
     method: 'POST',
     uri: url,
@@ -11,17 +17,17 @@ export const post = async (dispatch: any, action: any, data: any)  => {
     },
     json: true,
     body: {
-      'email_address': 'lottwin@gmail.com',
-      'firstname': 'aaanaastasia',
-      'lastname': 'sopparova'
+      'email_address': data.email,
+      'firstname': data.firstname,
+      'lastname': data.lastname
     }
   };
 
   try {
       const response = await rp(options);
-      console.log(response);
+      return response;
   } catch (e) {
-      console.log(e);
+      return e;
   }
 
 };

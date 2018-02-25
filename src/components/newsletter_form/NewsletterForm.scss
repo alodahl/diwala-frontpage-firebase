@@ -1,11 +1,23 @@
 @import "../../core/styles/index";
 
+.newsletter_form {
+  transition-property: all;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
 .newsletter_form.closed {
   max-height: 0px;
+  overflow: hidden;
+  button {
+    opacity: 0;
+  }
 }
 
 .newsletter_form.open {
   max-height: 300px;
+  button {
+    opacity: 1;
+  }
 }
 
 .newsletter_form input,
@@ -38,4 +50,20 @@
 
 .newsletter_form button {
   @include button;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.response-form button {
+  @include button;
+}
+
+.emoji {
+  font-size: 30px;
+}
+
+.message {
+  font-size: 15px;
 }
