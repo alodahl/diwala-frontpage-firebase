@@ -10,6 +10,12 @@ class Picture extends React.Component {
     width: number;
   };
 
+  componentDidMount() {
+    window.addEventListener('resize', () => this.setState({
+      ...this.state // just to make it update
+    }));
+  }
+
   render() {
     const maxHeight = this.props.maxHeight ? this.props.maxHeight : Number.MAX_SAFE_INTEGER;
     const height = Math.min(getViewportHeight(), maxHeight, this.props.height);
