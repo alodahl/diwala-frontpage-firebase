@@ -7,7 +7,7 @@ import { loadTexts } from '../../actions/texts';
 import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
-import Picture from '../picture/Picture';
+import StaticPicture from '../static_picture/StaticPicture';
 
 class MainBox extends React.Component {
   public props: { texts: TextData[] };
@@ -31,7 +31,7 @@ class MainBox extends React.Component {
         </section>
         <section className="MainBox__section MainBox__section--full-width">
           {/* tslint:disable*/}
-          <Picture
+          <StaticPicture
             height={3840}
             maxHeight={800}
             src="https://firebasestorage.googleapis.com/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76"

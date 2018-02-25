@@ -1,8 +1,8 @@
 import * as React from 'react';
-import '../../compiled_css/components/picture/Picture.css';
+import '../../compiled_css/components/static_picture/StaticPicture.css';
 import { getViewportHeight, getViewportWidth } from '../../core/utilities/viewport.functions';
 
-class Picture extends React.Component {
+class StaticPicture extends React.Component {
   public props: {
     height: number;
     maxHeight?: number;
@@ -24,12 +24,15 @@ class Picture extends React.Component {
     const width = Math.min(getViewportWidth(), maxWidth, this.props.width);
     const src = this.props.src.replace('https://', '');
     const rszSrc = `https://rsz.io/${src}?mode=crop&width=${width}&height=${height}`;
+    const styles = {
+      backgroundImage: `url('${rszSrc}')`,
+      height,
+      width
+    };
     return (
-      <div className="picture">
-        <img src={rszSrc}/>
-      </div>
+      <div className="static-picture" style={styles}>&nbsp;</div>
     );
   }
 }
 
-export default Picture;
+export default StaticPicture;
