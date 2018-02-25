@@ -8,6 +8,7 @@ import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
 import Picture from '../picture/Picture';
+import Mission from '../mission/Mission';
 
 class MainBox extends React.Component {
   public props: { texts: TextData[] };
@@ -19,10 +20,11 @@ class MainBox extends React.Component {
 
   render() {
     const benefits = this.props.texts.find(text => text.id === 'benefits');
+    const mission = this.props.texts.find(text => text.id === 'frontpage-missionstatement');
     return (
       <div className="MainBox">
         <section className="MainBox__section">
-          <Hero/>
+          {mission ? <Hero text={mission}/> : ''}
           <SlackButton/>
         </section>
         <section className="MainBox__section">
@@ -30,7 +32,8 @@ class MainBox extends React.Component {
         </section>
         <section className="MainBox__section">
           {/* tslint:disable-next-line*/}
-          <Picture src="https://firebasestorage.googleapis.com.rsz.io/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76?width=200"/>
+          <Picture
+            src="https://firebasestorage.googleapis.com.rsz.io/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76?width=200"/>
         </section>
       </div>
     );

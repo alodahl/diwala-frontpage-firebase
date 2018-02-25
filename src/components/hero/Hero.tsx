@@ -1,12 +1,13 @@
 import * as React from 'react';
 import '../../compiled_css/components/hero/Hero.css';
+import { TextData } from '../../api/texts';
 
-export default function Header(props: any) {
+export default function Header(props: { text: TextData }) {
   return (
     <div className="website-hero">
       <div className="website-hero__logo">
         <div className="website-hero__text">
-          We are building a decentralised platform that verifies the skills of people in displacement.
+          {props.text.value[0].value}
         </div>
       </div>
     </div>
