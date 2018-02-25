@@ -1,10 +1,15 @@
 import * as React from 'react';
 import '../../compiled_css/components/mission/Mission.css';
+import { TextData } from '../../api/texts';
 
-export default function Mission(props: any) {
+export default function Mission(props: { text: TextData }) {
   return (
-    <div className="frontpage-mission">
-      We are building a decentralised platform that verifies the skills of people in displacement.
+    <div className="website-hero">
+      <div className="website-hero__logo">
+        <div className="website-hero__text">
+          {props.text.value[0].value}
+        </div>
+      </div>
     </div>
   );
 }

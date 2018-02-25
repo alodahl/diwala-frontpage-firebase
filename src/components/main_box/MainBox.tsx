@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
 import Mission from '../mission/Mission';
 import NewsletterSignup from '../newsletter_signup/NewsletterSignup';
+import StaticPicture from '../static_picture/StaticPicture';
+
 
 class MainBox extends React.Component {
   public props: { texts: TextData[] };
@@ -19,18 +21,33 @@ class MainBox extends React.Component {
   }
 
   render() {
+    const hero = this.props.texts.find(text => text.id === 'hero-text');
     const benefits = this.props.texts.find(text => text.id === 'benefits');
+    const mission = this.props.texts.find(text => text.id === 'mission');
     return (
       <div className="MainBox">
-        <section className="MainBox__section">
-          <Hero />
-          <SlackButton />
+        {hero ? (
+          <section className="MainBox__section">
+            <Hero text={hero}/>
+            <SlackButton/>
+          </section>
+        ) : ''}
+        {benefits ? (
+          <section className="MainBox__section">
+            <Benefits text={benefits}/>
+          </section>
+        ) : ''}
+        <section className="MainBox__section MainBox__section--full-width">
+          {/* tslint:disable*/}
+          <StaticPicture
+            height={3840}
+            maxHeight={800}
+            src="https://firebasestorage.googleapis.com/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76"
+            width={5760}/>
+          {/* tslint:enable*/}
         </section>
         <section className="MainBox__section">
-          {benefits ? <Benefits text={benefits} /> : ''}
-        </section>
-        <section className="MainBox__section">
-          <Mission />
+          <Mission text={mission} />
           <NewsletterSignup />
         </section>
       </div>

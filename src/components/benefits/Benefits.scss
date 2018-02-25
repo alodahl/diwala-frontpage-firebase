@@ -9,6 +9,11 @@
 
 .benefits__list-item-label {
   @include typography-title-h4;
+  background-image: url('../../../graphics/dot.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: $base-space-size;
+  padding-left: $base-space-size * 2;
 }
 
 .benefits__list-item-value {
