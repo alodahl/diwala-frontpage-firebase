@@ -28,6 +28,7 @@ const App = () => (
       <div className="App">
         <Menu right={true}>
           <a id="home" className="menu-item" href="/">Home</a>
+          <a id="menu-item-benefits" className="menu-item" href="#benefits">Benefits</a>
           <a id="team" className="menu-item" href="/team">Team</a>
           <a id="partners" className="menu-item" href="/partners">Partners</a>
         </Menu>

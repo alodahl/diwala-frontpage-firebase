@@ -3,10 +3,12 @@
 @import "variables";
 
 @mixin button {
-  @include typography-title-h5;
+  @include typography-base;
   background: $diwala-purple;
-  border-radius: $font-size-title-h5;
+  border-radius: $font-size-base * 4;
   color: $diwala-background;
   display: inline-block;
+  max-width: 150px; // magic number
   padding: $base-space-size $base-space-size * 3;
+  text-align: center;
 }

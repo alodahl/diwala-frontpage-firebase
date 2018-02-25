@@ -2,7 +2,7 @@ import * as React from 'react';
 import '../../compiled_css/components/header/Header.css';
 import '../../compiled_css/components/core/Core.css';
 
-const logo = require('../../graphics/logo.png');
+const logo = require('../../graphics/Diwala_Logo_258x108px_1.png');
 
 export default function Header(props: any) {
   return (

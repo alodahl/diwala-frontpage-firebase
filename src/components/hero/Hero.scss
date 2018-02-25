@@ -17,6 +17,7 @@
 }
 
 .website-hero__text {
+  @include typography-title-h5;
   color: $diwala-background;
   margin: 0 auto;
   width: 250px;
