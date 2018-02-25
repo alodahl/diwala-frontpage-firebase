@@ -7,7 +7,7 @@ interface FormPerson {
 }
 
 export const post = async (dispatch: any, action: any, data: FormPerson)  => {
-  const url = 'http://localhost:5000/diwala-frontpage-dev/us-central1/mailChimSignup';
+  const url = 'https://us-central1-diwala-frontpage-dev.cloudfunctions.net/mailChimSignup';
   const options = {
     method: 'POST',
     uri: url,
