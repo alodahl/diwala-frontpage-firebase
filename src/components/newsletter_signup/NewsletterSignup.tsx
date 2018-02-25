@@ -3,8 +3,12 @@ import NewsletterButton from '../buttons/newsletter/NewsletterButton';
 import NewsletterForm from '../newsletter_form/NewsletterForm';
 
 class SignupComponent extends React.Component {
+  props: {
+    injectClasses: string;
+  };
+
   state: {
-    formDisplay: boolean
+    formDisplay: boolean;
   };
 
   constructor(props: any) {
@@ -27,7 +31,7 @@ class SignupComponent extends React.Component {
     return (
       <div>
 
-        <NewsletterForm/>
+        <NewsletterForm injectedClasses={this.props.injectClasses}/>
         <NewsletterButton onClick={showForm} />
       </div>
     );

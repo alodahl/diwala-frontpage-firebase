@@ -44,7 +44,7 @@ class MainBox extends React.Component {
           {/* tslint:enable*/}
         </section>
         <section className="MainBox__section">
-          <NewsletterSignup />
+          <NewsletterSignup injectClasses="test" />
         </section>
       </div>
     );

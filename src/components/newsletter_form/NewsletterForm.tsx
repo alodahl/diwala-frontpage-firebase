@@ -19,7 +19,7 @@ class FormBox extends React.Component {
     const submit = this.submitForm.bind(this);
     return (
       <Form onSubmit={submit}>
-        {formApi => (
+        {(formApi: any) => (
             <form onSubmit={e => {e.preventDefault(); return formApi.submitForm(e); }} id="form1" className="newsletter_form closed">
               <Text placeholder="Email" field="email" id="email"/>
               <Text placeholder="Firstname" field="firstname" id="first"/>
@@ -44,9 +44,16 @@ const mapApiToState = (dispatch: any) => {
   };
 };
 
-const ConnectedFormBox = connect(
+const ConnectedFormBox = connect<StateFromProps, DispatchFromProps, {injectedClasses: string}>(
   state => state,
   mapApiToState
 )(FormBox);
 
 export default ConnectedFormBox;
+
+interface StateFromProps {
+}
+
+interface DispatchFromProps {
+  sendPerson: (action: any, values: any) => void;
+}
