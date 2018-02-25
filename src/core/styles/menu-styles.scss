@@ -22,26 +22,24 @@
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: $diwala-text-invert;
 }
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
-  padding: 2.5em 1.5em 0;
+  background: $diwala-object-purple;
+  padding: 200px 100px 0;
   font-size: 1.15em;
+
+  .bm-item-list {
+    a {
+      color: $diwala-text-invert;
+      padding: 5px;
+    }
+    padding: 0.8em;
+  }
 }
 
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
-}
 
 /* Styling of overlay */
 .bm-overlay {

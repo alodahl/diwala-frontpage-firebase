@@ -1,8 +1,8 @@
 import * as React from 'react';
 import '../../compiled_css/components/main_box/MainBox.css';
-import '../../compiled_css/components/core/Core.css';
 import Hero from '../hero/Hero';
 import SlackButton from '../buttons/slack/SlackButton';
+import CollaborationButton from '../buttons/collaboration/Collaboration';
 import { loadTexts } from '../../actions/texts';
 import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
@@ -18,22 +18,35 @@ class MainBox extends React.Component {
     props.getTexts(loadTexts);
   }
 
-  render() {
+  HeroOrNothing = () => {
     const hero = this.props.texts.find(text => text.id === 'hero-text');
+    return hero ? (
+      <section className="MainBox__section" id="home">
+          <Hero text={hero}/>
+          <div className="flex-btn-group">
+            <CollaborationButton/>
+            <SlackButton/>
+          </div>
+
+      </section>
+    ) : <span />;
+  }
+
+  BenefitsOrNothing = () => {
     const benefits = this.props.texts.find(text => text.id === 'benefits');
+    return benefits ? (
+      <section id="benefits" className="MainBox__section">
+        <Benefits text={benefits}/>
+      </section>
+    ) : <span />;
+  }
+
+  render() {
+
     return (
       <div className="MainBox">
-        {hero ? (
-          <section className="MainBox__section">
-            <Hero text={hero}/>
-            <SlackButton/>
-          </section>
-        ) : ''}
-        {benefits ? (
-          <section id="benefits" className="MainBox__section">
-            <Benefits text={benefits}/>
-          </section>
-        ) : ''}
+          {this.HeroOrNothing()}
+          {this.BenefitsOrNothing()}
         <section className="MainBox__section MainBox__section--full-width">
           {/* tslint:disable*/}
           <StaticPicture

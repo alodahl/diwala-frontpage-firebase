@@ -5,6 +5,6 @@ const slackUrl = 'https://join.slack.com/t/diwala-org/shared_invite/enQtMjIyODA4
 
 export default function SlackButton(props: any) {
   return (
-    <a className="slack-button" href={slackUrl}>Join our community on slack! </a>
+    <a className="btn slack-button" target="_blank" href={slackUrl}>Join our community on slack! </a>
   );
 }
