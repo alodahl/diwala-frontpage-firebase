@@ -8,7 +8,6 @@ import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
 import Picture from '../picture/Picture';
-import Mission from '../mission/Mission';
 
 class MainBox extends React.Component {
   public props: { texts: TextData[] };
@@ -31,9 +30,10 @@ class MainBox extends React.Component {
           {benefits ? <Benefits text={benefits}/> : ''}
         </section>
         <section className="MainBox__section">
-          {/* tslint:disable-next-line*/}
+          {/* tslint:disable*/}
           <Picture
             src="https://firebasestorage.googleapis.com.rsz.io/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76?width=200"/>
+          {/* tslint:enable*/}
         </section>
       </div>
     );
