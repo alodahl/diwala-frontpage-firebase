@@ -8,7 +8,7 @@ import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
 import Mission from '../mission/Mission';
-import NewsletterButton from '../buttons/newsletter/NewsletterButton';
+import NewsletterSignup from '../newsletter_signup/NewsletterSignup';
 
 class MainBox extends React.Component {
   public props: { texts: TextData[] };
@@ -31,7 +31,7 @@ class MainBox extends React.Component {
         </section>
         <section className="MainBox__section">
           <Mission />
-          <NewsletterButton />
+          <NewsletterSignup />
         </section>
       </div>
     );

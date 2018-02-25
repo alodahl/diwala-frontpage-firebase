@@ -1,0 +1,41 @@
+@import "../../core/styles/index";
+
+.newsletter_form.closed {
+  max-height: 0px;
+}
+
+.newsletter_form.open {
+  max-height: 300px;
+}
+
+.newsletter_form input,
+.newsletter_form input[type="text"],
+.newsletter_form input[type="date"],
+.newsletter_form input[type="datetime"],
+.newsletter_form input[type="email"],
+.newsletter_form input[type="number"],
+.newsletter_form input[type="search"],
+.newsletter_form input[type="time"],
+.newsletter_form input[type="url"],
+.newsletter_form input[type="password"],
+.newsletter_form textarea,
+.newsletter_form select
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+
+.newsletter_form button {
+  @include button;
+}
