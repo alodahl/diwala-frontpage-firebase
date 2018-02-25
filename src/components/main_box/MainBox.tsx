@@ -29,10 +29,13 @@ class MainBox extends React.Component {
         <section className="MainBox__section">
           {benefits ? <Benefits text={benefits}/> : ''}
         </section>
-        <section className="MainBox__section">
+        <section className="MainBox__section MainBox__section--full-width">
           {/* tslint:disable*/}
           <Picture
-            src="https://firebasestorage.googleapis.com.rsz.io/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76?width=200"/>
+            height={3840}
+            maxHeight={800}
+            src="https://firebasestorage.googleapis.com/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76"
+            width={5760}/>
           {/* tslint:enable*/}
         </section>
       </div>

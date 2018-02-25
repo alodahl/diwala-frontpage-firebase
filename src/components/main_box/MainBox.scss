@@ -14,6 +14,10 @@
   padding: 0 $base-space-size;
   height: 100vh;
 }
+.MainBox__section--full-width {
+  padding: 0;
+  width: 100%;
+}
 
 @media (max-width: $min-size) {
   .MainText {
