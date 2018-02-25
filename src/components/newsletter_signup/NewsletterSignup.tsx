@@ -9,30 +9,32 @@ class SignupComponent extends React.Component {
 
   state: {
     formDisplay: boolean;
+    formClean: boolean;
   };
 
   constructor(props: any) {
     super(props);
     this.state = {
-      formDisplay: false
+      formDisplay: false,
+      formClean: true
     };
   }
 
   showForm() {
     this.setState({
-      formDisplay: !this.state.formDisplay
+      formDisplay: !this.state.formDisplay,
+      formClean: !this.state.formClean
     });
   }
 
   render() {
     const showForm = this.showForm.bind(this);
-    // const formClasses = this.state.formDisplay ? 'open' : 'closed';
-    // <NewsletterForm injectClasses={formClasses}/>
+    const formClasses = this.state.formDisplay ? 'open' : 'closed';
+    const buttonClasses = this.state.formDisplay ? 'gone' : 'displayed';
     return (
-      <div>
-
-        <NewsletterForm injectedClasses={this.props.injectClasses}/>
-        <NewsletterButton onClick={showForm} />
+      <div className="signupForm">
+        <NewsletterForm injectedClasses={formClasses}/>
+        <NewsletterButton onClick={showForm} injectedClasses={buttonClasses} />
       </div>
     );
   }

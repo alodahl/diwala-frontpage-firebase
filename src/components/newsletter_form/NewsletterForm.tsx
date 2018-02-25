@@ -1,26 +1,39 @@
 import * as React from 'react';
 import { Form, Text } from 'react-form';
 import { connect } from 'react-redux';
-import sendPerson from '../../api/mailform';
-import { loadTexts } from '../../actions/texts';
+import postPerson from '../../api/mailform';
+import { sendPerson, updateFormStatus } from '../../actions/mailform';
 import '../../compiled_css/components/newsletter_form/NewsletterForm.css';
+import ResponseNewsletterForm from './DesignedResponse';
 
 class FormBox extends React.Component {
   props: {
     sendPerson: (action: any, values: any) => void,
-    injectClasses: string
+    injectedClasses: string,
+    form: {
+      action: string
+    }
+    restartForm: (action: any) => void,
   };
 
-  submitForm (values: any, event: any) {
-    this.props.sendPerson(loadTexts, values);
+  submitForm = (values: any, event: any) => {
+    this.props.sendPerson(sendPerson, values);
+  }
+
+  restartForm = () => {
+    this.props.restartForm(updateFormStatus(''));
   }
 
   getForm () {
-    const submit = this.submitForm.bind(this);
+    const classes = 'newsletter_form ' + this.props.injectedClasses;
     return (
-      <Form onSubmit={submit}>
+      <Form onSubmit={this.submitForm}>
         {(formApi: any) => (
-            <form onSubmit={e => {e.preventDefault(); return formApi.submitForm(e); }} id="form1" className="newsletter_form closed">
+            <form
+              onSubmit={e => {e.preventDefault(); return formApi.submitForm(e); }}
+              id="form1"
+              className={classes}
+            >
               <Text placeholder="Email" field="email" id="email"/>
               <Text placeholder="Firstname" field="firstname" id="first"/>
               <Text placeholder="Lastname" field="lastname" id="last"/>
@@ -34,13 +47,18 @@ class FormBox extends React.Component {
   }
 
   render() {
-    return this.getForm();
+    if (!this.props.form.action) {
+      return this.getForm();
+    } else {
+      return <ResponseNewsletterForm form={this.props.form} onRestart={this.restartForm}/>;
+    }
   }
 }
 
 const mapApiToState = (dispatch: any) => {
   return {
-    sendPerson: (action: any, values: any) => sendPerson.bind(dispatch, action, values)()
+    sendPerson: (action: any, values: any) => postPerson.bind({}, dispatch, action, values)(),
+    restartForm: (action: any) => dispatch(action)
   };
 };
 
