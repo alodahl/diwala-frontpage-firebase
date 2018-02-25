@@ -7,7 +7,7 @@ import { SocialIcons } from 'react-social-icons';
 
 export default function MainText() {
   const urls = [
-    'http://twitter.com/diwalaorg',
+    'http://twitter.com/diwala',
     'https://www.linkedin.com/company/18089037/',
     'https://www.instagram.com/diwala_/',
     'https://www.facebook.com/diwalaorg/',
