@@ -1,50 +1,48 @@
+@import "../../core/styles/index";
 
-@import "../../core/styles/colors.scss";
-@import "../../core/styles/variables.scss";
+$header-height: 50px;
+$header-padding: 20px;
+$header-total-height: $header-height + $header-padding * 2;
 
 .Header {
   background-color: white;
-  height: 50px;
-  padding: 20px;
+  height: $header-height;
+  padding: $header-padding;
   color: $diwala-text-purple;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.Header + * {
+  margin-top: -$header-total-height;
+  > *:first-child {
+    padding-top: $header-total-height;
+  }
+}
+
+.Header-logo {
+  max-height: 100%;
+  max-width: 100%;
+}
+
 @media (max-width: $min-size) {
   .Header-logo {
-    height: 50px;
+    height: $header-height;
     align-self: flex-start;
   }
 }
 
 
 @media (min-width: $min-size) and (max-width: $medium-size) {
-  .Header {
-    align-items: center;
-    background-image: url("../../../graphics/smallheader.png");
-  }
-
-  .Header-logo {
-    height: 180px;
-  }
-
   .Header-text {
     width: 440px;
-    margin-bottom: 50px;
+    margin-bottom: $header-height;
     text-align: center;
   }
 }
 
 @media (min-width: $medium-size) and (max-width: $max-size) {
-  .Header-logo {
-    height: 200px;
-    position: absolute;
-    top: 3%;
-    right: -4%;
-  }
-
   .Header-text {
     width: 440px;
     position: absolute;

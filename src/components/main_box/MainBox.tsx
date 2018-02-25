@@ -30,7 +30,7 @@ class MainBox extends React.Component {
           </section>
         ) : ''}
         {benefits ? (
-          <section className="MainBox__section">
+          <section id="benefits" className="MainBox__section">
             <Benefits text={benefits}/>
           </section>
         ) : ''}
