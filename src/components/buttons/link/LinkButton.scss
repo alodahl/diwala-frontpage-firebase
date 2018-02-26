@@ -1,0 +1,9 @@
+@import "../../../core/styles/index";
+
+.button {
+  @include button;
+}
+
+.invert-button {
+  @include invert_button;
+}

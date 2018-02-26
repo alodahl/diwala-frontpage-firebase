@@ -3,10 +3,6 @@ import NewsletterButton from '../buttons/newsletter/NewsletterButton';
 import NewsletterForm from '../newsletter_form/NewsletterForm';
 
 class SignupComponent extends React.Component {
-  props: {
-    injectClasses: string;
-  };
-
   state: {
     formDisplay: boolean;
     formClean: boolean;

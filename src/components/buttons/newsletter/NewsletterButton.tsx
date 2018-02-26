@@ -8,11 +8,11 @@ export default function NewsletterButton(props: any) {
 
   if (props.onClick) {
     return (
-      <button className={classes} onClick={props.onClick} >Follow our journey!</button>
+      <button className={classes} onClick={props.onClick} >Sign up for our newsletter!</button>
     );
   } else {
     return (
-      <a className="newsletter-button" target="_blank" href={newsLetterUrl}>Follow our journey!</a>
+      <a className="newsletter-button" target="_blank" href={newsLetterUrl}>Sign up for our newsletter!</a>
     );
   }
 }

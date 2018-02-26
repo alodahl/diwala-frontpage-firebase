@@ -1,0 +1,17 @@
+@import "../../core/styles/index";
+
+.image-container {
+  position: relative;
+  margin-left: 30%;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-container img:nth-child(2) {
+  top: 40px;
+  left: 60px;
+}

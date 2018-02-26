@@ -1,5 +1,5 @@
-
 @import "../../core/styles/colors.scss";
+@import "../../core/styles/index.scss";
 
 .Footer {
    background: $diwala-background;
@@ -13,6 +13,12 @@
     margin: 5px;
     width: 35px !important;
   }
+  position: absolute;
+  margin-top: 9px;
+  margin-left: 10px;
+}
+.social-icons a:nth-child(2){
+  margin-right: 210px;
 }
 
 .copyright {

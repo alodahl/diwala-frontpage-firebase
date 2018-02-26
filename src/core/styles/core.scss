@@ -13,7 +13,7 @@
 .flex-btn-group {
   @include flex-column;
   @include flex-start;
-  .btn {
+  > * {
     margin-top: 20px;
   }
 }
