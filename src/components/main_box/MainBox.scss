@@ -13,6 +13,12 @@
 .MainBox__section {
   padding: 0 $base-space-size;
   height: 100vh;
+  .longer {
+    height: 110vh;
+  }
+}
+.MainBox__section.longer {
+  height: 120vh;
 }
 .MainBox__section--full-width {
   padding: 0;
@@ -21,49 +27,4 @@
 
 .title {
   @include typography-title-h1;
-}
-
-@media (max-width: $min-size) {
-  .MainText {
-    margin: 0 auto;
-  }
-  .Look-figure {
-    height: 200px;
-    margin-top: -50px;
-  }
-}
-
-@media (min-width: $min-size) and (max-width: $medium-size) {
-  .Look-figure {
-    height: 200px;
-    margin-top: -50px;
-  }
-}
-
-@media (min-width: $medium-size) and (max-width: $max-size) {
-  .MainText {
-    margin-left: 32%;
-    padding-top: 30px;
-  }
-  .Look-figure {
-    height: 200px;
-    position: absolute;
-    left: 7%;
-    margin-top: -50px;
-  }
-}
-
-@media (min-width: $max-size) {
-  .MainBox {
-    display: flex;
-    flex-direction: row;
-  }
-  .MainText {
-    padding-top: 30px;
-  }
-  .Look-figure{
-    margin-left: 250px;
-    height: 300px;
-    margin-top: -50px;
-  }
 }

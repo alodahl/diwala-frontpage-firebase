@@ -1,37 +1,26 @@
 import * as React from 'react';
 import '../../compiled_css/components/partners/Partners.css';
-import { connect } from 'react-redux';
-import { loadPartners } from '../../actions/partners';
-import getPartners from '../../api/partners';
+import { urlFor } from '../../core/utilities/image-builder.functions';
+import { getViewportWidth } from '../../core/utilities/viewport.functions';
 
-class Partners extends React.Component {
-  public props: any;
-
-  constructor(props: any) {
-    super(props);
-    props.getPartners(loadPartners);
-  }
-
-  render() {
-    const firstPartners = this.props.partners[ 0 ];
-    const partners = firstPartners ? firstPartners.name : '';
-    return (
-      <div className="partners">
-        {partners}
-      </div>
-    );
-  }
-}
-
-const mapApiToState = (dispatch: any) => {
-  return {
-    getPartners: (action: any) => getPartners(dispatch, action)
+export default function Partners(props: any) {
+  const imageWidth = getViewportWidth() / 4;
+  const AllPartners = () => {
+    return props.partners.map((partner: any) => {
+      const url = urlFor(partner.image).width(imageWidth).url();
+      return (
+        <div key={partner._id} className="partner">
+          <img src={url} />
+        </div>
+      );
+    });
   };
-};
 
-const ConnectedPartners = connect(
-  state => state,
-  mapApiToState
-)(Partners);
+  return (
+    <div className="partners-section">
+      <div className="partner-title">Partners & Supporters</div>
+      <AllPartners />
+    </div>
 
-export default ConnectedPartners;
+  );
+}

@@ -7,15 +7,23 @@ import { loadTexts } from '../../actions/texts';
 import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
+import { loadPartners } from '../../actions/partners';
+import getPartners from '../../api/partners';
+
+import Partners from '../partners/Partners';
 
 import StaticPicture from '../static_picture/StaticPicture';
 
 class MainBox extends React.Component {
-  public props: { texts: TextData[] };
+  public props: {
+    texts: TextData[],
+    partners: any
+   };
 
   constructor(props: any) {
     super(props);
     props.getTexts(loadTexts);
+    props.getPartners(loadPartners);
   }
 
   HeroOrNothing = () => {
@@ -48,7 +56,6 @@ class MainBox extends React.Component {
   }
 
   MissionOrNothing = () => {
-    console.log(this.props.texts);
     const missionStatement = this.props.texts.find(text => text.id === 'frontpage-missionstatement');
     return missionStatement ? (
       <div>
@@ -58,13 +65,21 @@ class MainBox extends React.Component {
     ) : <span />;
   }
 
-  render() {
+  PartnersOrNothing = () => {
+    console.log(this.props);
+    return this.props.partners ? (
+      <section id="partners" className="MainBox__section">
+        <Partners partners={this.props.partners}/>
+      </section>
+    ) : <span />;
+  }
 
+  render() {
     return (
       <div className="MainBox">
         {this.HeroOrNothing()}
         {this.BenefitsOrNothing()}
-        <section className="MainBox__section MainBox__section--full-width">
+        <section id="mission" className="MainBox__section longer MainBox__section--full-width">
           {/* tslint:disable*/}
           <StaticPicture
             height={3840}
@@ -74,9 +89,9 @@ class MainBox extends React.Component {
             modifiedHeight={150}
           />
           {this.MissionOrNothing()}
-
           {/* tslint:enable*/}
         </section>
+        {this.PartnersOrNothing()}
       </div>
     );
   }
@@ -84,7 +99,8 @@ class MainBox extends React.Component {
 
 const mapApiToState = (dispatch: any) => {
   return {
-    getTexts: (action: any) => getTexts(dispatch, action)
+    getTexts: (action: any) => getTexts(dispatch, action),
+    getPartners: (action: any) => getPartners(dispatch, action)
   };
 };
 

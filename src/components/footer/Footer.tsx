@@ -5,7 +5,8 @@ const logo = require('../../graphics/Diwala_Logo_258x108px_1.png');
 import NewsletterSignup from '../newsletter_signup/NewsletterSignup';
 import LinkButton from '../buttons/link/LinkButton';
 
-export default function Header(props: any) {
+export default function Footer(props: any) {
+  
   const urls = [
     'http://twitter.com/diwala',
     'https://www.linkedin.com/company/18089037/',

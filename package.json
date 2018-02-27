@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@sanity/client": "^0.123.0",
+    "@sanity/image-url": "^0.125.8",
     "@types/react-burger-menu": "^2.2.0",
     "@types/react-form": "^2.12.1",
     "baconjs": "^1.0.1",

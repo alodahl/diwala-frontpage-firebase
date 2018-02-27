@@ -31,9 +31,10 @@ export default class MainBox extends React.Component {
       <BurgerMenu isOpen={this.state.menuOpen} onStateChange={this.handleStateChange} right={true}>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#home" animate={{duration: this.animationSpeed}}>Home</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#benefits" animate={{duration: this.animationSpeed}}>Benefits</Scrollchor>
+        <Scrollchor beforeAnimate={() => this.closeMenu()} to="#mission" animate={{ duration: this.animationSpeed}}>Our mission</Scrollchor>
+        <Scrollchor beforeAnimate={() => this.closeMenu()} to="#partners" animate={{ duration: this.animationSpeed}}>Partners</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#footer" animate={{ duration: this.animationSpeed}}>Contact</Scrollchor>
         <a id="team" className="menu-item" href="/team">Team</a>
-        <a id="partners" className="menu-item" href="/partners">Partners</a>
       </BurgerMenu>
     );
   }
