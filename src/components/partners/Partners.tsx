@@ -6,14 +6,19 @@ import { getViewportWidth } from '../../core/utilities/viewport.functions';
 export default function Partners(props: any) {
   const imageWidth = getViewportWidth() / 4;
   const AllPartners = () => {
-    return props.partners.map((partner: any) => {
-      const url = urlFor(partner.image).width(imageWidth).url();
-      return (
-        <div key={partner._id} className="partner">
-          <img src={url} />
-        </div>
-      );
-    });
+    if (props.partners.length > 0) {
+      return props.partners.map((partner: any) => {
+        const url = urlFor(partner.image).width(imageWidth).url();
+        return (
+          <div key={partner._id} className="partner">
+            <img src={url} />
+          </div>
+        );
+      });
+    } else {
+      return <span />;
+    }
+
   };
 
   return (
