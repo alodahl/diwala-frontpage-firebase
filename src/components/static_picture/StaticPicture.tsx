@@ -9,6 +9,7 @@ class StaticPicture extends React.Component {
     maxWidth?: number;
     src: string;
     width: number;
+    modifiedHeight?: number;
   };
 
   componentDidMount() {
@@ -19,7 +20,8 @@ class StaticPicture extends React.Component {
 
   render() {
     const maxHeight = this.props.maxHeight ? this.props.maxHeight : Number.MAX_SAFE_INTEGER;
-    const height = Math.min(getViewportHeight(), maxHeight, this.props.height);
+    const modifiedHeight = this.props.modifiedHeight || 0;
+    const height = Math.min(getViewportHeight(), maxHeight, this.props.height) - modifiedHeight;
     const maxWidth = this.props.maxWidth ? this.props.maxWidth : Number.MAX_SAFE_INTEGER;
     const width = Math.min(getViewportWidth(), maxWidth, this.props.width);
     const src = this.props.src.replace('https://', '');

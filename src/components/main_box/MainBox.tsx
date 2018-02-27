@@ -47,19 +47,34 @@ class MainBox extends React.Component {
     ) : <span />;
   }
 
+  MissionOrNothing = () => {
+    console.log(this.props.texts);
+    const missionStatement = this.props.texts.find(text => text.id === 'frontpage-missionstatement');
+    return missionStatement ? (
+      <div>
+        <div className="title">{missionStatement.value[0].label}</div>
+        <div>{missionStatement.value[0].value}</div>
+      </div>
+    ) : <span />;
+  }
+
   render() {
 
     return (
       <div className="MainBox">
-          {this.HeroOrNothing()}
-          {this.BenefitsOrNothing()}
+        {this.HeroOrNothing()}
+        {this.BenefitsOrNothing()}
         <section className="MainBox__section MainBox__section--full-width">
           {/* tslint:disable*/}
           <StaticPicture
             height={3840}
             maxHeight={800}
             src="https://firebasestorage.googleapis.com/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76"
-            width={5760}/>
+            width={5760}
+            modifiedHeight={150}
+          />
+          {this.MissionOrNothing()}
+
           {/* tslint:enable*/}
         </section>
       </div>

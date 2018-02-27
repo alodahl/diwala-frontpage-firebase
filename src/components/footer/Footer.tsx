@@ -30,12 +30,14 @@ export default function Header(props: any) {
           />
           <NewsletterSignup />
         </div>
-        <div className="social-icons">
-          <SocialIcons urls={urls} color={color}/>
-        </div>
-        <img className="Header-logo" src={logo} alt="Diwala"/>
-        <div className="copyright">
-          Confidential and propriatary. Copyright © by Diwala org. All rights reserved
+        <div className="lower-footer-section">
+          <div className="social-icons">
+            <SocialIcons urls={urls} color={color}/>
+          </div>
+          <img className="footer-logo" src={logo} alt="Diwala"/>
+          <div className="copyright">
+            Confidential and propriatary. Copyright © by Diwala org. All rights reserved
+          </div>
         </div>
       </footer>
 

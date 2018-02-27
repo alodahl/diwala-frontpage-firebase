@@ -3,8 +3,24 @@
 
 .Footer {
    background: $diwala-background;
+   display: flex;
+   flex-direction: column;
+   -ms-flex-pack: end;
+   justify-content: flex-end;
+   width: 100%;
+   height: 70vh;
+   align-items: center;
    padding-bottom: 5px;
    width:100%;
+   height: 70vh;
+}
+
+.footer-logo {
+  height: 50px;
+}
+
+.lower-footer-section {
+  margin-top: 30px;
 }
 
 .social-icons {
@@ -14,11 +30,13 @@
     width: 35px !important;
   }
   position: absolute;
-  margin-top: 9px;
-  margin-left: 10px;
+  margin-top: 10px;
+}
+.social-icons a:nth-child(1){
+  margin-left: -15px;
 }
 .social-icons a:nth-child(2){
-  margin-right: 210px;
+  margin-right: 215px;
 }
 
 .copyright {
