@@ -1,1 +1,139 @@
+@import "../../core/styles/index";
 
+.team--core {
+  .team__person-image {
+    max-width: 200px;
+  }
+  .team__list {
+    margin: $base-space-size * 2 auto;
+  }
+  .team__person {
+    padding: $base-space-size;
+  }
+  @media (min-width: 450px) {
+    .team__person-image {
+      max-width: 100px;
+    }
+    .team__list {
+      display: flex;
+      justify-content: center;
+      max-width: 450px;
+    }
+  }
+  @media (min-width: 600px) {
+    .team__person-image {
+      max-width: 150px;
+    }
+    .team__list {
+      max-width: 600px;
+    }
+  }
+  @media (min-width: 750px) {
+    .team__person-image {
+      max-width: 200px;
+    }
+    .team__list {
+      max-width: 750px;
+    }
+  }
+}
+
+.team--others {
+  $item-height: 150px;
+  $item-width: 150px;
+  .team__title {
+    @include typography-title-h4;
+    height: $item-height;
+    width: 50%;
+  }
+  .team__person-image {
+    max-width: 100px;
+  }
+  .team__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: $item-height * -1;
+    .team__person {
+      height: $item-height * 2;
+      &:nth-child(2n+1) {
+        height: $item-height;
+        padding-top: $item-height;
+      }
+    }
+    .team__person-title {
+      min-height: 3em;
+    }
+  }
+  @media (min-width: $item-width * 3) {
+    .team__title {
+      height: auto;
+      width: auto;
+    }
+    .team__list {
+      grid-template-columns: repeat(3, 1fr);
+      margin: $base-space-size * 2 auto;
+      max-width: $item-width * 3;
+      .team__person {
+        &:nth-child(2n+1) {
+          height: $item-height * 2;
+          padding-top: 0;
+        }
+        &:nth-child(3n+2) {
+          height: $item-height;
+          padding-top: $item-height;
+        }
+      }
+    }
+  }
+  @media (min-width: $item-width * 5) {
+    .team__list {
+      grid-template-columns: repeat(5, 1fr);
+      max-width: $item-width * 5;
+      .team__person {
+        &:nth-child(3n+2) {
+          height: $item-height * 2;
+          padding-top: 0;
+        }
+        &:nth-child(5n+2),
+        &:nth-child(5n+4){
+          height: $item-height;
+          padding-top: $item-height;
+        }
+      }
+    }
+  }
+}
+
+.team__title-core {
+  @include typography-title-h1;
+}
+.team__title-others {
+  @include typography-title-h2;
+}
+
+.team__list {
+  list-style: none;
+  padding-left: 0;
+}
+.team__list--others {
+  //display: grid;
+  .team__person {
+    //width: 50%;
+    &:first-child {
+      //margin-top: 100px;
+    }
+  }
+}
+
+.team__person {
+  margin-bottom: $base-space-size * 2;
+}
+.team__person-name {
+  font-weight: bold;
+}
+.team__person-title {
+  font-weight: lighter;
+}
+.team__person-description {
+  @include typography-small;
+}

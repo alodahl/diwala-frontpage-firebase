@@ -12,13 +12,13 @@
 
 .MainBox__section {
   padding: 0 $base-space-size;
-  height: 100vh;
+  min-height: 100vh;
   .longer {
-    height: 110vh;
+    min-height: 110vh;
   }
 }
 .MainBox__section.longer {
-  height: 120vh;
+  min-height: 120vh;
 }
 .MainBox__section--full-width {
   padding: 0;

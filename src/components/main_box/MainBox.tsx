@@ -13,12 +13,13 @@ import getPartners from '../../api/partners';
 import Partners from '../partners/Partners';
 
 import StaticPicture from '../static_picture/StaticPicture';
+import Team from '../team/Team';
 
 class MainBox extends React.Component {
   public props: {
     texts: TextData[],
     partners: any
-   };
+  };
 
   constructor(props: any) {
     super(props);
@@ -26,52 +27,61 @@ class MainBox extends React.Component {
     props.getPartners(loadPartners);
   }
 
-  HeroOrNothing = () => {
+  private HeroOrNothing() {
     const hero = this.props.texts.find(text => text.id === 'hero-text');
     const joinSlack = 'https://join.slack.com/t/';
     const slackUrl = joinSlack + 'diwala-org/shared_invite/enQtMjIyODA4OTQ0MjEzLTZkMmU5MmNkNDg1YWEzNmM5Y2Q3NGYwYmMxMzkzMDJlMzBmZDdhOWUxNzNkZWJjNGEyZDhhYWY4NjA1ZDY2MTk';
     return hero ? (
       <section className="MainBox__section" id="home">
-          <Hero text={hero}/>
-          <div className="flex-btn-group">
-            <CollaborationButton/>
-            <LinkButton
-              classes="button"
-              url={slackUrl}
-              text="Join our community on slack!"
-            />
-          </div>
+        <Hero text={hero}/>
+        <div className="flex-btn-group">
+          <CollaborationButton/>
+          <LinkButton
+            classes="button"
+            url={slackUrl}
+            text="Join our community on slack!"
+          />
+        </div>
 
       </section>
-    ) : <span />;
+    ) : <span/>;
   }
 
-  BenefitsOrNothing = () => {
+  private BenefitsOrNothing() {
     const benefits = this.props.texts.find(text => text.id === 'benefits');
     return benefits ? (
       <section id="benefits" className="MainBox__section">
         <Benefits text={benefits}/>
       </section>
-    ) : <span />;
+    ) : <span/>;
   }
 
-  MissionOrNothing = () => {
+  private MissionOrNothing() {
     const missionStatement = this.props.texts.find(text => text.id === 'frontpage-missionstatement');
     return missionStatement ? (
       <div>
-        <div className="title">{missionStatement.value[0].label}</div>
-        <div>{missionStatement.value[0].value}</div>
+        <div className="title">{missionStatement.value[ 0 ].label}</div>
+        <div>{missionStatement.value[ 0 ].value}</div>
       </div>
-    ) : <span />;
+    ) : <span/>;
   }
 
-  PartnersOrNothing = () => {
+  private PartnersOrNothing() {
     console.log(this.props);
     return this.props.partners ? (
       <section id="partners" className="MainBox__section">
         <Partners partners={this.props.partners}/>
       </section>
-    ) : <span />;
+    ) : <span/>;
+  }
+
+  private TeamOrNothing() {
+    // adding conditional when necessary
+    return (
+      <section id="team" className="MainBox__section">
+        <Team/>
+      </section>
+    );
   }
 
   render() {
@@ -92,6 +102,7 @@ class MainBox extends React.Component {
           {/* tslint:enable*/}
         </section>
         {this.PartnersOrNothing()}
+        {this.TeamOrNothing()}
       </div>
     );
   }
