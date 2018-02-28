@@ -1,0 +1,26 @@
+@import "colors";
+@import "typography";
+@import "variables";
+
+@mixin button {
+  @include typography-base;
+  background: $diwala-object-purple;
+  border-radius: $font-size-base * 4;
+  color: $diwala-background;
+  display: inline-block;
+  max-width: 150px; // magic number
+  padding: $base-space-size $base-space-size * 3;
+  text-align: center;
+}
+
+@mixin invert_button {
+  @include typography-base;
+  background: $diwala-background;
+  border-radius: $font-size-base * 4;
+  border: 3px solid $diwala-object-purple;
+  color: $diwala-object-purple;
+  display: inline-block;
+  max-width: 150px; // magic number
+  padding: $base-space-size $base-space-size * 3;
+  text-align: center;
+}

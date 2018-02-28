@@ -1,0 +1,19 @@
+@import "./colors.scss";
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-start {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-btn-group {
+  @include flex-column;
+  @include flex-start;
+  > * {
+    margin-top: 20px;
+  }
+}

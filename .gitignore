@@ -24,3 +24,6 @@ yarn-error.log*
 # IDE
 .idea
 css
+
+# Firebase
+firebase-debug.log

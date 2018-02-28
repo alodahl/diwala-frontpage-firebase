@@ -1,0 +1,5 @@
+@import "../../../core/styles/index";
+
+.collaboration-button {
+  @include invert_button;
+}

@@ -1,2 +1,5 @@
+@import "../../core/styles/index";
 
-@import "../../variables.scss";
+.partner-title {
+    @include typography-title-h1;
+}

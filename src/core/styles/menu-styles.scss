@@ -1,0 +1,47 @@
+@import "./colors.scss";
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: $diwala-object-purple;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: $diwala-text-invert;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: $diwala-object-purple;
+  padding: 200px 100px 0;
+  font-size: 1.15em;
+
+  .bm-item-list {
+    a {
+      color: $diwala-text-invert;
+      padding: 5px;
+    }
+    padding: 0.8em;
+  }
+}
+
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}

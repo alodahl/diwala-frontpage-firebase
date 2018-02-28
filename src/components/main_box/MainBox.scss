@@ -1,15 +1,8 @@
-@import "../../variables.scss";
+@import "../../core/styles/index";
 
 .MainText {
   padding: 10px;
   color: #58449e;
-}
-
-.social-icons {
-  margin-top: 20px;
-  a {
-    margin: 5px;
-  }
 }
 
 .Button-holder {
@@ -17,47 +10,21 @@
   margin-bottom: 37px;
 }
 
-@media (max-width: $min-size) {
-  .MainText {
-    margin: 0 auto;
-  }
-  .Look-figure {
-    height: 200px;
-    margin-top: -50px;
+.MainBox__section {
+  padding: 0 $base-space-size;
+  min-height: 100vh;
+  .longer {
+    min-height: 110vh;
   }
 }
-
-@media (min-width: $min-size) and (max-width: $medium-size) {
-  .Look-figure {
-    height: 200px;
-    margin-top: -50px;
-  }
+.MainBox__section.longer {
+  min-height: 120vh;
+}
+.MainBox__section--full-width {
+  padding: 0;
+  width: 100%;
 }
 
-@media (min-width: $medium-size) and (max-width: $max-size) {
-  .MainText {
-    margin-left: 32%;
-    padding-top: 30px;
-  }
-  .Look-figure {
-    height: 200px;
-    position: absolute;
-    left: 7%;
-    margin-top: -50px;
-  }
-}
-
-@media (min-width: $max-size) {
-  .MainBox {
-    display: flex;
-    flex-direction: row;
-  }
-  .MainText {
-    padding-top: 30px;
-  }
-  .Look-figure{
-    margin-left: 250px;
-    height: 300px;
-    margin-top: -50px;
-  }
+.title {
+  @include typography-title-h1;
 }
