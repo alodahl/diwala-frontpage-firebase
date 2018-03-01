@@ -4,7 +4,7 @@ import { urlFor } from '../../core/utilities/image-builder.functions';
 import { getViewportWidth } from '../../core/utilities/viewport.functions';
 
 export default function Partners(props: any) {
-  const imageWidth = getViewportWidth() / 4;
+  const imageWidth = Math.round(getViewportWidth() / 4);
   const AllPartners = () => {
     if (props.partners.length > 0) {
       return props.partners.map((partner: any) => {

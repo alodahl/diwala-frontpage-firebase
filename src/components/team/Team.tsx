@@ -96,7 +96,7 @@ class Team extends React.Component {
           <h2 className="team__title team__title-core">Team</h2>
           <ul className="team__list team__list-core">
             {coreTeam.map((person, key) => (
-              <li className={`team__person team__person--role-${person.type}`}>
+              <li key={key} className={`team__person team__person--role-${person.type}`}>
                 <img className="team__person-image" src={person.image}/>
                 <div className="team__person-name">{person.name}</div>
                 <div className="team__person-title">{person.title}</div>
@@ -111,7 +111,7 @@ class Team extends React.Component {
           <h3 className="team__title team__title-others">Mentors &amp; contributors</h3>
           <ul className="team__list team__list--others">
             {others.map((person, key) => (
-              <li className={`team__person team__person--role-${person.type}`}>
+              <li key={key} className={`team__person team__person--role-${person.type}`}>
                 <img className="team__person-image" src={person.image}/>
                 <div className="team__person-name">{person.name}</div>
                 <div className="team__person-title">{person.title}</div>

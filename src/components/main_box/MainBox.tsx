@@ -67,7 +67,6 @@ class MainBox extends React.Component {
   }
 
   private PartnersOrNothing() {
-    console.log(this.props);
     return this.props.partners ? (
       <section id="partners" className="MainBox__section">
         <Partners partners={this.props.partners}/>
