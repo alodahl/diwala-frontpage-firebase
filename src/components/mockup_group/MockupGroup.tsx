@@ -12,7 +12,7 @@ export default function Header(props: any) {
   const rszSrc = `${rszUrl}${mock1}?format=auto&ch-width=${windowWidth/4}`;
   const rszSrc2 = `${rszUrl}${mock2}?format=auto&ch-width=${windowWidth/4}`;
   return (
-    <div className="center-wrapper">
+    <div className="center-wrapper col-lg-5 col-8 offset-lg-0 offset-2 order-lg-1">
       <div className='image-container'>
         <img src={rszSrc}/>
         <img src={rszSrc2}/>
