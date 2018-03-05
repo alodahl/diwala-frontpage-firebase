@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/benefits/Benefits.css';
 import { TextData } from '../../api/texts';
 import MockupGroup from '../mockup_group/MockupGroup';
 

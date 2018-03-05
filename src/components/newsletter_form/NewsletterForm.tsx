@@ -3,7 +3,6 @@ import { Form, Text } from 'react-form';
 import { connect } from 'react-redux';
 import postPerson from '../../api/mailform';
 import { sendPerson, updateFormStatus } from '../../actions/mailform';
-import '../../compiled_css/components/newsletter_form/NewsletterForm.css';
 import ResponseNewsletterForm from './DesignedResponse';
 import Loader from '../loader/Loader';
 

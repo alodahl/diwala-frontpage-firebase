@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/mockup_group/MockupGroup.css';
 import { getViewportWidth } from '../../core/utilities/viewport.functions';
 
 export default function Header(props: any) {

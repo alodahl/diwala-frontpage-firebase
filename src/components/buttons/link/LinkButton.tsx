@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../../compiled_css/components/buttons/link/LinkButton.css';
 
 export default function LinkButton(props: any) {
   return (
