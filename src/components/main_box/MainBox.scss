@@ -10,21 +10,37 @@
   margin-bottom: 37px;
 }
 
-.MainBox__section {
-  padding: 0 $base-space-size;
-  min-height: 100vh;
-  .longer {
-    min-height: 110vh;
+.MainBox{
+  &__section {
+    //padding: 0 $base-space-size * 2;
+    //min-height: 100vh;
+
+    &--full-width {
+      padding: 0;
+      width: 100%;
+    }
+
+    &--with-borders{
+      border-top: 1px solid $diwala-object-purple;
+      border-bottom: 1px solid $diwala-object-purple;
+    }
+
+    .longer {
+      min-height: 110vh;
+    }
+
+    &.longer {
+      min-height: 120vh;
+    }
   }
-}
-.MainBox__section.longer {
-  min-height: 120vh;
-}
-.MainBox__section--full-width {
-  padding: 0;
-  width: 100%;
+
+  &__container{
+    max-width: 1200px;
+    margin: auto;
+  }
 }
 
 .title {
   @include typography-title-h1;
 }
+

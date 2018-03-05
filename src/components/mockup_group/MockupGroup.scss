@@ -1,17 +1,33 @@
 @import "../../core/styles/index";
 
+.center-wrapper{
+  width: 45%;
+  @include flex-row;
+}
+
 .image-container {
   position: relative;
-  margin-left: 30%;
+  @include flex-row;
+  width: 100%;
+  @include breakpoint(md){
+    height: 490px;
+    margin-top: 45px;
+  }
 }
 
 .image-container img {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  right: 13%;
+  max-width: 200px;
+  z-index: 1;
+  @include breakpoint(xs){
+    max-width: 130px;
+  }
 }
 
 .image-container img:nth-child(2) {
-  top: 40px;
-  left: 60px;
+  top: 90px;
+  right: 47%;
+  z-index: 0;
 }

@@ -50,7 +50,7 @@ class MainBox extends React.Component {
   private BenefitsOrNothing() {
     const benefits = this.props.texts.find(text => text.id === 'benefits');
     return benefits ? (
-      <section id="benefits" className="MainBox__section">
+      <section id="benefits" className="MainBox__section MainBox__section--with-borders">
         <Benefits text={benefits}/>
       </section>
     ) : <span/>;

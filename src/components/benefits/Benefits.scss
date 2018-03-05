@@ -1,22 +1,98 @@
 @import "../../core/styles/index";
 
 .benefits {
-  padding-top: 30px;
-}
+  padding: 100px 0;
+  @include flex-row;
 
-.benefits__list {
-  text-align: start;
-}
+  &__title{
+    margin-top: 0;
+    font-size: 63px;
+    padding-left: 12px;
+    @include breakpoint(lg){
+      font-size: 46px;
+      padding-left: 22px;
+    }
+    @include breakpoint(md){
+      padding-left: 100px;
+    }
+    @include breakpoint(sm){
+      padding-left: 0px;
+    }
+    @include breakpoint(xs){
+      padding-left: 28px;
+      font-size: 32px;
+    }
+  }
 
-.benefits__list-item-label {
-  @include typography-title-h4;
-  background-image: url('../../../graphics/dot.png');
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: $base-space-size;
-  padding-left: $base-space-size * 2;
-}
+  &__list {
+    text-align: start;
+    margin: 0;
+    width: 55%;
+    @include breakpoint(xs){
+      padding: 0 40px;
+    }
+  }
 
-.benefits__list-item-value {
-  margin-left: 0;
+  &__list-item-label {
+    float: left;
+    width: 50%;
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    text-align: right;
+    padding-right: 85px;
+    box-sizing: border-box;
+    line-height: normal;
+    @include breakpoint(lg){
+      font-size: 24px;
+      padding-right: 65px;
+    }
+    @include breakpoint(xs){
+      width: 100%;
+      text-align: left;
+      padding: 0 0 0 30px;
+      font-size: 18px;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $diwala-text-purple;
+      right: 38px;
+      top: 13px;
+      @include breakpoint(lg){
+        right: 25px;
+      }
+      @include breakpoint(xs){
+        left: 0;
+        top: 4px;
+      }
+    }
+  }
+
+  &__list-item-value {
+    float: left;
+    width: 50%;
+    margin: 0;
+    font-size: 20px;
+    line-height: normal;
+    margin-bottom: 25px;
+    padding-top: 5px;
+    @include breakpoint(lg){
+      font-size: 16px;
+    }
+    @include breakpoint(md){
+      font-size: 20px;
+    }
+    @include breakpoint(sm){
+      font-size: 16px;
+    }
+    @include breakpoint(xs){
+      width: 100%;
+      padding: 0 0 0 30px;
+      font-size: 13px;
+    }
+  }
 }

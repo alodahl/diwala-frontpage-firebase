@@ -8,10 +8,10 @@ class Benefits extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="benefits">
-          <h2>Benefits</h2>
-          <dl className="benefits__list">
+      <div className="container">
+        <div className="benefits row">
+          <dl className="benefits__list col-lg-7 col-md-12 order-lg-2">
+            <h2 className="benefits__title title">Benefits</h2>
             {this.props.text.value.map((item, key) => [
               <dt key={key + 'dt'} className="benefits__list-item-label">{item.label}</dt>,
               <dd key={key + 'dd'} className="benefits__list-item-value">{item.value}</dd>

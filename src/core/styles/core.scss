@@ -5,6 +5,11 @@
   flex-direction: column;
 }
 
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+
 @mixin flex-start {
   justify-content: flex-start;
   align-items: center;
