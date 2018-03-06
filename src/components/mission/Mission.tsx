@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/mission/Mission.css';
 import { TextData } from '../../api/texts';
 
 export default function Mission(props: { text: TextData }) {

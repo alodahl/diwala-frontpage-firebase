@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/team/Team.css';
 import { connect } from 'react-redux';
 // import { loadTeam } from '../../actions/team';
 import getTeam from '../../api/team';

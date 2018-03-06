@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/partners/Partners.css';
 import { urlFor } from '../../core/utilities/image-builder.functions';
 import { getViewportWidth } from '../../core/utilities/viewport.functions';
 

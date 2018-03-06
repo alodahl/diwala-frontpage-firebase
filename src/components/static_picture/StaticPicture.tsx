@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/static_picture/StaticPicture.css';
 import { getViewportHeight, getViewportWidth } from '../../core/utilities/viewport.functions';
 
 class StaticPicture extends React.Component {

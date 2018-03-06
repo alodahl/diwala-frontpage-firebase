@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/footer/Footer.css';
 import { SocialIcons } from 'react-social-icons';
 const logo = require('../../graphics/Diwala_Logo_258x108px_1.png');
 import NewsletterSignup from '../newsletter_signup/NewsletterSignup';
