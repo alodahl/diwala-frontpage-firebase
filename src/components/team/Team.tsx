@@ -8,8 +8,6 @@ export default function Team(props: any) {
   const teamCore = team.filter( teamMember => teamMember.type === 'core');
   const teamOther = team.filter( teamMember => teamMember.type !== 'core');
   const imageWidth = Math.round(getViewportWidth() / 4);
-
-  console.log(teamCore);
   
   const TeamCore = () => {
     if (teamCore.length > 0) {
