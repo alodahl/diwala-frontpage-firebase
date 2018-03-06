@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/hero/Hero.css';
 import { TextData } from '../../api/texts';
 
 export default function Header(props: { text: TextData }) {

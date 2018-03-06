@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../../compiled_css/components/buttons/collaboration/Collaboration.css';
 import Scrollchor from 'react-scrollchor';
 
 export default function CollaborationButton(props: any) {

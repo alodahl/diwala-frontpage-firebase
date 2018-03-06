@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/newsletter_form/NewsletterForm.css';
 import { EXISTING_MEMBER, SIGNED_UP } from '../../reducers/mailform';
 
 export default function ResponseNewsletterForm(props: any) {

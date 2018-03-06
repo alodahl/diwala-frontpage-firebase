@@ -1,6 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/menu/Menu.css';
-import '../../compiled_css/core/styles/index.css';
 import { slide as BurgerMenu } from 'react-burger-menu';
 import Scrollchor from 'react-scrollchor';
 

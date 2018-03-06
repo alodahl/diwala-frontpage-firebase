@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../../compiled_css/components/main_box/MainBox.css';
 import Hero from '../hero/Hero';
 import LinkButton from '../buttons/link/LinkButton';
 import CollaborationButton from '../buttons/collaboration/Collaboration';
