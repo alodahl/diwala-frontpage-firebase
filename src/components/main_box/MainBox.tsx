@@ -8,22 +8,26 @@ import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
 import { loadPartners } from '../../actions/partners';
 import getPartners from '../../api/partners';
+import { loadTeam } from '../../actions/team';
+import getTeam from '../../api/team';
 
 import Partners from '../partners/Partners';
+import Team from '../team/Team';
 
 import StaticPicture from '../static_picture/StaticPicture';
-import Team from '../team/Team';
 
 class MainBox extends React.Component {
   public props: {
     texts: TextData[],
-    partners: any
+    partners: any,
+    team: any
   };
 
   constructor(props: any) {
     super(props);
     props.getTexts(loadTexts);
     props.getPartners(loadPartners);
+    props.getTeam(loadTeam);
   }
 
   private HeroOrNothing() {
@@ -74,12 +78,11 @@ class MainBox extends React.Component {
   }
 
   private TeamOrNothing() {
-    // adding conditional when necessary
-    return (
+    return this.props.team ? (
       <section id="team" className="MainBox__section">
-        <Team/>
+        <Team team={this.props.team}/>
       </section>
-    );
+    ) : '';
   }
 
   render() {
@@ -109,7 +112,8 @@ class MainBox extends React.Component {
 const mapApiToState = (dispatch: any) => {
   return {
     getTexts: (action: any) => getTexts(dispatch, action),
-    getPartners: (action: any) => getPartners(dispatch, action)
+    getPartners: (action: any) => getPartners(dispatch, action),
+    getTeam: (action: any) => getTeam(dispatch, action),
   };
 };
 

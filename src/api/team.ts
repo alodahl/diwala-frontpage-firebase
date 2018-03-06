@@ -1,3 +1,5 @@
+import pullTeam from '../service/team';
+
 export default function getTeam(dispatch: any, action: any) {
-  return {};
+  return pullTeam(dispatch, action);
 }
