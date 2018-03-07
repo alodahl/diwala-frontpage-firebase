@@ -57,6 +57,7 @@ class MainBox extends React.Component {
             cropHeight={viewport => viewport.height}
             cropIf={viewport => viewport.width < 400}
             cropWidth={viewport => viewport.width}
+            focalX={0.6}
             pictures={this.props.pictures}
             name="Tanzania marked">
             <StaticPicture

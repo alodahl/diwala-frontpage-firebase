@@ -13,6 +13,8 @@ class PictureFetcher extends React.Component<any> {
     cropHeight: (viewport: ViewportData) => number;
     cropIf: (viewport: ViewportData) => boolean;
     cropWidth: (viewport: ViewportData) => number;
+    focalX?: number;
+    focalY?: number;
     pictures: PictureData[];
     name: string;
   };
@@ -32,8 +34,16 @@ class PictureFetcher extends React.Component<any> {
     let viewportData = getViewportData();
     const height = this.props.cropHeight(viewportData);
     const width = this.props.cropWidth(viewportData);
+    const focalX = this.props.focalX || 0.5;
+    const focalY = this.props.focalY || 0.5;
     if (this.props.cropIf(viewportData)) {
-      src = builder.image(picture.image).size(width, height).fit('crop').crop('focalpoint').url();
+      src = builder
+        .image(picture.image)
+        .size(width, height)
+        .fit('crop')
+        .crop('focalpoint')
+        .focalPoint(focalX, focalY)
+        .url();
     } else {
       src = builder.image(picture.image).url();
     }
