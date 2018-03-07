@@ -50,12 +50,13 @@
     max-width: 100px;
   }
   .team__list {
+    direction: rtl;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-top: $item-height * -1;
     .team__person {
       height: $item-height * 2;
-      &:nth-child(2n+1) {
+      &:nth-child(2n) {
         height: $item-height;
         padding-top: $item-height;
       }
@@ -70,11 +71,12 @@
       width: auto;
     }
     .team__list {
+      direction: ltr;
       grid-template-columns: repeat(3, 1fr);
       margin: $base-space-size * 2 auto;
       max-width: $item-width * 3;
       .team__person {
-        &:nth-child(2n+1) {
+        &:nth-child(2n) {
           height: $item-height * 2;
           padding-top: 0;
         }
@@ -96,6 +98,42 @@
         }
         &:nth-child(5n+2),
         &:nth-child(5n+4){
+          height: $item-height;
+          padding-top: $item-height;
+        }
+      }
+    }
+  }
+  @media (min-width: $item-width * 5) {
+    .team__list {
+      grid-template-columns: repeat(5, 1fr);
+      max-width: $item-width * 5;
+      .team__person {
+        &:nth-child(3n+2) {
+          height: $item-height * 2;
+          padding-top: 0;
+        }
+        &:nth-child(5n+2),
+        &:nth-child(5n+4){
+          height: $item-height;
+          padding-top: $item-height;
+        }
+      }
+    }
+  }
+  @media (min-width: $item-width * 7) {
+    .team__list {
+      grid-template-columns: repeat(7, 1fr);
+      max-width: $item-width * 7;
+      .team__person {
+        &:nth-child(5n+2),
+        &:nth-child(5n+4){
+          height: $item-height * 2;
+          padding-top: 0;
+        }
+        &:nth-child(7n+2),
+        &:nth-child(7n+4),
+        &:nth-child(7n+6){
           height: $item-height;
           padding-top: $item-height;
         }
