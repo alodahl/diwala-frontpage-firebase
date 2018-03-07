@@ -15,6 +15,8 @@ import Partners from '../partners/Partners';
 import Team from '../team/Team';
 
 import StaticPicture from '../static_picture/StaticPicture';
+import getPictures from '../../api/pictures';
+import { loadPictures } from '../../actions/pictures';
 
 class MainBox extends React.Component {
   public props: {
@@ -27,6 +29,7 @@ class MainBox extends React.Component {
     super(props);
     props.getTexts(loadTexts);
     props.getPartners(loadPartners);
+    props.getPictures(loadPictures);
     props.getTeam(loadTeam);
   }
 
@@ -111,6 +114,7 @@ class MainBox extends React.Component {
 
 const mapApiToState = (dispatch: any) => {
   return {
+    getPictures: (action: any) => getPictures(dispatch, action),
     getTexts: (action: any) => getTexts(dispatch, action),
     getPartners: (action: any) => getPartners(dispatch, action),
     getTeam: (action: any) => getTeam(dispatch, action),
