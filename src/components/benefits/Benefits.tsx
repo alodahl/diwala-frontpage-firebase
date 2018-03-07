@@ -3,7 +3,9 @@ import { TextData } from '../../api/texts';
 import MockupGroup from '../mockup_group/MockupGroup';
 
 class Benefits extends React.Component {
-  public props: { text: TextData };
+  public props: {
+    text: TextData
+  };
 
   render() {
     return (

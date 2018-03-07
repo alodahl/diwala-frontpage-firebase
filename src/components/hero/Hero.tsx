@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TextData } from '../../api/texts';
 
-export default function Header(props: { text: TextData }) {
+export default function Hero(props: { text: TextData }) {
   return (
     <div className="website-hero">
       <div className="website-hero__logo">

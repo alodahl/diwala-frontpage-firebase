@@ -1,7 +1,4 @@
 import * as React from 'react';
-import Hero from '../hero/Hero';
-import LinkButton from '../buttons/link/LinkButton';
-import CollaborationButton from '../buttons/collaboration/Collaboration';
 import { loadTexts } from '../../actions/texts';
 import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
@@ -14,11 +11,17 @@ import getTeam from '../../api/team';
 import Partners from '../partners/Partners';
 import Team from '../team/Team';
 
-// import StaticPicture from '../static_picture/StaticPicture';
 import getPictures, { PictureData } from '../../api/pictures';
 import { loadPictures } from '../../actions/pictures';
 import PictureFetcher from '../picture_fetcher/PictureFetcher';
 import StaticPicture from '../static_picture/StaticPicture';
+import Section from '../section/Section';
+import Home from '../home/Home';
+import TextFetcher from '../text_fetcher/TextFetcher';
+import Mission from '../mission/Mission';
+import Filter from '../filter/Filter';
+
+const emptyText: TextData = { id: 'empty', value: [] };
 
 class MainBox extends React.Component {
   public props: {
@@ -36,68 +39,20 @@ class MainBox extends React.Component {
     props.getTeam(loadTeam);
   }
 
-  private HeroOrNothing() {
-    const hero = this.props.texts.find(text => text.id === 'hero-text');
-    const joinSlack = 'https://join.slack.com/t/';
-    const slackUrl = joinSlack + 'diwala-org/shared_invite/enQtMjIyODA4OTQ0MjEzLTZkMmU5MmNkNDg1YWEzNmM5Y2Q3NGYwYmMxMzkzMDJlMzBmZDdhOWUxNzNkZWJjNGEyZDhhYWY4NjA1ZDY2MTk';
-    return hero ? (
-      <section className="MainBox__section" id="home">
-        <Hero text={hero}/>
-        <div className="flex-btn-group">
-          <CollaborationButton/>
-          <LinkButton
-            classes="button"
-            url={slackUrl}
-            text="Join our community on slack!"
-          />
-        </div>
-
-      </section>
-    ) : <span/>;
-  }
-
-  private BenefitsOrNothing() {
-    const benefits = this.props.texts.find(text => text.id === 'benefits');
-    return benefits ? (
-      <section id="benefits" className="MainBox__section">
-        <Benefits text={benefits}/>
-      </section>
-    ) : <span/>;
-  }
-
-  private MissionOrNothing() {
-    const missionStatement = this.props.texts.find(text => text.id === 'frontpage-missionstatement');
-    return missionStatement ? (
-      <section id="mission" className="MainBox__section MainBox__section--mission">
-        <h2 className="title">{missionStatement.value[ 0 ].label}</h2>
-        <div>{missionStatement.value[ 0 ].value}</div>
-      </section>
-    ) : <span/>;
-  }
-
-  private PartnersOrNothing() {
-    return this.props.partners ? (
-      <section id="partners" className="MainBox__section MainBox__section--partners">
-        <Partners partners={this.props.partners}/>
-      </section>
-    ) : <span/>;
-  }
-
-  private TeamOrNothing() {
-    return this.props.team ? (
-      <section id="team" className="MainBox__section">
-        <Team team={this.props.team}/>
-      </section>
-    ) : '';
-  }
-
-  render() {
+  public render() {
     return (
       <div className="MainBox">
-        {this.HeroOrNothing()}
-        {this.BenefitsOrNothing()}
-        <section id="mission" className="MainBox__section longer MainBox__section--full-width">
-          {/* tslint:disable*/}
+        <Section name="home">
+          <TextFetcher id="hero-text" texts={this.props.texts}>
+            <Home text={emptyText}/>
+          </TextFetcher>
+        </Section>
+        <Section name="benefits">
+          <TextFetcher id="benefits" texts={this.props.texts}>
+            <Benefits text={emptyText}/>
+          </TextFetcher>
+        </Section>
+        <Section name="picture" fullWidth={true}>
           <PictureFetcher
             cropHeight={viewport => viewport.height}
             cropIf={viewport => viewport.width < 400}
@@ -109,10 +64,22 @@ class MainBox extends React.Component {
               src={'test'}
               width={0}/>
           </PictureFetcher>
-        </section>
-        {this.MissionOrNothing()}
-        {this.PartnersOrNothing()}
-        {this.TeamOrNothing()}
+        </Section>
+        <Section name="mission">
+          <TextFetcher id="frontpage-missionstatement" texts={this.props.texts}>
+            <Mission text={emptyText}/>
+          </TextFetcher>
+        </Section>
+        <Section name="partners">
+          <Filter if={this.props.partners}>
+            <Partners partners={this.props.partners}/>
+          </Filter>
+        </Section>
+        <Section name="team">
+          <Filter if={this.props.team}>
+            <Team team={this.props.team}/>
+          </Filter>
+        </Section>
       </div>
     );
   }
