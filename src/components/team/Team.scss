@@ -1,5 +1,9 @@
 @import "../../core/styles/utilities";
 
+.team-section {
+  @extend .container;
+}
+
 .team--core {
   .team__person-image {
     max-width: 200px;
@@ -39,7 +43,7 @@
 }
 
 .team--others {
-  $item-height: 150px;
+  $item-height: 100px;
   $item-width: 150px;
   .team__title {
     @include typography-title-h4;
@@ -54,6 +58,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-top: $item-height * -1;
+    padding: 0;
     .team__person {
       height: $item-height * 2;
       &:nth-child(2n) {
@@ -167,10 +172,9 @@
   margin-bottom: $base-space-size * 2;
 }
 .team__person-name {
-  font-weight: bold;
 }
 .team__person-title {
-  font-weight: lighter;
+  @include typography-small;
 }
 .team__person-description {
   @include typography-small;

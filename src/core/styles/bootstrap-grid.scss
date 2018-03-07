@@ -1,3 +1,5 @@
+@import './utilities';
+
 /*!
  * Bootstrap Grid v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -21,8 +23,8 @@ html {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: $base-space-size * 2.5;
+  padding-left: $base-space-size * 2.5;
   margin-right: auto;
   margin-left: auto;
 }

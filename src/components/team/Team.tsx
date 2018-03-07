@@ -52,7 +52,7 @@ export default function Team(props: any) {
   };
 
   return (
-    <div className="partners-section">
+    <div className="team-section">
       <div key="team-core" className="team team--core">
         <h2 className="team__title team__title-core">Team</h2>
         <ul className="team__list team__list-core">
