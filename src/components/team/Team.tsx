@@ -60,7 +60,7 @@ export default function Team(props: any) {
         </ul>
       </div>
       <div key="team-others" className="team team--others">
-        <h3 className="team__title team__title-others">Mentors &amp; contributors</h3>
+        <h3 className="team__title team__title-others">Mentors &amp; Contributors</h3>
         <ul className="team__list team__list--others">
           {TeamOther()}
         </ul>
