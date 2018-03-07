@@ -14,14 +14,17 @@ import getTeam from '../../api/team';
 import Partners from '../partners/Partners';
 import Team from '../team/Team';
 
-import StaticPicture from '../static_picture/StaticPicture';
-import getPictures from '../../api/pictures';
+// import StaticPicture from '../static_picture/StaticPicture';
+import getPictures, { PictureData } from '../../api/pictures';
 import { loadPictures } from '../../actions/pictures';
+import PictureFetcher from '../picture_fetcher/PictureFetcher';
+import StaticPicture from '../static_picture/StaticPicture';
 
 class MainBox extends React.Component {
   public props: {
     texts: TextData[],
     partners: any,
+    pictures: PictureData[];
     team: any
   };
 
@@ -56,7 +59,7 @@ class MainBox extends React.Component {
   private BenefitsOrNothing() {
     const benefits = this.props.texts.find(text => text.id === 'benefits');
     return benefits ? (
-      <section id="benefits" className="MainBox__section MainBox__section--with-borders">
+      <section id="benefits" className="MainBox__section">
         <Benefits text={benefits}/>
       </section>
     ) : <span/>;
@@ -65,16 +68,16 @@ class MainBox extends React.Component {
   private MissionOrNothing() {
     const missionStatement = this.props.texts.find(text => text.id === 'frontpage-missionstatement');
     return missionStatement ? (
-      <div>
-        <div className="title">{missionStatement.value[ 0 ].label}</div>
+      <section id="mission" className="MainBox__section MainBox__section--mission">
+        <h2 className="title">{missionStatement.value[ 0 ].label}</h2>
         <div>{missionStatement.value[ 0 ].value}</div>
-      </div>
+      </section>
     ) : <span/>;
   }
 
   private PartnersOrNothing() {
     return this.props.partners ? (
-      <section id="partners" className="MainBox__section MainBox__section--partners MainBox__section--with-borders">
+      <section id="partners" className="MainBox__section MainBox__section--partners">
         <Partners partners={this.props.partners}/>
       </section>
     ) : <span/>;
@@ -95,16 +98,19 @@ class MainBox extends React.Component {
         {this.BenefitsOrNothing()}
         <section id="mission" className="MainBox__section longer MainBox__section--full-width">
           {/* tslint:disable*/}
-          <StaticPicture
-            height={3840}
-            maxHeight={800}
-            src="https://firebasestorage.googleapis.com/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76"
-            width={5760}
-            modifiedHeight={150}
-          />
-          {this.MissionOrNothing()}
-          {/* tslint:enable*/}
+          <PictureFetcher
+            cropHeight={viewport => viewport.height}
+            cropIf={viewport => viewport.width < 400}
+            cropWidth={viewport => viewport.width}
+            pictures={this.props.pictures}
+            name="Tanzania marked">
+            <StaticPicture
+              height={0}
+              src={'test'}
+              width={0}/>
+          </PictureFetcher>
         </section>
+        {this.MissionOrNothing()}
         {this.PartnersOrNothing()}
         {this.TeamOrNothing()}
       </div>

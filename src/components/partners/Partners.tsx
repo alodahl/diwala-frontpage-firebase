@@ -27,7 +27,7 @@ export default function Partners(props: any) {
       <div className="row partners__section">
         <div className="col-lg-12">
           <div className="row">
-            <div className="partners__title">Partners <span className="partners__title-wrap">& Supporters</span></div>
+            <div className="partners__title">Partners <span className="partners__title-wrap">&amp; Supporters</span></div>
           </div>
         </div>
         <div className="col-xl-9 col-lg-10 col-md-12">
