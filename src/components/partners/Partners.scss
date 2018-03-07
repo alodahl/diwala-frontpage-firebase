@@ -1,5 +1,43 @@
 @import "../../core/styles/utilities";
 
-.partner-title {
+.partners {
+  &__section {
+    margin: 270px 0 130px;
+    @include breakpoint('lg'){
+      margin: 40px 0;
+    }
+  }
+
+  &__title {
     @include typography-title-h1;
+    text-align: left;
+    font-weight: bold;
+    font-size: 57px;
+    margin-top: 0;
+    @include breakpoint('lg'){
+      font-size: 38px;
+    }
+    @include breakpoint('md'){
+      font-size: 41px;
+    }
+    @include breakpoint('xs'){
+      font-size: 27px;
+    }
+  }
+
+  &__title-wrap {
+    @include breakpoint('md'){
+      display: block;
+    }
+  }
+
+  &__list {
+    align-items:center;
+  }
+
+  &__logo {
+    max-width: 100%;
+    max-height: 200px;
+  }
 }
+

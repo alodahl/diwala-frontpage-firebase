@@ -71,7 +71,7 @@ class MainBox extends React.Component {
 
   private PartnersOrNothing() {
     return this.props.partners ? (
-      <section id="partners" className="MainBox__section">
+      <section id="partners" className="MainBox__section MainBox__section--partners MainBox__section--with-borders">
         <Partners partners={this.props.partners}/>
       </section>
     ) : <span/>;
