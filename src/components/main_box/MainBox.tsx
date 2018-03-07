@@ -4,7 +4,7 @@ import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
 import { loadPartners } from '../../actions/partners';
-import getPartners from '../../api/partners';
+import getPartners, { PartnerData } from '../../api/partners';
 import { loadTeam } from '../../actions/team';
 import getTeam from '../../api/team';
 
@@ -26,7 +26,7 @@ const emptyText: TextData = { id: 'empty', value: [] };
 class MainBox extends React.Component {
   public props: {
     texts: TextData[],
-    partners: any,
+    partners: PartnerData[],
     pictures: PictureData[];
     team: any
   };

@@ -1,23 +1,20 @@
 @import "../../core/styles/utilities";
 
-.frontpage-mission {
-}
+.mission {
+  margin: auto $base-space-size * 8;
+  @include min-breakpoint(sm) {
 
-.website-hero__logo {
-  align-items: center;
-  background-image: url("../../../graphics/New-Logo_Sketching-27__cropped.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: flex;
-  height: 309px;
-  margin: 40px auto;
-  text-align: center;
-  vertical-align: center;
-  width: 308px;
-}
+  }
+  @include min-breakpoint(sm) {
 
-.website-hero__text {
-  color: $diwala-background;
-  margin: 0 auto;
-  width: 250px;
+  }
+  @include min-breakpoint(md) {
+
+  }
+  @include min-breakpoint(lg) {
+
+  }
+  @include min-breakpoint(xl) {
+
+  }
 }
