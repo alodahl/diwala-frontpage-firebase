@@ -3,7 +3,7 @@
 $small-screen-bullet-padding: 30px;
 
 .benefits {
-  margin: $base-space-size * 10 auto 27px; // magic number - requested by Marina
+  margin: $base-space-size * 10 auto $base-space-size * 7;
   padding: 0 $base-space-size * 6;
   text-align: left;
   @include min-breakpoint(sm) {
@@ -86,6 +86,8 @@ $small-screen-bullet-padding: 30px;
   }
 
   &__mockup {
+    margin: 0 auto;
+    max-width: 380px;
     @include min-breakpoint(lg) {
       grid-area: mockup;
       padding-right: 20px; // magic number
