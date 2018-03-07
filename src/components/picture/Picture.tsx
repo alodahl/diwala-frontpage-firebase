@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { getViewportHeight, getViewportWidth } from '../../core/utilities/viewport.functions';
+// import { getViewportHeight, getViewportWidth } from '../../core/utilities/viewport.functions';
 
 class Picture extends React.Component {
   public props: {
-    height: number;
-    maxHeight?: number;
-    maxWidth?: number;
+    // height: number;
     src: string;
-    width: number;
+    // width: number;
   };
 
   componentDidMount() {
@@ -17,15 +15,15 @@ class Picture extends React.Component {
   }
 
   render() {
-    const maxHeight = this.props.maxHeight ? this.props.maxHeight : Number.MAX_SAFE_INTEGER;
-    const height = Math.min(getViewportHeight(), maxHeight, this.props.height);
-    const maxWidth = this.props.maxWidth ? this.props.maxWidth : Number.MAX_SAFE_INTEGER;
-    const width = Math.min(getViewportWidth(), maxWidth, this.props.width);
-    const src = this.props.src.replace('https://', '');
-    const rszSrc = `https://rsz.io/${src}?mode=crop&width=${width}&height=${height}`;
+    // const maxHeight = this.props.maxHeight ? this.props.maxHeight : Number.MAX_SAFE_INTEGER;
+    // const height = Math.min(getViewportHeight(), maxHeight, this.props.height);
+    // const maxWidth = this.props.maxWidth ? this.props.maxWidth : Number.MAX_SAFE_INTEGER;
+    // const width = Math.min(getViewportWidth(), maxWidth, this.props.width);
+    // const src = this.props.src.replace('https://', '');
+    // const rszSrc = `https://rsz.io/${src}?mode=crop&width=${width}&height=${height}`;
     return (
       <div className="picture">
-        <img src={rszSrc}/>
+        <img src={this.props.src}/>
       </div>
     );
   }

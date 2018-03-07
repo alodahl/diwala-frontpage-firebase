@@ -49,7 +49,7 @@ class MainBox extends React.Component {
         </Section>
         <Section name="benefits">
           <TextFetcher id="benefits" texts={this.props.texts}>
-            <Benefits text={emptyText}/>
+            <Benefits text={emptyText} pictures={this.props.pictures}/>
           </TextFetcher>
         </Section>
         <Section name="picture" fullWidth={true}>

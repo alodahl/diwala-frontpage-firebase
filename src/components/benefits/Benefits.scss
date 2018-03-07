@@ -3,12 +3,22 @@
 $small-screen-bullet-padding: 30px;
 
 .benefits {
-  margin: $base-space-size * 10 auto;
+  margin: $base-space-size * 10 auto 27px; // magic number - requested by Marina
   padding: 0 $base-space-size * 6;
   text-align: left;
   @include min-breakpoint(sm) {
     padding: 0;
     width: 480px;
+  }
+  @include min-breakpoint(lg) {
+    display: grid;
+    grid-template-areas: "mockup title" "mockup text";
+    grid-template-columns: 356px 1fr; // magic number
+    grid-template-rows: auto 1fr;
+    width: 880px;
+  }
+  @include min-breakpoint(xl) {
+    width: 910px;
   }
 
   &__title {
@@ -18,29 +28,24 @@ $small-screen-bullet-padding: 30px;
     @include min-breakpoint(sm) {
       padding-left: 0;
     }
-    @include min-breakpoint(md) {
-      //padding-left: 100px;
-    }
     @include min-breakpoint(lg) {
-      //font-size: 46px;
-      //padding-left: 22px;
+      grid-area: title;
     }
-    @include min-breakpoint(xl) {
-      //font-size: 63px;
-      //padding-left: 12px;
+  }
+
+  &__text {
+    @include min-breakpoint(lg) {
+      grid-area: text;
     }
   }
 
   &__list {
     margin: 0;
-    overflow: auto;
     text-align: start;
     @include min-breakpoint(sm) {
       display: grid;
       grid-template-columns: 200px 1fr; // magic number - requested by Marina
-      //width: 100%;
-      //padding: 0 40px;
-      //width: 55%;
+      grid-template-rows: auto 1fr;
     }
   }
 
@@ -53,16 +58,6 @@ $small-screen-bullet-padding: 30px;
     @include min-breakpoint(sm) {
       padding: 0 $small-screen-bullet-padding 0 0;
     }
-    @include min-breakpoint(md) {
-      //font-size: 24px;
-      //padding-right: 65px;
-    }
-    @include min-breakpoint(lg) {
-      //width: 50%;
-      //text-align: right;
-      //padding-right: 85px;
-      //font-size: 32px;
-    }
     &:after {
       content: '';
       position: absolute;
@@ -70,9 +65,8 @@ $small-screen-bullet-padding: 30px;
       height: $base-space-size * 1.5;
       border-radius: 50%;
       background-color: $diwala-text-purple;
-      //right: 38px;
       left: 0;
-      top: $base-space-size / 2;
+      top: $base-space-size;
       @include min-breakpoint(sm) {
         left: auto;
         right: 0;
@@ -86,17 +80,19 @@ $small-screen-bullet-padding: 30px;
     margin: $base-space-size * 0.75 0 $base-space-size * 3;
     padding: 0 0 0 $small-screen-bullet-padding;
     width: 100%;
-    @include min-breakpoint(sm){
+    @include min-breakpoint(sm) {
       margin-top: 0;
-      //font-size: 20px;
     }
-    @include min-breakpoint(lg){
-      font-size: 16px;
+  }
+
+  &__mockup {
+    @include min-breakpoint(lg) {
+      grid-area: mockup;
+      padding-right: 20px; // magic number
+      padding-top: 100px; // magic number
     }
-    @include min-breakpoint(xl){
-      font-size: 20px;
-      padding-top: 5px;
-      width: 50%;
+    @include min-breakpoint(xl) {
+      padding-right: 50px; // magic number
     }
   }
 }
