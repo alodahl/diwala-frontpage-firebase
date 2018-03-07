@@ -1,98 +1,102 @@
 @import "../../core/styles/utilities";
 
-.benefits {
-  padding: 100px 0;
-  @include flex-row;
+$small-screen-bullet-padding: 30px;
 
-  &__title{
+.benefits {
+  margin: $base-space-size * 10 auto;
+  padding: 0 $base-space-size * 6;
+  text-align: left;
+  @include min-breakpoint(sm) {
+    padding: 0;
+    width: 480px;
+  }
+
+  &__title {
     margin-top: 0;
-    font-size: 63px;
-    padding-left: 12px;
-    @include breakpoint(lg){
-      font-size: 46px;
-      padding-left: 22px;
+    padding-left: $small-screen-bullet-padding;
+    font-size: 32px;
+    @include min-breakpoint(sm) {
+      padding-left: 0;
     }
-    @include breakpoint(md){
-      padding-left: 100px;
+    @include min-breakpoint(md) {
+      //padding-left: 100px;
     }
-    @include breakpoint(sm){
-      padding-left: 0px;
+    @include min-breakpoint(lg) {
+      //font-size: 46px;
+      //padding-left: 22px;
     }
-    @include breakpoint(xs){
-      padding-left: 28px;
-      font-size: 32px;
+    @include min-breakpoint(xl) {
+      //font-size: 63px;
+      //padding-left: 12px;
     }
   }
 
   &__list {
-    text-align: start;
     margin: 0;
-    width: 55%;
-    @include breakpoint(xs){
-      padding: 0 40px;
+    overflow: auto;
+    text-align: start;
+    @include min-breakpoint(sm) {
+      display: grid;
+      grid-template-columns: 200px 1fr; // magic number - requested by Marina
+      //width: 100%;
+      //padding: 0 40px;
+      //width: 55%;
     }
   }
 
   &__list-item-label {
-    float: left;
-    width: 50%;
-    font-size: 32px;
-    font-weight: bold;
+    @include typography-title-h5;
+    margin: 0;
+    padding: 0 0 0 $small-screen-bullet-padding;
     position: relative;
-    text-align: right;
-    padding-right: 85px;
-    box-sizing: border-box;
-    line-height: normal;
-    @include breakpoint(lg){
-      font-size: 24px;
-      padding-right: 65px;
+    width: 100%;
+    @include min-breakpoint(sm) {
+      padding: 0 $small-screen-bullet-padding 0 0;
     }
-    @include breakpoint(xs){
-      width: 100%;
-      text-align: left;
-      padding: 0 0 0 30px;
-      font-size: 18px;
+    @include min-breakpoint(md) {
+      //font-size: 24px;
+      //padding-right: 65px;
     }
-    &:after{
+    @include min-breakpoint(lg) {
+      //width: 50%;
+      //text-align: right;
+      //padding-right: 85px;
+      //font-size: 32px;
+    }
+    &:after {
       content: '';
       position: absolute;
-      width: 15px;
-      height: 15px;
+      width: $base-space-size * 1.5;
+      height: $base-space-size * 1.5;
       border-radius: 50%;
       background-color: $diwala-text-purple;
-      right: 38px;
-      top: 13px;
-      @include breakpoint(lg){
-        right: 25px;
-      }
-      @include breakpoint(xs){
-        left: 0;
-        top: 4px;
+      //right: 38px;
+      left: 0;
+      top: $base-space-size / 2;
+      @include min-breakpoint(sm) {
+        left: auto;
+        right: 0;
+        top: $base-space-size;
       }
     }
   }
 
   &__list-item-value {
-    float: left;
-    width: 50%;
-    margin: 0;
-    font-size: 20px;
-    line-height: normal;
-    margin-bottom: 25px;
-    padding-top: 5px;
-    @include breakpoint(lg){
+    @include typography-small;
+    margin: $base-space-size * 0.75 0 $base-space-size * 3;
+    padding: 0 0 0 $small-screen-bullet-padding;
+    width: 100%;
+    @include min-breakpoint(sm){
+      margin-top: 0;
+      //font-size: 20px;
+    }
+    @include min-breakpoint(lg){
       font-size: 16px;
     }
-    @include breakpoint(md){
+    @include min-breakpoint(xl){
       font-size: 20px;
-    }
-    @include breakpoint(sm){
-      font-size: 16px;
-    }
-    @include breakpoint(xs){
-      width: 100%;
-      padding: 0 0 0 30px;
-      font-size: 13px;
+      padding-top: 5px;
+      width: 50%;
     }
   }
 }

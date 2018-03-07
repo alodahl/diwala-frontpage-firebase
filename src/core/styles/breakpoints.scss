@@ -24,3 +24,30 @@
 		@warn "Breakpoint mixin supports: xs, sm, md, lg";
 	}
 }
+
+@mixin min-breakpoint($class) {
+	@if $class == xl {
+		@media (min-width: 1200px) { @content; }
+	}
+
+	@else if $class == lg {
+		@media only screen and (min-width: 992px) { @content; }
+	}
+
+	@else if $class == md {
+		@media only screen and (min-width: 768px) { @content; }
+	}
+
+	@else if $class == sm {
+		@media only screen and (min-width: 576px) { @content; }
+	}
+
+	@else if $class == xs {
+		@media only screen and (min-width: 0px) { @content; }
+	}
+
+
+	@else {
+		@media only screen and (min-width: $class) { @content; }
+	}
+}
