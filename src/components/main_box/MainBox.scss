@@ -25,6 +25,32 @@
       border-bottom: 1px solid $diwala-object-purple;
     }
 
+    &--partners {
+      position: relative;
+      &:before{
+        content: "";
+        position: absolute;
+        background: url("../../../graphics/DIwala_Token2.png") right -330px center no-repeat;
+        width: 375px;
+        height: 670px;
+        right: 0;
+        top: -79px;
+        @include breakpoint('lg'){
+          width: 200px;
+          height: 500px;
+          background-size: auto 100%;
+          top: -300px;
+        }
+        @include breakpoint('xs'){
+          width: 100px;
+          height: 280px;
+          background-size: auto 100%;
+          top: -130px;
+          background-position: left top;
+        }
+      }
+    }
+
     .longer {
       min-height: 110vh;
     }

@@ -5,8 +5,14 @@ import { getViewportWidth } from '../../core/utilities/viewport.functions';
 
 export default function Team(props: any) {
   const team: any[] = props.team;
-  const teamCore = team.filter( teamMember => teamMember.type === 'core');
-  const teamOther = team.filter( teamMember => teamMember.type !== 'core');
+  const teamCore = team
+    .filter( teamMember => teamMember.type === 'core')
+    .sort((a: any, b: any) => a.order - b.order);
+
+  const teamOther = team
+    .filter( teamMember => teamMember.type !== 'core')
+    .sort((a: any, b: any) => a.order - b.order);
+
   const imageWidth = Math.round(getViewportWidth() / 4);
   
   const TeamCore = () => {
@@ -14,7 +20,7 @@ export default function Team(props: any) {
       return teamCore.map((person: any, key: any) => {
         const url = person.image ? urlFor(person.image).width(imageWidth).url() : '';
         return (
-          <li key={key} className={`team__person team__person--role-${person.type}`}>
+          <li key={person._id} className={`team__person team__person--role-${person.type}`}>
             <a href={person.linkedin ? person.linkedin : 'javascript:void(0)'} target="_blank">
               <img className="team__person-image" src={url}/>
               <div className="team__person-name">{person.name}</div>
@@ -33,7 +39,7 @@ export default function Team(props: any) {
       return teamOther.map((person: any, key: any) => {
         const url = person.image ? urlFor(person.image).width(imageWidth).url() : '';
         return (
-          <li key={key} className={`team__person team__person--role-${person.type}`}>
+          <li key={person._id} className={`team__person team__person--role-${person.type}`}>
             <img className="team__person-image" src={url}/>
             <div className="team__person-name">{person.name}</div>
             <div className="team__person-title">{person.title}</div>
