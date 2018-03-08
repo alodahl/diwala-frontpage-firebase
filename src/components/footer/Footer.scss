@@ -13,19 +13,19 @@
   width: 100%;
   align-items: center;
   width:100%;
-  margin-top: 100px;
   @include min-breakpoint(400px) {
     background-image: url('../../../graphics/footer/Webpage_Diwala_Ipad2-06-06.png');
   }
-  @include min-breakpoint(700px) {
-    margin-top: 0;
-  }
+  //@include min-breakpoint(700px) {
+  //  margin-top: 0;
+  //}
   @include min-breakpoint(1024px) {
     background-image: url('../../../graphics/footer/Webpage_Diwala_Website.png');
   }
   &__diwala-icon{
     width: 115px;
     margin-bottom: 30px;
+    margin-top: 50px;
     @include min-breakpoint(700px) {
       width: 160px;
     }
@@ -119,6 +119,36 @@
     }
     @include min-breakpoint(1200px) {
       font-size: 17px;
+    }
+  }
+  // icon moving around
+  margin-top: 190px;
+  position: relative;
+  &:before {
+    background-image: url("../../../graphics/Diwala_Logo-13.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    content: "";
+    height: 218px;
+    left: 0;
+    position: absolute;
+    top: -130px;
+    width: 128px;
+    //@include min-breakpoint(600px) {
+    //  background-size: 400px;
+    //  height: 400px;
+    //  width: 180px;
+    //}
+    //@include min-breakpoint(900px) {
+    //  background-size: 550px;
+    //  height: 550px;
+    //  width: 255px;
+    //}
+    @include min-breakpoint(1024px) {
+      background-image: url("../../../graphics/Diwala_Logo-09.png");
+      height: 396px;
+      width: 279px;
     }
   }
 }
