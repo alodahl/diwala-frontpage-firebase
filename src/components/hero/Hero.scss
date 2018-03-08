@@ -71,7 +71,7 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-    padding: 22px 8%;
+    padding: 22px 6%;
     display: flex;
     justify-content: space-between;
     @include breakpoint('xs'){
@@ -125,7 +125,7 @@
   &__social-icons{
     position: absolute;
     top: -30px;
-    left: 11%;
+    left: 9%;
     @include breakpoint(576px){
       left: 0;
       top: -15px;
