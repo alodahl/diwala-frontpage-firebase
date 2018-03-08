@@ -20,9 +20,22 @@
       width: 100%;
     }
 
+    &--full-height{
+      min-height: 100vh;
+    }
+
     &--with-borders{
       border-top: 1px solid $diwala-object-purple;
       border-bottom: 1px solid $diwala-object-purple;
+    }
+
+    &--hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint('xs'){
+        flex-flow: row wrap;
+      }
     }
 
     &--partners {

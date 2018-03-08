@@ -27,7 +27,6 @@
   &__list {
     text-align: start;
     margin: 0;
-    width: 55%;
     @include breakpoint(xs){
       padding: 0 40px;
     }

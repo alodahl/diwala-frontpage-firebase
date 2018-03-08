@@ -11,16 +11,25 @@
   max-width: 150px; // magic number
   padding: $base-space-size $base-space-size * 3;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin invert_button {
   @include typography-base;
   background: $diwala-background;
   border-radius: $font-size-base * 4;
-  border: 3px solid $diwala-object-purple;
+  border: 5px solid $diwala-object-purple;
   color: $diwala-object-purple;
   display: inline-block;
   max-width: 150px; // magic number
   padding: $base-space-size $base-space-size * 3;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include breakpoint('xs'){
+    border-width: 3px;
+  }
 }

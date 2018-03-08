@@ -10,6 +10,7 @@ import { loadPartners } from '../../actions/partners';
 import getPartners from '../../api/partners';
 import { loadTeam } from '../../actions/team';
 import getTeam from '../../api/team';
+import { SocialIcons } from 'react-social-icons';
 
 import Partners from '../partners/Partners';
 import Team from '../team/Team';
@@ -34,18 +35,28 @@ class MainBox extends React.Component {
     const hero = this.props.texts.find(text => text.id === 'hero-text');
     const joinSlack = 'https://join.slack.com/t/';
     const slackUrl = joinSlack + 'diwala-org/shared_invite/enQtMjIyODA4OTQ0MjEzLTZkMmU5MmNkNDg1YWEzNmM5Y2Q3NGYwYmMxMzkzMDJlMzBmZDdhOWUxNzNkZWJjNGEyZDhhYWY4NjA1ZDY2MTk';
-    return hero ? (
-      <section className="MainBox__section" id="home">
-        <Hero text={hero}/>
-        <div className="flex-btn-group">
-          <CollaborationButton/>
-          <LinkButton
-            classes="button"
-            url={slackUrl}
-            text="Join our community on slack!"
-          />
-        </div>
+    const urls = [
+      'http://twitter.com/diwala',
+      'https://www.linkedin.com/company/18089037/',
+      'https://www.instagram.com/diwala_/',
+      'https://www.facebook.com/diwalaorg/',
+    ];
+    const color = '#5d05a7';
 
+    return hero ? (
+      <section className="MainBox__section MainBox__section--hero MainBox__section--full-height" id="home">
+        <Hero text={hero}/>
+        <div className="website-hero__buttons">
+          <div className="website-hero__social-icons">
+            <SocialIcons urls={urls} color={color}/>
+          </div>
+          <LinkButton
+              classes="button button--join-slack"
+              url={slackUrl}
+              text="Join our community on slack!"
+          />
+          <CollaborationButton/>
+        </div>
       </section>
     ) : <span/>;
   }

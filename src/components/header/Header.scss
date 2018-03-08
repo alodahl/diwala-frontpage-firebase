@@ -5,25 +5,23 @@ $header-padding: 20px;
 $header-total-height: $header-height + $header-padding * 2;
 
 .Header {
-  background-color: white;
-  height: $header-height;
-  padding: $header-padding;
-  color: $diwala-text-purple;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+  padding: 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 
-.Header + * {
-  margin-top: -$header-total-height;
-  > *:first-child {
-    padding-top: $header-total-height;
+  &__logo{
+    width: 230px;
+    height: auto;
+    align-self: flex-start;
+    @include breakpoint('sm'){
+      width: 130px;
+    }
   }
-}
-
-.Header-logo {
-  max-height: 100%;
-  max-width: 100%;
-  height: $header-height;
-  align-self: flex-start;
+  
 }
