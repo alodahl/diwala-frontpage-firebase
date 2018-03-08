@@ -10,10 +10,10 @@
   margin-bottom: 37px;
 }
 
-.MainBox{
+.MainBox {
   &__section {
     //padding: 0 $base-space-size * 2;
-    //min-height: 100vh;
+    min-height: 100vh;
 
     &--full-width {
       padding: 0;
@@ -24,12 +24,7 @@
       min-height: 100vh;
     }
 
-    &--with-borders{
-      border-top: 1px solid $diwala-object-purple;
-      border-bottom: 1px solid $diwala-object-purple;
-    }
-
-    &--hero {
+    &--home {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -38,44 +33,41 @@
       }
     }
 
+    &--benefits,
+    &--mission,
     &--partners {
+      min-height: auto;
+    }
+
+    &--mission {
       position: relative;
-      &:before{
+      &:after {
+        background-image: url("../../../graphics/DIwala_Token2.png");
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
         content: "";
+        height: 280px;
         position: absolute;
-        background: url("../../../graphics/DIwala_Token2.png") right -330px center no-repeat;
-        width: 375px;
-        height: 670px;
         right: 0;
-        top: -79px;
-        @include breakpoint('lg'){
-          width: 200px;
-          height: 500px;
-          background-size: auto 100%;
-          top: -300px;
+        top: -130px;
+        width: 100px;
+        @include min-breakpoint(600px) {
+          background-size: 400px;
+          height: 400px;
+          width: 180px;
         }
-        @include breakpoint('xs'){
-          width: 100px;
-          height: 280px;
-          background-size: auto 100%;
-          top: -130px;
-          background-position: left top;
+        @include min-breakpoint(900px) {
+          background-size: 550px;
+          height: 550px;
+          width: 255px;
         }
       }
     }
 
-    .longer {
-      min-height: 110vh;
+    &--partners {
+      margin-bottom: $base-space-size * 15;
     }
-
-    &.longer {
-      min-height: 120vh;
-    }
-  }
-
-  &__container{
-    max-width: 1200px;
-    margin: auto;
   }
 }
 

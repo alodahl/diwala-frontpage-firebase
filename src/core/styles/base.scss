@@ -18,3 +18,33 @@ a {
   color: $diwala-text-purple;
   text-decoration: none;
 }
+
+h1,
+.title--h1 {
+  @include typography-title-h1;
+}
+
+h2,
+.title--h2 {
+  @include typography-title-h2;
+}
+
+h3,
+.title--h3 {
+  @include typography-title-h3;
+}
+
+h4,
+.title--h4 {
+  @include typography-title-h4;
+}
+
+h5,
+.title--h5 {
+  @include typography-title-h5;
+}
+
+h6,
+.title--h6 {
+  @include typography-title-h6;
+}

@@ -1,26 +1,33 @@
 import * as React from 'react';
-import Hero from '../hero/Hero';
-import LinkButton from '../buttons/link/LinkButton';
-import CollaborationButton from '../buttons/collaboration/Collaboration';
 import { loadTexts } from '../../actions/texts';
 import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
 import Benefits from '../benefits/Benefits';
 import { loadPartners } from '../../actions/partners';
-import getPartners from '../../api/partners';
+import getPartners, { PartnerData } from '../../api/partners';
 import { loadTeam } from '../../actions/team';
 import getTeam from '../../api/team';
-import { SocialIcons } from 'react-social-icons';
 
 import Partners from '../partners/Partners';
 import Team from '../team/Team';
 
+import getPictures, { PictureData } from '../../api/pictures';
+import { loadPictures } from '../../actions/pictures';
+import PictureFetcher from '../picture_fetcher/PictureFetcher';
 import StaticPicture from '../static_picture/StaticPicture';
+import Section from '../section/Section';
+import Home from '../home/Home';
+import TextFetcher from '../text_fetcher/TextFetcher';
+import Mission from '../mission/Mission';
+import Filter from '../filter/Filter';
+
+const emptyText: TextData = { id: 'empty', value: [] };
 
 class MainBox extends React.Component {
   public props: {
     texts: TextData[],
-    partners: any,
+    partners: PartnerData[],
+    pictures: PictureData[];
     team: any
   };
 
@@ -28,93 +35,52 @@ class MainBox extends React.Component {
     super(props);
     props.getTexts(loadTexts);
     props.getPartners(loadPartners);
+    props.getPictures(loadPictures);
     props.getTeam(loadTeam);
   }
 
-  private HeroOrNothing() {
-    const hero = this.props.texts.find(text => text.id === 'hero-text');
-    const joinSlack = 'https://join.slack.com/t/';
-    const slackUrl = joinSlack + 'diwala-org/shared_invite/enQtMjIyODA4OTQ0MjEzLTZkMmU5MmNkNDg1YWEzNmM5Y2Q3NGYwYmMxMzkzMDJlMzBmZDdhOWUxNzNkZWJjNGEyZDhhYWY4NjA1ZDY2MTk';
-    const urls = [
-      'http://twitter.com/diwala',
-      'https://www.linkedin.com/company/18089037/',
-      'https://www.instagram.com/diwala_/',
-      'https://www.facebook.com/diwalaorg/',
-    ];
-    const color = '#5d05a7';
-
-    return hero ? (
-      <section className="MainBox__section MainBox__section--hero MainBox__section--full-height" id="home">
-        <Hero text={hero}/>
-        <div className="website-hero__buttons">
-          <div className="website-hero__social-icons">
-            <SocialIcons urls={urls} color={color}/>
-          </div>
-          <LinkButton
-              classes="button button--join-slack"
-              url={slackUrl}
-              text="Join our community on slack!"
-          />
-          <CollaborationButton/>
-        </div>
-      </section>
-    ) : <span/>;
-  }
-
-  private BenefitsOrNothing() {
-    const benefits = this.props.texts.find(text => text.id === 'benefits');
-    return benefits ? (
-      <section id="benefits" className="MainBox__section MainBox__section--with-borders">
-        <Benefits text={benefits}/>
-      </section>
-    ) : <span/>;
-  }
-
-  private MissionOrNothing() {
-    const missionStatement = this.props.texts.find(text => text.id === 'frontpage-missionstatement');
-    return missionStatement ? (
-      <div>
-        <div className="title">{missionStatement.value[ 0 ].label}</div>
-        <div>{missionStatement.value[ 0 ].value}</div>
-      </div>
-    ) : <span/>;
-  }
-
-  private PartnersOrNothing() {
-    return this.props.partners ? (
-      <section id="partners" className="MainBox__section MainBox__section--partners MainBox__section--with-borders">
-        <Partners partners={this.props.partners}/>
-      </section>
-    ) : <span/>;
-  }
-
-  private TeamOrNothing() {
-    return this.props.team ? (
-      <section id="team" className="MainBox__section">
-        <Team team={this.props.team}/>
-      </section>
-    ) : '';
-  }
-
-  render() {
+  public render() {
     return (
       <div className="MainBox">
-        {this.HeroOrNothing()}
-        {this.BenefitsOrNothing()}
-        <section id="mission" className="MainBox__section longer MainBox__section--full-width">
-          {/* tslint:disable*/}
-          <StaticPicture
-            height={3840}
-            maxHeight={800}
-            src="https://firebasestorage.googleapis.com/v0/b/diwala-frontpage-dev.appspot.com/o/RF2134672_Nduta_3Nov17_0135.jpg?alt=media&token=7af3bc78-907e-4117-949f-de7c2191de76"
-            width={5760}
-            modifiedHeight={150}
-          />
-          {this.MissionOrNothing()}
-          {/* tslint:enable*/}
-        </section>
-        {this.PartnersOrNothing()}
-        {this.TeamOrNothing()}
+        <Section name="home" fullHeight={true}>
+          <TextFetcher id="hero-text" texts={this.props.texts}>
+            <Home text={emptyText}/>
+          </TextFetcher>
+        </Section>
+        <Section name="benefits">
+          <TextFetcher id="benefits" texts={this.props.texts}>
+            <Benefits text={emptyText} pictures={this.props.pictures}/>
+          </TextFetcher>
+        </Section>
+        <Section name="picture" fullWidth={true}>
+          <PictureFetcher
+            cropHeight={viewport => viewport.height}
+            cropIf={viewport => viewport.width < 400}
+            cropWidth={viewport => viewport.width}
+            focalX={0.6}
+            pictures={this.props.pictures}
+            name="Tanzania marked">
+            <StaticPicture
+              height={0}
+              src={'test'}
+              width={0}/>
+          </PictureFetcher>
+        </Section>
+        <Section name="mission">
+          <TextFetcher id="frontpage-missionstatement" texts={this.props.texts}>
+            <Mission text={emptyText}/>
+          </TextFetcher>
+        </Section>
+        <Section name="partners">
+          <Filter if={this.props.partners}>
+            <Partners partners={this.props.partners}/>
+          </Filter>
+        </Section>
+        <Section name="team">
+          <Filter if={this.props.team}>
+            <Team team={this.props.team}/>
+          </Filter>
+        </Section>
       </div>
     );
   }
@@ -122,6 +88,7 @@ class MainBox extends React.Component {
 
 const mapApiToState = (dispatch: any) => {
   return {
+    getPictures: (action: any) => getPictures(dispatch, action),
     getTexts: (action: any) => getTexts(dispatch, action),
     getPartners: (action: any) => getPartners(dispatch, action),
     getTeam: (action: any) => getTeam(dispatch, action),

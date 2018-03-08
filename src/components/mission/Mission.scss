@@ -1,5 +1,36 @@
 @import "../../core/styles/utilities";
+@import "../../core/styles/containers";
 
-.frontpage-mission {
+.mission {
+  @extend .logo-container;
+  margin-bottom: $base-space-size * 9;
+  margin-top: $base-space-size * 9;
+  text-align: left;
+  text-align: start;
+  &__title {
+    font-size: 34px;
+  }
+  &__text {
+    max-width: 200px;
+  }
+  @include min-breakpoint(400px) {
+    &__title {
+      font-size: $font-size-title-h1;
+    }
+    &__text {
+      max-width: 350px;
+    }
+  }
+  @include min-breakpoint(500px) {
+    &__text {
+      max-width: 430px;
+      font-size: $font-size-title-h5;
+    }
+  }
+  //@include min-breakpoint(700px) {
+  //  margin-left: 100px;
+  //}
+  //@include min-breakpoint(900px) {
+  //  margin-left: 200px;
+  //}
 }
-

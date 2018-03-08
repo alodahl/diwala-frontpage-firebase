@@ -1,14 +1,19 @@
 import * as React from 'react';
 import { TextData } from '../../api/texts';
 
-export default function Mission(props: { text: TextData }) {
-  return (
-    <div className="website-hero">
-      <div className="website-hero__logo">
-        <div className="website-hero__text">
-          {props.text.value[0].value}
-        </div>
+class Mission extends React.Component {
+  public props: {
+    text: TextData;
+  };
+
+  render() {
+    return (
+      <div className="mission">
+        <h2 className="mission__title">{this.props.text.value[ 0 ].label}</h2>
+        <div className="mission__text">{this.props.text.value[ 0 ].value}</div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+export default Mission;

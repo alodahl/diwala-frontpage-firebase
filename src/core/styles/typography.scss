@@ -11,22 +11,22 @@ $font-size-title-h3: ceil($font-size-base * pow($font-size-scale, 3)); // 28px
 $font-size-title-h4: ceil($font-size-base * pow($font-size-scale, 2)); // 24px
 $font-size-title-h5: ceil($font-size-base * pow($font-size-scale, 1)); // 20px
 $font-size-title-h6: $font-size-base * pow($font-size-scale, 0); // 16px
-$font-size-small: ceil($font-size-base / pow($font-size-scale, 2)); // 12px
+$font-size-small: 14px; // 14px
 
-$font-line-height: 1.25;
+$font-line-height: 1.35;
 
 @mixin typography-base() {
   color: $diwala-text-purple;
   font-size: $font-size-base;
   font-family: $font-family-base;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
 }
 
 @mixin typography-button() {
   color: $diwala-text-purple;
   font-size: $font-size-base;
   font-family: $font-family-base;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
 }
 
 @mixin typography-ingress() {
@@ -34,7 +34,7 @@ $font-line-height: 1.25;
   font-size: $font-size-title-h5;
   font-family: $font-family-base;
   font-weight: 300;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
 }
 
 @mixin typography-label() {
@@ -42,14 +42,14 @@ $font-line-height: 1.25;
   font-size: $font-size-base;
   font-family: $font-family-base;
   font-weight: 600;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
 }
 
 @mixin typography-title-h1() {
   color: $diwala-text-purple;
   font-size: $font-size-title-h1;
   font-family: $font-family-base;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
   margin: 1em 0 0.5em;
   text-rendering: optimizeLegibility;
 }
@@ -58,7 +58,7 @@ $font-line-height: 1.25;
   color: $diwala-text-purple;
   font-size: $font-size-title-h2;
   font-family: $font-family-base;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
   margin: 1em 0 0.5em;
   text-rendering: optimizeLegibility;
 }
@@ -67,7 +67,7 @@ $font-line-height: 1.25;
   color: $diwala-text-purple;
   font-size: $font-size-title-h3;
   font-family: $font-family-base;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
   margin: 1em 0 0.5em;
   text-rendering: optimizeLegibility;
 }
@@ -76,7 +76,7 @@ $font-line-height: 1.25;
   color: $diwala-text-purple;
   font-size: $font-size-title-h4;
   font-family: $font-family-base;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
   margin: 1em 0 0.5em;
   text-rendering: optimizeLegibility;
 }
@@ -85,7 +85,7 @@ $font-line-height: 1.25;
   color: $diwala-text-purple;
   font-size: $font-size-title-h5;
   font-family: $font-family-base;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
   margin: 1em 0 0.5em;
   text-rendering: optimizeLegibility;
 }
@@ -94,7 +94,7 @@ $font-line-height: 1.25;
   color: $diwala-text-purple;
   font-size: $font-size-title-h6;
   font-family: $font-family-base;
-  line-height: 1em * $font-line-height;
+  line-height: $font-line-height;
   margin: 1em 0 0.5em;
   text-rendering: optimizeLegibility;
 }
@@ -103,5 +103,5 @@ $font-line-height: 1.25;
   color: $diwala-text-purple;
   font-size: $font-size-small;
   font-family: $font-family-base;
-  line-height: 1em * $font-line-height;
+  line-height: 1.25;
 }
