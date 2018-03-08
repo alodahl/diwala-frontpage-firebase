@@ -1,3 +1,13 @@
+@import "../../core/styles/utilities";
+
 .text-left{
   text-align: left;
+}
+
+.flex-btn-group {
+  @include flex-column;
+  @include flex-start;
+  > * {
+    margin-top: 20px;
+  }
 }

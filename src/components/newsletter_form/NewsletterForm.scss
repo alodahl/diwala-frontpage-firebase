@@ -3,21 +3,17 @@
 .newsletter_form {
   transition-property: all;
 	transition-duration: 1s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  overflow: hidden;
 }
 .newsletter_form.closed {
-  max-height: 0px;
-  overflow: hidden;
-  button {
-    opacity: 0;
-  }
+  max-height: 0;
+  opacity: 0;
 }
 
 .newsletter_form.open {
   max-height: 300px;
-  button {
-    opacity: 1;
-  }
+  opacity: 1;
 }
 
 .newsletter_form input,
@@ -61,10 +57,15 @@
   @include button;
 }
 
+.response-form + .button{
+  display: none;
+}
+
 .emoji {
   font-size: 30px;
 }
 
 .message {
   font-size: 15px;
+  margin-bottom: 35px;
 }

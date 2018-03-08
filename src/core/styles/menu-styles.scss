@@ -1,4 +1,4 @@
-@import "./colors.scss";
+@import "../../core/styles/utilities";
 
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -28,8 +28,11 @@
 /* General sidebar styles */
 .bm-menu {
   background: $diwala-object-purple;
-  padding: 200px 100px 0;
+  padding: 70px 70px 0;
   font-size: 1.15em;
+  @include min-breakpoint(700px) {
+    padding: 200px 70px 0;
+  }
 
   .bm-item-list {
     a {
