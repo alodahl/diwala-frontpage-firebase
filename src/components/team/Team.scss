@@ -1,4 +1,37 @@
 @import "../../core/styles/utilities";
+@import "../../core/styles/containers";
+
+.team__title {
+  &--core {
+    @include typography-title-h1;
+  }
+  &--others {
+    @include typography-title-h2;
+  }
+}
+
+.team__title-container {
+  @extend .logo-container;
+  &--core .team__title--others {
+    display: none;
+  }
+  @include min-breakpoint(450px) {
+    text-align: left;
+  }
+  @include min-breakpoint(getLogoContainerWidth(4)) {
+    &--core .team__title--core {
+      margin-bottom: 0;
+    }
+    &--core .team__title--others {
+      @include typography-title-h3;
+      display: inherit;
+      margin-top: 0;
+    }
+    &--others .team__title--others {
+      display: none;
+    }
+  }
+}
 
 .team--core {
   .team__person-image {
@@ -129,14 +162,6 @@
       }
     }
   }
-}
-
-.team__title-core {
-  @include typography-title-h1;
-}
-
-.team__title-others {
-  @include typography-title-h2;
 }
 
 .team__list {

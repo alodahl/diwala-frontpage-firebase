@@ -1,15 +1,22 @@
+@import "utilities";
+
 $logo-width: 200px;
 $padding: $base-space-size * 5;
+
+@function getLogoContainerWidth($number) {
+  @return $logo-width * $number + $padding * 2;
+}
+
 .logo-container {
   margin: 0 $base-space-size * 5;
-  @include min-breakpoint($logo-width * 3 + $padding * 2) {
+  @include min-breakpoint(getLogoContainerWidth(3)) {
     margin: 0 auto;
     max-width: $logo-width * 3;
   }
-  @include min-breakpoint($logo-width * 4 + $padding * 2) {
+  @include min-breakpoint(getLogoContainerWidth(4)) {
     max-width: $logo-width * 4;
   }
-  @include min-breakpoint($logo-width * 5 + $padding * 2) {
+  @include min-breakpoint(getLogoContainerWidth(5)) {
     max-width: $logo-width * 5;
   }
 }

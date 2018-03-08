@@ -52,19 +52,24 @@ export default function Team(props: any) {
   };
 
   return (
-    <div className="team-section">
+    <>
       <div key="team-core" className="team team--core">
-        <h2 className="team__title team__title-core">Team</h2>
+        <div className="team__title-container team__title-container--core">
+          <h2 className="team__title team__title--core">Team</h2>
+          <h3 className="team__title team__title--others">Mentors &amp; Contributors</h3>
+        </div>
         <ul className="team__list team__list-core">
           {TeamCore()}
         </ul>
       </div>
       <div key="team-others" className="team team--others">
-        <h3 className="team__title team__title-others">Mentors &amp; Contributors</h3>
+        <div className="team__title-container team__title-container--others">
+          <h3 className="team__title team__title--others">Mentors &amp; Contributors</h3>
+        </div>
         <ul className="team__list team__list--others">
           {TeamOther()}
         </ul>
       </div>
-    </div>
+    </>
   );
 }
