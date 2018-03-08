@@ -19,7 +19,7 @@ export default function Footer(props: any) {
   return (
       <footer className="Footer" id="footer">
         <img src={diwalaIcon} className="Footer__diwala-icon"/>
-        <div className="Footer__title">Curious to learn more? </div>
+        <h2 className="Footer__title">Curious to learn more? </h2>
         <div className="Footer__buttons flex-btn-group">
           <LinkButton
             classes="button invert-button"
