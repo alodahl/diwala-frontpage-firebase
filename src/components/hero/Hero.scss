@@ -1,24 +1,120 @@
 @import "../../core/styles/utilities";
 
 .website-hero {
-}
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include breakpoint('xs') {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    margin: 120px 0 0px;
+  }
+  &__logo {
+    align-items: center;
+    background-image: url("../../../graphics/DIwala_Token2.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    vertical-align: center;
+    width: 100%;
+    height: 100%;
+    @include breakpoint('lg'){
+      background-size: 600px auto;
+    }
+    @include breakpoint('sm'){
+      background-size: 450px auto;
+    }
+    @include breakpoint('xs'){
+      background-size: 290px auto;
+    }
+  }
+  
+  &__text {
+    @include typography-title-h5;
+    color: $diwala-background;
+    max-width: 660px;
+    font-size: 51px;
+    margin: 0;
+    @include breakpoint('lg'){
+      font-size: 43px;
+      max-width: 550px;
+    }
+    @include breakpoint('sm'){
+      font-size: 33px;
+      max-width: 420px;
+    }
+    @include breakpoint('xs'){
+      font-size: 20px;
+      max-width: 263px;
+    }
+  }
 
-.website-hero__logo {
-  align-items: center;
-  background-image: url("../../../graphics/New-Logo_Sketching-27__cropped.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: flex;
-  height: 309px;
-  margin: 40px auto;
-  text-align: center;
-  vertical-align: center;
-  width: 308px;
-}
+  &__buttons {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 36px;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint('xs'){
+      flex-flow: row wrap;
+      justify-content: space-around;
+      position: relative;
+      width: 100%;
+    }
+    .button--join-slack{
+      font-size: 26px;
+      max-width: 310px;
+      padding: 10px 24px;
+      @include breakpoint('lg'){
+        font-size: 21px;
+        max-width: 260px;
+      }
+      @include breakpoint('xs'){
+        font-size: 13px;
+        margin-bottom: 15px;
+        height: 45px;
+        width: 185px;
+      }
+    }
+    .button--collaborate{
+      font-size: 23px;
+      max-width: 100%;
+      min-height: 84px;
+      @include breakpoint('lg'){
+        font-size: 21px;
+        min-height: 70px;
+      }
+      @include breakpoint('xs'){
+        font-size: 13px;
+        height: 45px;
+        min-height: 45px;
+        width: 185px;
+      }
+    }
+  }
 
-.website-hero__text {
-  @include typography-title-h5;
-  color: $diwala-background;
-  margin: 0 auto;
-  width: 250px;
+  &__social-icons{
+    position: absolute;
+    top: -30px;
+    left: 95px;
+    @include breakpoint('lg'){
+      left: 65px;
+    }
+    @include breakpoint('xs'){
+      display: none;
+    }
+    .social-icon{
+      height: 40px !important;
+      width: 40px !important;
+      margin: 0 5px;
+    }
+  }
 }

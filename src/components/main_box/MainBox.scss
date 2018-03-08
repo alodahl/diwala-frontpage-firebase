@@ -20,6 +20,19 @@
       width: 100%;
     }
 
+    &--full-height{
+      min-height: 100vh;
+    }
+
+    &--home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint('xs'){
+        flex-flow: row wrap;
+      }
+    }
+
     &--benefits,
     &--mission,
     &--partners {

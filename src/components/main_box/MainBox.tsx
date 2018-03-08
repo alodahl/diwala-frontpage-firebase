@@ -42,7 +42,7 @@ class MainBox extends React.Component {
   public render() {
     return (
       <div className="MainBox">
-        <Section name="home">
+        <Section name="home" fullHeight={true}>
           <TextFetcher id="hero-text" texts={this.props.texts}>
             <Home text={emptyText}/>
           </TextFetcher>
