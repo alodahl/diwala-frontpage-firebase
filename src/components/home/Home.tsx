@@ -25,8 +25,8 @@ class Home extends React.Component {
           <div className="website-hero__social-icons">
             <SocialIcons urls={urls} color={color}/>
           </div>
-          <SlackButton/>
           <CollaborationButton/>
+          <SlackButton/>
         </div>
       </>
     );
