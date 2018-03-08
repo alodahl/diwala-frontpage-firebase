@@ -5,31 +5,33 @@ $logo-width: 200px;
 $padding: $base-space-size * 5;
 
 .partners {
+  @extend .logo-container;
+  &__title {
+    font-size: 34px;
+    text-align: left;
+    @include min-breakpoint(400px) {
+      font-size: $font-size-title-h1;
+    }
+  }
 
   &__list {
     display: grid;
+    grid-gap: $base-space-size * 3;
     grid-template-columns: repeat(2, 1fr);
     list-style: none;
-    margin: 0 $padding;
+    margin: 0 auto;
     padding: 0;
     @include min-breakpoint($logo-width * 3 + $padding * 2) {
       grid-template-columns: repeat(3, 1fr);
-      width: $logo-width * 3;
     }
     @include min-breakpoint($logo-width * 4 + $padding * 2) {
       grid-template-columns: repeat(4, 1fr);
-      width: $logo-width * 4;
     }
     @include min-breakpoint($logo-width * 5 + $padding * 2) {
       grid-template-columns: repeat(5, 1fr);
-      width: $logo-width * 5;
     }
     &-item {
-      padding: 0 $base-space-size * 3;
-      width: $logo-small-width;
-      @include min-breakpoint($logo-width * 2 + $padding * 2) {
-        width: $logo-width;
-      }
+      width: 100%;
     }
   }
 

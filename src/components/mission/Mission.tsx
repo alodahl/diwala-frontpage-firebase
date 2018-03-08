@@ -9,8 +9,8 @@ class Mission extends React.Component {
   render() {
     return (
       <div className="mission">
-        <h2 className="title">{this.props.text.value[ 0 ].label}</h2>
-        <div>{this.props.text.value[ 0 ].value}</div>
+        <h2 className="mission__title">{this.props.text.value[ 0 ].label}</h2>
+        <div className="mission__text">{this.props.text.value[ 0 ].value}</div>
       </div>
     );
   }

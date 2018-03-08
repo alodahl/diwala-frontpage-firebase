@@ -1,20 +1,35 @@
 @import "../../core/styles/utilities";
 
 .mission {
-  margin: auto $base-space-size * 8;
-  @include min-breakpoint(sm) {
-
+  @extend .logo-container;
+  margin-bottom: $base-space-size * 9;
+  margin-top: $base-space-size * 9;
+  text-align: left;
+  text-align: start;
+  &__title {
+    font-size: 34px;
   }
-  @include min-breakpoint(sm) {
-
+  &__text {
+    max-width: 200px;
   }
-  @include min-breakpoint(md) {
-
+  @include min-breakpoint(400px) {
+    &__title {
+      font-size: $font-size-title-h1;
+    }
+    &__text {
+      max-width: 350px;
+    }
   }
-  @include min-breakpoint(lg) {
-
+  @include min-breakpoint(500px) {
+    &__text {
+      max-width: 430px;
+      font-size: $font-size-title-h5;
+    }
   }
-  @include min-breakpoint(xl) {
-
-  }
+  //@include min-breakpoint(700px) {
+  //  margin-left: 100px;
+  //}
+  //@include min-breakpoint(900px) {
+  //  margin-left: 200px;
+  //}
 }

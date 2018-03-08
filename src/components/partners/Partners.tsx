@@ -20,7 +20,7 @@ export default function Partners(props: {partners: PartnerData[]}) {
 
   return (
     <div className="partners">
-      <h2 className="partners__title title--h1">
+      <h2 className="partners__title">
         Partners <span className="partners__title-wrap">&amp; Supporters</span>
       </h2>
       <ul className="partners__list">

@@ -21,48 +21,40 @@
     }
 
     &--benefits,
-    &--mission {
+    &--mission,
+    &--partners {
       min-height: auto;
     }
 
-    &--partners {
+    &--mission {
       position: relative;
-      //&:before {
-      //  content: "";
-      //  position: absolute;
-      //  background: url("../../../graphics/DIwala_Token2.png") right -330px center no-repeat;
-      //  width: 375px;
-      //  height: 670px;
-      //  right: 0;
-      //  top: -79px;
-      //  @include breakpoint('lg') {
-      //    width: 200px;
-      //    height: 500px;
-      //    background-size: auto 100%;
-      //    top: -300px;
-      //  }
-      //  @include breakpoint('xs') {
-      //    width: 100px;
-      //    height: 280px;
-      //    background-size: auto 100%;
-      //    top: -130px;
-      //    background-position: left top;
-      //  }
-      //}
+      &:after {
+        background-image: url("../../../graphics/DIwala_Token2.png");
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        content: "";
+        height: 280px;
+        position: absolute;
+        right: 0;
+        top: -130px;
+        width: 100px;
+        @include min-breakpoint(600px) {
+          background-size: 400px;
+          height: 400px;
+          width: 180px;
+        }
+        @include min-breakpoint(900px) {
+          background-size: 550px;
+          height: 550px;
+          width: 255px;
+        }
+      }
     }
 
-    .longer {
-      min-height: 110vh;
+    &--partners {
+      margin-bottom: $base-space-size * 15;
     }
-
-    &.longer {
-      min-height: 120vh;
-    }
-  }
-
-  &__container {
-    max-width: 1200px;
-    margin: auto;
   }
 }
 

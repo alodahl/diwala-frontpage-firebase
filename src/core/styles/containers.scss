@@ -1,0 +1,15 @@
+$logo-width: 200px;
+$padding: $base-space-size * 5;
+.logo-container {
+  margin: 0 $base-space-size * 5;
+  @include min-breakpoint($logo-width * 3 + $padding * 2) {
+    margin: 0 auto;
+    max-width: $logo-width * 3;
+  }
+  @include min-breakpoint($logo-width * 4 + $padding * 2) {
+    max-width: $logo-width * 4;
+  }
+  @include min-breakpoint($logo-width * 5 + $padding * 2) {
+    max-width: $logo-width * 5;
+  }
+}
