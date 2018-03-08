@@ -3,15 +3,16 @@ import * as React from 'react';
 const newsLetterUrl = 'http://eepurl.com/dll_5H';
 
 export default function NewsletterButton(props: any) {
-  const classes = 'newsletter-button ' + props.injectedClasses;
-
+  const classes = 'button newsletter-button';
+  const { buttonText } = props;
+  
   if (props.onClick) {
     return (
-      <button className={classes} onClick={props.onClick} >Sign up for our newsletter!</button>
+      <button className={classes} onClick={props.onClick}>{buttonText}</button>
     );
   } else {
     return (
-      <a className="newsletter-button" target="_blank" href={newsLetterUrl}>Sign up for our newsletter!</a>
+      <a className="newsletter-button" target="_blank" href={newsLetterUrl}>{buttonText}</a>
     );
   }
 }

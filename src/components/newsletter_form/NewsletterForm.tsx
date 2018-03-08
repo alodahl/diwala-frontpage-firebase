@@ -28,13 +28,13 @@ class FormBox extends React.Component {
   buttonOrLoading = () => {
     if (!this.props.form.loading) {
       return (
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="button btn btn-primary">
           Submit
         </button>
       );
     } else {
       return (
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="button btn btn-primary">
           <Loader />
         </button>
       );
@@ -54,7 +54,10 @@ class FormBox extends React.Component {
               <Text placeholder="Email" field="email" id="email"/>
               <Text placeholder="Firstname" field="firstname" id="first"/>
               <Text placeholder="Lastname" field="lastname" id="last"/>
-              {this.buttonOrLoading()}
+              <div className="flex-btn-group">
+                {this.buttonOrLoading()}
+                
+              </div>
             </form>
           )}
       </Form>

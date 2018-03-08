@@ -6,6 +6,7 @@
   @include typography-base;
   background: $diwala-object-purple;
   border-radius: $font-size-base * 4;
+  border: 5px solid #5d05a7;
   color: $diwala-background;
   display: inline-block;
   max-width: 150px; // magic number
@@ -14,6 +15,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
+  @include breakpoint('xs'){
+    border-width: 3px;
+  }
 }
 
 @mixin invert_button {
@@ -29,6 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
   @include breakpoint('xs'){
     border-width: 3px;
   }

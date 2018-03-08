@@ -14,11 +14,3 @@
   justify-content: flex-start;
   align-items: center;
 }
-
-.flex-btn-group {
-  @include flex-column;
-  @include flex-start;
-  > * {
-    margin-top: 20px;
-  }
-}

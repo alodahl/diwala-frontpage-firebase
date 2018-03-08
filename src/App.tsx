@@ -8,7 +8,6 @@ import Partners from './components/partners/Partners';
 import Menu from './components/menu/Menu';
 import './compiled_css/App.css';
 import './compiled_css/fonts/font-faces.css';
-import './compiled_css/core/styles/menu-styles.css';
 import {
   BrowserRouter as Router,
   Route,

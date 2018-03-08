@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { SocialIcons } from 'react-social-icons';
 const logo = require('../../graphics/Diwala_Logo_258x108px_1.png');
+const diwalaIcon = require('../../graphics/Diwala_Logo-08.png');
 import NewsletterSignup from '../newsletter_signup/NewsletterSignup';
 import LinkButton from '../buttons/link/LinkButton';
 
@@ -17,9 +18,11 @@ export default function Footer(props: any) {
 
   return (
       <footer className="Footer" id="footer">
-        <div className="flex-btn-group">
+        <img src={diwalaIcon} className="Footer__diwala-icon"/>
+        <div className="Footer__title">Curious to learn more? </div>
+        <div className="Footer__buttons flex-btn-group">
           <LinkButton
-            classes="invert-button"
+            classes="button invert-button"
             url="mailto:hello@diwala.org"
             text="Send us an email"
           />
@@ -30,16 +33,15 @@ export default function Footer(props: any) {
           />
           <NewsletterSignup />
         </div>
-        <div className="lower-footer-section">
-          <div className="social-icons">
+        <div className="Footer__bottom">
+          <div className="Footer__social-icons">
             <SocialIcons urls={urls} color={color}/>
           </div>
-          <img className="footer-logo" src={logo} alt="Diwala"/>
-          <div className="copyright">
+          <img className="Footer__logo" src={logo} alt="Diwala"/>
+          <div className="Footer__copyright">
             Confidential and propriatary. Copyright © by Diwala org. All rights reserved
           </div>
         </div>
       </footer>
-
   );
 }

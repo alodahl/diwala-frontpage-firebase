@@ -16,7 +16,7 @@ class SignupComponent extends React.Component {
     };
   }
 
-  showForm() {
+  toggleForm() {
     this.setState({
       formDisplay: !this.state.formDisplay,
       formClean: !this.state.formClean
@@ -24,13 +24,14 @@ class SignupComponent extends React.Component {
   }
 
   render() {
-    const showForm = this.showForm.bind(this);
+    const toggleForm = this.toggleForm.bind(this);
     const formClasses = this.state.formDisplay ? 'open' : 'closed';
-    const buttonClasses = this.state.formDisplay ? 'gone' : 'displayed';
+    const buttonText = this.state.formDisplay ? 'Cancel' : 'Sign up for our newsletter!';
+
     return (
       <div className="signupForm">
         <NewsletterForm injectedClasses={formClasses}/>
-        <NewsletterButton onClick={showForm} injectedClasses={buttonClasses} />
+        <NewsletterButton onClick={toggleForm} buttonText={buttonText} />
       </div>
     );
   }

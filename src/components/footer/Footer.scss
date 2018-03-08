@@ -1,44 +1,114 @@
 @import "../../core/styles/utilities";
 
 .Footer {
-   background: $diwala-background;
-   display: flex;
-   flex-direction: column;
-   -ms-flex-pack: end;
-   justify-content: flex-end;
-   width: 100%;
-   height: 70vh;
-   align-items: center;
-   padding-bottom: 5px;
-   width:100%;
-   height: 70vh;
-}
-
-.footer-logo {
-  height: 50px;
-}
-
-.lower-footer-section {
-  margin-top: 30px;
-}
-
-.social-icons {
-  a {
-    height: 35px !important;
-    margin: 5px;
-    width: 35px !important;
+  background: $diwala-background;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+  width:100%;
+  margin-top: 100px;
+  @include min-breakpoint(700px) {
+    margin-top: 0;
   }
-  position: absolute;
-  margin-top: 10px;
-}
-.social-icons a:nth-child(1){
-  margin-left: -15px;
-}
-.social-icons a:nth-child(2){
-  margin-right: 215px;
-}
-
-.copyright {
-  color: $diwala-text-purple;
-  font-size: 10px;
+  &__diwala-icon{
+    width: 115px;
+    margin-bottom: 30px;
+    @include min-breakpoint(700px) {
+      width: 160px;
+    }
+  }
+  &__title{
+    font-size: 33px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    max-width: 230px;
+    @include min-breakpoint(700px) {
+      font-size: 40px;
+      max-width: 100%;
+    }
+    @include min-breakpoint(1200px) {
+      font-size: 57px;
+    }
+  }
+  &__buttons{
+    width: 100%;
+    padding: 0 15px;
+    max-width: 310px;
+    @include min-breakpoint(700px) {
+      max-width: 350px;
+      padding: 0;
+    }
+    @include min-breakpoint(1200px) {
+      max-width: 500px;
+    }
+    .button{
+      width: 100%;
+      max-width: 100%;
+      cursor: pointer;
+      font-size: 18px;
+      margin-bottom: 15px;
+      transition: none;
+      @include min-breakpoint(700px) {
+        min-height: 52px;
+        font-size: 24px;
+        margin-bottom: 20px;
+        padding: 5px 20px;
+      }
+      @include min-breakpoint(1200px) {
+        min-height: 73px;
+        font-size: 35px;
+        max-width: 500px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+  &__bottom{
+    margin-top: 80px;
+    @include min-breakpoint(1200px) {
+      margin-top: 120px;
+    }
+  }
+  &__logo{
+    height: 30px;
+    @include min-breakpoint(700px) {
+      height: 50px;
+    }
+  }
+  &__social-icons{
+    position: absolute;
+    margin: -5px auto 0;
+    left: 0;
+    right: 0;
+    @include min-breakpoint(700px) {
+      margin: 10px auto 0;
+    }
+    a {
+      height: 35px !important;
+      margin: 5px;
+      width: 35px !important;
+      &:nth-child(1){
+        margin-left: -1px;
+      }
+      &:nth-child(2){
+        margin-right: 120px;
+        @include min-breakpoint(700px) {
+          margin-right: 215px;
+        }
+      }
+    }
+  }
+  &__copyright {
+    color: $diwala-text-purple;
+    font-size: 9px;
+    margin: 20px 0;
+    @include min-breakpoint(700px) {
+      font-size: 13px;
+    }
+    @include min-breakpoint(1200px) {
+      font-size: 17px;
+    }
+  }
 }
