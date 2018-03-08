@@ -1,7 +1,11 @@
 @import "../../core/styles/utilities";
 
 .Footer {
-  background: $diwala-background;
+  background-color: $diwala-background;
+  background-image: url('../../../graphics/footer/Webpage_Diwala_Mobile.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
   display: flex;
   flex-direction: column;
   -ms-flex-pack: end;
@@ -10,8 +14,14 @@
   align-items: center;
   width:100%;
   margin-top: 100px;
+  @include min-breakpoint(400px) {
+    background-image: url('../../../graphics/footer/Webpage_Diwala_Ipad2-06-06.png');
+  }
   @include min-breakpoint(700px) {
     margin-top: 0;
+  }
+  @include min-breakpoint(1024px) {
+    background-image: url('../../../graphics/footer/Webpage_Diwala_Website.png');
   }
   &__diwala-icon{
     width: 115px;
