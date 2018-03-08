@@ -6,7 +6,7 @@
   @include typography-base;
   background: $diwala-object-purple;
   border-radius: $font-size-base * 4;
-  border: 5px solid #5d05a7;
+  border: 4px solid $diwala-object-purple;
   color: $diwala-background;
   display: inline-block;
   max-width: 150px; // magic number
@@ -25,7 +25,7 @@
   @include typography-base;
   background: $diwala-background;
   border-radius: $font-size-base * 4;
-  border: 5px solid $diwala-object-purple;
+  border: 4px solid $diwala-object-purple;
   color: $diwala-object-purple;
   display: inline-block;
   max-width: 150px; // magic number

@@ -16,7 +16,7 @@ $header-total-height: $header-height + $header-padding * 2;
   width: 100%;
 
   &__logo{
-    width: 230px;
+    width: 130px;
     height: auto;
     align-self: flex-start;
     @include breakpoint('sm'){
