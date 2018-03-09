@@ -23,7 +23,7 @@ export default function Team(props: any) {
             <a href={person.linkedin ? person.linkedin : 'javascript:void(0)'} target="_blank">
               <img className="team__person-image" src={url}/>
               <div className="team__person-name">{person.name}</div>
-              <div className="team__person-title">{person.title}</div>
+              <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
             </a>
           </li>
         );
@@ -41,7 +41,7 @@ export default function Team(props: any) {
           <li key={person._id} className={`team__person team__person--role-${person.type}`}>
             <img className="team__person-image" src={url}/>
             <div className="team__person-name">{person.name}</div>
-            <div className="team__person-title">{person.title}</div>
+            <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
           </li>
         );
       });
