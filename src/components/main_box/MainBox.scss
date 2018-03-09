@@ -33,13 +33,11 @@
       }
     }
 
-    &--benefits,
-    &--mission,
-    &--partners {
+    &--benefits {
       min-height: auto;
     }
 
-    &--mission {
+    &--missionAndPartners {
       position: relative;
       &:after {
         background-image: url("../../../graphics/DIwala_Token2.png");
