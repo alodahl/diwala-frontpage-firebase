@@ -3,6 +3,7 @@
 
 body {
   @include typography-base;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
   min-height: 100%;

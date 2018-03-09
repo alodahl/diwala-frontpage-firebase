@@ -52,6 +52,7 @@
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  margin-bottom: $base-space-size * 2;
 }
 .response-form button {
   @include button;
