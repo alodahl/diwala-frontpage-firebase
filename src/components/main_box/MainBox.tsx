@@ -66,15 +66,17 @@ class MainBox extends React.Component {
               width={0}/>
           </PictureFetcher>
         </Section>
-        <Section name="mission">
-          <TextFetcher id="frontpage-missionstatement" texts={this.props.texts}>
-            <Mission text={emptyText}/>
-          </TextFetcher>
-        </Section>
-        <Section name="partners">
-          <Filter if={this.props.partners}>
-            <Partners partners={this.props.partners}/>
-          </Filter>
+        <Section name="missionAndPartners">
+          <div id="mission">
+            <TextFetcher id="frontpage-missionstatement" texts={this.props.texts}>
+              <Mission text={emptyText}/>
+            </TextFetcher>
+          </div>
+          <div id="partners">
+            <Filter if={this.props.partners}>
+              <Partners partners={this.props.partners}/>
+            </Filter>
+          </div>
         </Section>
         <Section name="team">
           <Filter if={this.props.team}>

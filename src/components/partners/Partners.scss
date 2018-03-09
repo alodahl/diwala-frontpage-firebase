@@ -9,6 +9,7 @@ $padding: $base-space-size * 5;
   @extend .logo-container;
   &__title {
     font-size: 34px;
+    margin-top: $base-space-size * 11;
     text-align: left;
     @include min-breakpoint(400px) {
       font-size: $font-size-title-h1;
