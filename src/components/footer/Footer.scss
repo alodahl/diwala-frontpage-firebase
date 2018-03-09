@@ -15,6 +15,7 @@
   width: 100%;
   @include min-breakpoint(400px) {
     background-image: url('../../../graphics/footer/Webpage_Diwala_Ipad2-06-06.png');
+    background-size: 100%;
   }
   //@include min-breakpoint(700px) {
   //  margin-top: 0;
