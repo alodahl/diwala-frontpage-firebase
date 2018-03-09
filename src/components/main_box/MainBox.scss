@@ -37,6 +37,31 @@
       min-height: auto;
     }
 
+    &--picture{
+      position: relative;
+      &:after{
+        content: "";
+        background-image: url('../../../graphics/Copyright.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% auto;
+        width: 160px;
+        height: 53px;
+        position: absolute;
+        right: 92px;
+        bottom: 0;
+      }
+      // @include min-breakpoint(1200px){
+      //   min-height: auto;
+      //   display: none;
+      // }
+      // .static-picture{
+      //   @include min-breakpoint(1200px){
+      //     display: none;
+      //   }
+      // }
+    }
+
     &--missionAndPartners {
       position: relative;
       &:after {

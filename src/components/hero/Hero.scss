@@ -125,7 +125,8 @@
   &__social-icons{
     position: absolute;
     top: -30px;
-    left: 9%;
+    width: 224px;
+    left: 6%;
     @include breakpoint(576px){
       left: 0;
       top: -15px;

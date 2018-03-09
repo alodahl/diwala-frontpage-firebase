@@ -35,7 +35,7 @@
   }
   &__title {
     @extend .title--h1;
-    //font-size: 33px;
+    font-size: 33px;
     //font-weight: bold;
     margin-bottom: $base-space-size;
     margin-top: $base-space-size * 2;
@@ -46,6 +46,7 @@
     }
     @include min-breakpoint(1200px) {
       font-size: 57px;
+      text-indent: 10px;
     }
   }
   &__buttons {
@@ -125,7 +126,7 @@
       font-size: 13px;
     }
     @include min-breakpoint(1200px) {
-      font-size: 17px;
+      font-size: 15px;
     }
   }
   // icon moving around

@@ -7,6 +7,15 @@
   margin-top: $base-space-size * 9;
   text-align: left;
   text-align: start;
+  // @include min-breakpoint(1200px){
+  //   height: 1200px;
+  // }
+  // &:after{
+  //   @include min-breakpoint(1200px){
+  //     content: '';
+  //     background-image: url('../../../graphics/Photography_intoken1.jpg');
+  //   }
+  // }
   &__title {
     font-size: 34px;
   }
