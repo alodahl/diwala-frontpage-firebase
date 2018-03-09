@@ -1,3 +1,13 @@
+@import "core/styles/utilities";
+
 .App {
   text-align: center;
+  @include min-breakpoint(1024px) {
+    background-image: url('../graphics/footer/Diwala_Yellow_Bubble_again-26.png');
+    background-position: left 50px bottom 100px;
+    background-repeat: no-repeat;
+    background-size: 100px;
+  }
 }
+
+

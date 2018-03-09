@@ -1,7 +1,7 @@
 @import "../../core/styles/utilities";
+@import "../../core/styles/base";
 
 .Footer {
-  background-color: $diwala-background;
   background-image: url('../../../graphics/footer/Webpage_Diwala_Mobile.png');
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -20,21 +20,24 @@
   //  margin-top: 0;
   //}
   @include min-breakpoint(1024px) {
-    background-image: url('../../../graphics/footer/Webpage_Diwala_Website.png');
+    background-image: url('../../../graphics/footer/Bubble_rightside-06.png');
+    background-position: right bottom;
+    background-size: auto;
   }
   &__diwala-icon {
-    width: 115px;
+    width: 120px;
     //margin-bottom: 30px;
     margin-top: 50px;
-    @include min-breakpoint(700px) {
-      width: 160px;
-    }
+    //@include min-breakpoint(700px) {
+    //  width: 160px;
+    //}
   }
   &__title {
     @extend .title--h1;
     //font-size: 33px;
     //font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: $base-space-size;
+    margin-top: $base-space-size * 2;
     max-width: 230px;
     @include min-breakpoint(700px) {
       font-size: 40px;
@@ -79,10 +82,10 @@
     }
   }
   &__bottom {
-    margin-top: 80px;
-    @include min-breakpoint(1200px) {
-      margin-top: 120px;
-    }
+    margin-top: $base-space-size * 6;
+    //@include min-breakpoint(1200px) {
+    //  margin-top: 120px;
+    //}
   }
   &__logo {
     height: 30px;
