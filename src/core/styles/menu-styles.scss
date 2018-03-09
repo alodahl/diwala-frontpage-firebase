@@ -48,3 +48,15 @@
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
+.bm-menu-wrap{
+  width: 200px !important;
+  @include min-breakpoint(700px){
+    width: 300px !important;
+  }
+}
+.bm-menu{
+  padding: 70px 25px 0;
+  @include min-breakpoint(700px){
+    padding: 70px 70px 0;
+  }
+}
