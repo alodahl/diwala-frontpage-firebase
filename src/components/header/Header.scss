@@ -19,8 +19,8 @@ $header-total-height: $header-height + $header-padding * 2;
     width: 130px;
     height: auto;
     align-self: flex-start;
-    @include breakpoint('sm'){
-      width: 130px;
+    @include min-breakpoint(1200px){
+      width: 160px;
     }
   }
   

@@ -46,13 +46,9 @@
   &__text {
     @include typography-title-h5;
     color: $diwala-background;
-    max-width: 450px;
-    font-size: 32px;
+    max-width: 458px;
+    font-size: 36px;
     margin: 0;
-    @include breakpoint('lg'){
-      font-size: 43px;
-      max-width: 550px;
-    }
     @include breakpoint(1050px) {
       font-size: 30px;
       max-width: 400px;

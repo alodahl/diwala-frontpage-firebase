@@ -40,11 +40,8 @@
     margin-bottom: $base-space-size;
     margin-top: $base-space-size * 2;
     max-width: 230px;
-    @include min-breakpoint(300px) {
-      font-size: 40px;
-    }
     @include min-breakpoint(700px) {
-      font-size: 40px;
+      font-size: 34px;
       max-width: 100%;
     }
     @include min-breakpoint(1200px) {
