@@ -69,7 +69,7 @@ class MainBox extends React.Component {
         <Section name="missionAndPartners">
           <div id="mission">
             <TextFetcher id="frontpage-missionstatement" texts={this.props.texts}>
-              <Mission text={emptyText}/>
+              <Mission  pictures={this.props.pictures} text={emptyText}/>
             </TextFetcher>
           </div>
           <div id="partners">

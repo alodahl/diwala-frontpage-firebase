@@ -5,6 +5,7 @@ class Picture extends React.Component {
   public props: {
     // height: number;
     src: string;
+    classes: any;
     // width: number;
   };
 
@@ -22,7 +23,7 @@ class Picture extends React.Component {
     // const src = this.props.src.replace('https://', '');
     // const rszSrc = `https://rsz.io/${src}?mode=crop&width=${width}&height=${height}`;
     return (
-      <div className="picture">
+      <div className={`picture ${this.props.classes}`}>
         <img src={this.props.src}/>
       </div>
     );

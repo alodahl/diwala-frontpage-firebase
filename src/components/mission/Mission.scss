@@ -7,15 +7,27 @@
   margin-top: $base-space-size * 9;
   text-align: left;
   text-align: start;
-  // @include min-breakpoint(1200px){
-  //   height: 1200px;
-  // }
-  // &:after{
-  //   @include min-breakpoint(1200px){
-  //     content: '';
-  //     background-image: url('../../../graphics/Photography_intoken1.jpg');
-  //   }
-  // }
+  @include min-breakpoint(1200px){
+    height: 770px;
+    position: relative;
+    text-align: right;
+    padding-top: 220px;
+  }
+  .token-image{
+    display: none;
+    @include min-breakpoint(1200px){
+      display: block;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position: left center;
+      width: 1060px;
+      height: 1000px;
+      position: absolute;
+      left: -400px;
+      top: -187px;
+      z-index: -1;
+    }
+  }
   &__title {
     font-size: 34px;
   }
@@ -34,6 +46,13 @@
     &__text {
       max-width: 430px;
       font-size: $font-size-title-h5;
+    }
+  }
+  @include min-breakpoint(1200px) {
+    &__text {
+      font-size: 26px;
+      text-align: right;
+      display: inline-block;
     }
   }
   //@include min-breakpoint(700px) {

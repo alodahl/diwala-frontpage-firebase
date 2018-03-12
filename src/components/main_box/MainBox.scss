@@ -51,15 +51,15 @@
         right: 5px;
         top: 5px;
       }
-      // @include min-breakpoint(1200px){
-      //   min-height: auto;
-      //   display: none;
-      // }
-      // .static-picture{
-      //   @include min-breakpoint(1200px){
-      //     display: none;
-      //   }
-      // }
+      @include min-breakpoint(1200px){
+        min-height: auto;
+        display: none;
+      }
+      .static-picture{
+        @include min-breakpoint(1200px){
+          display: none;
+        }
+      }
     }
 
     &--missionAndPartners {
@@ -84,6 +84,13 @@
           background-size: 550px;
           height: 550px;
           width: 255px;
+        }
+        @include min-breakpoint(1200px) {
+          background-size: 550px;
+          height: 550px;
+          width: 255px;
+          bottom: -30px;
+          top: auto;
         }
       }
     }
