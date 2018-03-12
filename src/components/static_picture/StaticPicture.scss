@@ -1,5 +1,10 @@
+@import "../../core/styles/utilities";
+
 .static-picture {
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+  @include iPhone() {
+    background-attachment: scroll;
+  }
 }
