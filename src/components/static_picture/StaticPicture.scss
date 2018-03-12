@@ -1,5 +1,7 @@
 .static-picture {
-  background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+  @include min-breakpoint(700px) {
+    background-attachment: fixed;
+  }
 }
