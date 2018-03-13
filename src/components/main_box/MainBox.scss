@@ -39,6 +39,9 @@
 
     &--picture{
       position: relative;
+      height: 70vh;
+      min-height: auto;
+      overflow: hidden;
       &:after{
         content: "";
         background-image: url('../../../graphics/Copyright.png');
@@ -64,6 +67,8 @@
 
     &--missionAndPartners {
       position: relative;
+      min-height: auto;
+      margin-bottom: 300px;
       &:after {
         background-image: url("../../../graphics/DIwala_Token2.png");
         background-position: left top;
