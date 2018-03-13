@@ -5,7 +5,7 @@
   background-image: url('../../../graphics/footer/Webpage_Diwala_Mobile.png');
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: contain;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   -ms-flex-pack: end;
@@ -13,7 +13,7 @@
   width: 100%;
   align-items: center;
   width: 100%;
-  @include min-breakpoint(400px) {
+  @include min-breakpoint(500px) {
     background-image: url('../../../graphics/footer/Webpage_Diwala_Ipad2-06-06.png');
     background-size: 100%;
   }
