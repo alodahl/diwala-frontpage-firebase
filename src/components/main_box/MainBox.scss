@@ -39,7 +39,7 @@
 
     &--picture{
       position: relative;
-      height: 70vh;
+      height: 100vh;
       min-height: auto;
       overflow: hidden;
       &:after{
@@ -53,6 +53,9 @@
         position: absolute;
         right: 5px;
         top: 5px;
+      }
+      @include min-breakpoint(700px){
+        height: 80vh;
       }
       @include min-breakpoint(1200px){
         min-height: auto;

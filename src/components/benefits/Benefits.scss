@@ -55,6 +55,7 @@ $small-screen-bullet-padding: 30px;
     padding: 0 0 0 $small-screen-bullet-padding;
     position: relative;
     width: 100%;
+    font-weight: 700;
     @include min-breakpoint(sm) {
       padding: 0 $small-screen-bullet-padding 0 0;
     }
