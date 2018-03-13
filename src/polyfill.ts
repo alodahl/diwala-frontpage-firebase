@@ -1,12 +1,12 @@
 import { shim as shimIncludes } from 'array-includes';
 import { shim as shimPromise } from 'es6-promise';
 
-if (!Array.prototype.find) {
+if (!Array.prototype.find || !Set || !Map) {
   require('es6-shim');
 }
-if (!Array.prototype.includes) {
+if (!(<any> Array.prototype).includes) {
   shimIncludes();
 }
-if (!window.Promise) {
+if (!Promise) {
   shimPromise();
 }

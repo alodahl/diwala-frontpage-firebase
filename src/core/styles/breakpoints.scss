@@ -53,3 +53,54 @@
     }
   }
 }
+
+@mixin iPhone234() {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+    @content;
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin iPhone5() {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+    @content;
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin iPhone678() {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+    @content;
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin iPhoneX() {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+    @content;
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin iPhone() {
+  @include iPhone234() {
+    @content;
+  }
+  @include iPhone5() {
+    @content;
+  }
+  @include iPhone678() {
+    @content;
+  }
+  @include iPhoneX() {
+    @content;
+  }
+}

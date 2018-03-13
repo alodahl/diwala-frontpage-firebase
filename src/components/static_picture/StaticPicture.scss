@@ -6,4 +6,7 @@
   @include min-breakpoint(700px) {
     background-attachment: fixed;
   }
+  @include iPhone() {
+    background-attachment: scroll;
+  }
 }
