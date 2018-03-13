@@ -4,6 +4,7 @@
 
 @mixin button {
   @include typography-base;
+  font-weight: bold;
   background: $diwala-object-purple;
   border-radius: $font-size-base * 4;
   border: 4px solid $diwala-object-purple;
@@ -23,6 +24,7 @@
 
 @mixin invert_button {
   @include typography-base;
+  font-weight: bold;
   background: $diwala-background;
   border-radius: $font-size-base * 4;
   border: 4px solid $diwala-object-purple;

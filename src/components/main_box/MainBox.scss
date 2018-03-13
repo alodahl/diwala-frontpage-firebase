@@ -37,6 +37,31 @@
       min-height: auto;
     }
 
+    &--picture{
+      position: relative;
+      &:after{
+        content: "";
+        background-image: url('../../../graphics/Copyright.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% auto;
+        width: 160px;
+        height: 53px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+      }
+      @include min-breakpoint(1200px){
+        min-height: auto;
+        display: none;
+      }
+      .static-picture{
+        @include min-breakpoint(1200px){
+          display: none;
+        }
+      }
+    }
+
     &--missionAndPartners {
       position: relative;
       &:after {
@@ -49,7 +74,7 @@
         position: absolute;
         right: 0;
         top: -130px;
-        width: 100px;
+        width: 65px;
         @include min-breakpoint(600px) {
           background-size: 400px;
           height: 400px;
@@ -59,6 +84,13 @@
           background-size: 550px;
           height: 550px;
           width: 255px;
+        }
+        @include min-breakpoint(1200px) {
+          background-size: 550px;
+          height: 550px;
+          width: 255px;
+          bottom: -30px;
+          top: auto;
         }
       }
     }

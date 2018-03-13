@@ -31,7 +31,7 @@ class Benefits extends React.Component {
             cropWidth={() => 652}
             pictures={this.props.pictures}
             name="Diwala_UI_DesktopVersion">
-            <Picture src={''}/>
+            <Picture src={''} classes=""/>
           </PictureFetcher>
         </div>
       </div>
