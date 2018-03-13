@@ -79,8 +79,10 @@
     height: $item-height;
     width: 150px;
     text-align: left;
+    font-size: 22px;
     @include min-breakpoint(700px) {
       width: 50%;
+      font-size: 24px;
     }
   }
   .team__person-image {
