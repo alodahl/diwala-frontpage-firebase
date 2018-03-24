@@ -1,7 +1,4 @@
-@import "../../../core/styles/utilities";
-
 .newsletter-button {
-  @include invert_button;
   max-width: 100%;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;

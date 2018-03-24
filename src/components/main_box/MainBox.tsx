@@ -19,6 +19,7 @@ import Section from '../section/Section';
 import Home from '../home/Home';
 import TextFetcher from '../text_fetcher/TextFetcher';
 import Mission from '../mission/Mission';
+import DonationSection from '../donation_section/DonationSection';
 import Filter from '../filter/Filter';
 
 const emptyText: TextData = { id: 'empty', value: [] };
@@ -76,6 +77,9 @@ class MainBox extends React.Component {
             <Filter if={this.props.partners}>
               <Partners partners={this.props.partners}/>
             </Filter>
+          </div>
+          <div id="support">
+            <DonationSection />
           </div>
         </Section>
         <Section name="team">

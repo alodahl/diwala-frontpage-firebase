@@ -51,12 +51,12 @@ class FormBox extends React.Component {
               id="form1"
               className={classes}
             >
-              <Text placeholder="Email" field="email" id="email"/>
-              <Text placeholder="Firstname" field="firstname" id="first"/>
-              <Text placeholder="Lastname" field="lastname" id="last"/>
+              <Text placeholder="Email" field="email" id="email" autoComplete="email"/>
+              <Text placeholder="Firstname" field="firstname" id="first" autoComplete="given-name"/>
+              <Text placeholder="Lastname" field="lastname" id="last" autoComplete="family-name"/>
               <div className="flex-btn-group">
                 {this.buttonOrLoading()}
-                
+
               </div>
             </form>
           )}

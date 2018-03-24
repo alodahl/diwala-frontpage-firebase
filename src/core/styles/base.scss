@@ -1,5 +1,6 @@
 @import "colors";
 @import "typography";
+@import "utilities";
 
 body {
   @include typography-base;
@@ -49,4 +50,16 @@ h5,
 h6,
 .title--h6 {
   @include typography-title-h6;
+}
+
+.button {
+  @include button;
+}
+
+.invert-button {
+  @include invert_button;
+}
+
+.yellow-button {
+  @include yellow_button;
 }

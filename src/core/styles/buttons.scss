@@ -24,20 +24,15 @@
 
 @mixin invert_button {
   @include typography-base;
-  font-weight: bold;
+  @include button
   background: $diwala-background;
-  border-radius: $font-size-base * 4;
-  border: 4px solid $diwala-object-purple;
   color: $diwala-object-purple;
-  display: inline-block;
-  max-width: 150px; // magic number
-  padding: $base-space-size $base-space-size * 3;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  outline: none;
-  @include breakpoint('xs'){
-    border-width: 3px;
-  }
+}
+
+@mixin yellow_button {
+  @include typography-base;
+  @include button
+  background: $diwala-yellow;
+  color: $diwala-object-purple;
+  border: 4px solid $diwala-yellow;
 }
