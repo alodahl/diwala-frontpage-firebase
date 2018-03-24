@@ -58,7 +58,7 @@ class DonationModal extends React.Component {
         >
           <BitcoinDonation handleCloseModal={this.handleCloseModal} />
         </ReactModal>
-        <button className="button" onClick={this.handleOpenModal.bind(this, 'ether')}>Ethere</button>
+        <button className="button" onClick={this.handleOpenModal.bind(this, 'ether')}>Ether</button>
         <ReactModal
           isOpen={this.state.showEtherModal}
           contentLabel="onRequestClose Example"
