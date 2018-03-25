@@ -30,7 +30,8 @@
     "react-scrollchor": "^4.2.1",
     "redux": "^3.7.2",
     "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "web3": "^1.0.0-beta.33"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/compiled_css/",

@@ -27,7 +27,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  button {
+  text-align: center;
+  .close {
     position: absolute;
     right: 20px;
     top: 20px;
