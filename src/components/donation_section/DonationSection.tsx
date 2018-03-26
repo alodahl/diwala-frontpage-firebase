@@ -10,7 +10,7 @@ class DonationSection extends React.Component {
   render () {
     return (
       <div className="support">
-        <h2>Want to support us?</h2>
+        <h2 className="support__title">Want to support us?</h2>
         <DonationModal />
       </div>
     );

@@ -42,7 +42,7 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "deploy": "firebase deploy --only hosting",
-    "deploy-prod": "firebase -P diwala-frontpage deploy --only hosting",
+    "deploy-prod": "npm run build && firebase -P diwala-frontpage deploy --only hosting",
     "build-polyfill": "webpack --config webpack.polyfill.config.js --mode production --optimize-minimize"
   },
   "devDependencies": {
