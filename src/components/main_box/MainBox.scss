@@ -71,7 +71,7 @@
     &--missionAndPartners {
       position: relative;
       min-height: auto;
-      margin-bottom: 300px;
+      margin-bottom: 160px;
       &:after {
         background-image: url("../../../graphics/DIwala_Token2.png");
         background-position: left top;
@@ -102,9 +102,10 @@
         }
       }
     }
-
-    &--partners {
-      margin-bottom: $base-space-size * 15;
+    
+    &--support {
+      min-height: auto;
+      margin-bottom: 160px;
     }
   }
 }
@@ -112,4 +113,3 @@
 .title {
   @include typography-title-h1;
 }
-

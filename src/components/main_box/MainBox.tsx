@@ -78,6 +78,8 @@ class MainBox extends React.Component {
               <Partners partners={this.props.partners}/>
             </Filter>
           </div>
+        </Section>
+        <Section name="support">
           <div id="support">
             <DonationSection />
           </div>
