@@ -6,7 +6,7 @@ import NewsletterSignup from '../newsletter_signup/NewsletterSignup';
 import LinkButton from '../buttons/link/LinkButton';
 
 export default function Footer(props: any) {
-  
+
   const urls = [
     'http://twitter.com/diwala',
     'https://www.linkedin.com/company/18089037/',
@@ -39,7 +39,7 @@ export default function Footer(props: any) {
           </div>
           <img className="Footer__logo" src={logo} alt="Diwala"/>
           <div className="Footer__copyright">
-            Confidential and Proprietary. Copyright © by Diwala org. All rights reserved
+            Proprietary. Copyright © by Diwala. All rights reserved
           </div>
         </div>
       </footer>
