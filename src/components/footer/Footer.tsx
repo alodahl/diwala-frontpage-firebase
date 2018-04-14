@@ -39,7 +39,7 @@ export default function Footer(props: any) {
           </div>
           <img className="Footer__logo" src={logo} alt="Diwala"/>
           <div className="Footer__copyright">
-            Proprietary. Copyright © by Diwala. All rights reserved
+            Copyright © by Diwala. All rights reserved
           </div>
         </div>
       </footer>
