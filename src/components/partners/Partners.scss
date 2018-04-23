@@ -24,13 +24,16 @@ $padding: $base-space-size * 5;
     margin: 0 auto;
     padding: 0;
     @include min-breakpoint($logo-width * 3 + $padding * 2) {
+
       grid-template-columns: repeat(3, 1fr);
     }
     @include min-breakpoint($logo-width * 4 + $padding * 2) {
       grid-template-columns: repeat(4, 1fr);
     }
     @include min-breakpoint($logo-width * 5 + $padding * 2) {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      width: 900px;
+      margin-left: -3px;
     }
     &-item {
       width: 100%;
