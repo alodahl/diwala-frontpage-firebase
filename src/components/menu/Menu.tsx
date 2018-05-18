@@ -33,6 +33,7 @@ export default class MainBox extends React.Component {
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#partners" animate={{ duration: this.animationSpeed}}>Partners</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#support" animate={{ duration: this.animationSpeed}}>Support</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#team" animate={{ duration: this.animationSpeed}}>Team</Scrollchor>
+        <a href="https://medium.com/diwala" target="_blank">Blog</a>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#footer" animate={{ duration: this.animationSpeed}}>Contact</Scrollchor>
       </BurgerMenu>
     );
