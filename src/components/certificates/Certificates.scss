@@ -1,0 +1,115 @@
+@import "../../core/styles/utilities";
+
+.MainText {
+  padding: 10px;
+  color: #58449e;
+}
+
+.Button-holder {
+  margin-top: 37px;
+  margin-bottom: 37px;
+}
+
+.MainBox {
+  &__section {
+    //padding: 0 $base-space-size * 2;
+    min-height: 100vh;
+
+    &--full-width {
+      padding: 0;
+      width: 100%;
+    }
+
+    &--full-height{
+      min-height: 100vh;
+    }
+
+    &--home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint('xs'){
+        flex-flow: row wrap;
+      }
+    }
+
+    &--benefits {
+      min-height: auto;
+    }
+
+    &--picture{
+      position: relative;
+      height: 100vh;
+      min-height: auto;
+      overflow: hidden;
+      &:after{
+        content: "";
+        background-image: url('../../../graphics/Copyright.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% auto;
+        width: 160px;
+        height: 53px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+      }
+      @include min-breakpoint(700px){
+        height: 80vh;
+      }
+      @include min-breakpoint(1200px){
+        min-height: auto;
+        display: none;
+      }
+      .static-picture{
+        @include min-breakpoint(1200px){
+          display: none;
+        }
+      }
+    }
+
+    &--missionAndPartners {
+      position: relative;
+      min-height: auto;
+      margin-bottom: 160px;
+      &:after {
+        background-image: url("../../../graphics/DIwala_Token2.png");
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        content: "";
+        height: 280px;
+        position: absolute;
+        right: 0;
+        top: -130px;
+        width: 65px;
+        @include min-breakpoint(600px) {
+          background-size: 400px;
+          height: 400px;
+          width: 180px;
+        }
+        @include min-breakpoint(900px) {
+          background-size: 550px;
+          height: 550px;
+          width: 255px;
+        }
+        @include min-breakpoint(1200px) {
+          background-size: 550px;
+          height: 550px;
+          width: 255px;
+          bottom: -30px;
+          top: auto;
+        }
+      }
+    }
+    
+    &--support {
+      min-height: auto;
+      margin-bottom: 160px;
+    }
+  }
+}
+
+.title {
+  @include typography-title-h1;
+}
