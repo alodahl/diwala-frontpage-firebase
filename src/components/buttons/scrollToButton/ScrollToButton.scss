@@ -1,0 +1,5 @@
+@import "../../../core/styles/utilities";
+
+.button--invert {
+  @include invert_button;
+}
