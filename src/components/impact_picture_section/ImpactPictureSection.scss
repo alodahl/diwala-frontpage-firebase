@@ -1,0 +1,62 @@
+@import "../../core/styles/utilities";
+@import "../../core/styles/containers";
+
+.impactPicture {
+  width: 100%;
+  @include min-breakpoint(1200px){
+    height: 860px;
+    position: relative;
+    text-align: right;
+    padding-top: 220px;
+    max-width: 1070px;
+  }
+  .token-image{
+    display: none;
+    &__left {
+      @include min-breakpoint(1200px){
+        display: block;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: left center;
+        width: 1060px;
+        height: 1000px;
+        position: absolute;
+        left: -400px;
+        top: -187px;
+        z-index: -1;
+      }
+    }
+    &__right {
+
+    }
+
+
+  }
+  &__title {
+    font-size: 34px;
+  }
+  &__text {
+    max-width: 200px;
+  }
+  @include min-breakpoint(400px) {
+    &__title {
+      font-size: $font-size-title-h1;
+    }
+    &__text {
+      max-width: 350px;
+    }
+  }
+  @include min-breakpoint(500px) {
+    &__text {
+      max-width: 430px;
+      font-size: $font-size-title-h5;
+    }
+  }
+  @include min-breakpoint(1200px) {
+    &__text {
+      font-size: 26px;
+      text-align: right;
+      display: inline-block;
+    }
+  }
+}

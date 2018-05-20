@@ -8,6 +8,7 @@ import getTeam from '../../api/team';
 import getPictures, { PictureData } from '../../api/pictures';
 import { loadPictures } from '../../actions/pictures';
 import Section from '../section/Section';
+import ImpactPicture from '../impact_picture_section/ImpactPictureSection';
 import CertificateHome from './CertificateHome';
 import TextFetcher from '../text_fetcher/TextFetcher';
 
@@ -29,13 +30,17 @@ class MainBox extends React.Component {
 
   public render() {
     return (
-      <div className="MainBox">
+      <div className="Certificates">
         <Section name="home" fullHeight={true}>
           <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
             <CertificateHome text={emptyText}/>
           </TextFetcher>
         </Section>
-
+        <Section name="home" fullHeight={true}>
+          <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
+            <ImpactPicture text={emptyText} pictures={this.props.pictures} />
+          </TextFetcher>
+        </Section>
       </div>
     );
   }
