@@ -41,6 +41,7 @@ class MainBox extends React.Component {
   }
 
   public render() {
+
     return (
       <div className="MainBox">
         <Section name="home" fullHeight={true}>
