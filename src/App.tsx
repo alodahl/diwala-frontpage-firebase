@@ -3,8 +3,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import MainBox from './components/main_box/MainBox';
 import NoMatch from './components/no_match/NoMatch';
-import Team from './components/team/Team';
-import Partners from './components/partners/Partners';
+import Certificates from './components/certificates/Certificates';
 import Menu from './components/menu/Menu';
 import './compiled_css/App.css';
 import './compiled_css/fonts/font-faces.css';
@@ -27,12 +26,10 @@ const App = () => (
         <Header />
         <Switch>
           <Route exact={true} path="/" component={MainBox}/>
-          <Route exact={true} path="/team" component={Team}/>
-          <Route exact={true} path="/partners" component={Partners}/>
+          <Route exact={true} path="/certificates" component={Certificates}/>
           <Route component={NoMatch}/>
         </Switch>
         <Footer />
-
       </div>
     </Router>
   </Provider>
