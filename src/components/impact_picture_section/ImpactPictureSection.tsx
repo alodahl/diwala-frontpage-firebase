@@ -3,30 +3,49 @@ import { TextData } from '../../api/texts';
 import PictureFetcher from '../picture_fetcher/PictureFetcher';
 import Picture from '../picture/Picture';
 
-class Mission extends React.Component {
+class ImpactPicture extends React.Component {
   public props: {
     text: TextData,
-    pictures: any;
+    pictures: any,
+    picturePosition?: string,
+    pictureName: string,
+    textVerticalAlignement?: string,
+    extraModules?: any
   };
 
+  findRightText(texts: any, id: string) {
+    const textObj = texts.value.find((text: any) => {
+      return text.label === id;
+    });
+    return textObj.value;
+  }
+
   render() {
-    console.log(this.props.pictures);
+    const pictureName = this.props.pictureName;
+    const title = this.findRightText(this.props.text, 'title');
+    const text = this.findRightText(this.props.text, 'subtext');
+    const horisontalPosition = this.props.picturePosition ? `__${this.props.picturePosition}` : '__left';
+    const verticalPosition = this.props.textVerticalAlignement ? `__${this.props.textVerticalAlignement}` : '__center';
     return (
       <div className="impactPicture">
-        <h2 className="impactPicture__title">{this.props.text.value[ 0 ].label}</h2>
-        <div className="impactPicture__text">{this.props.text.value[ 0 ].value}</div>
+        <div className={`column-flex column-flex${horisontalPosition} column-flex${verticalPosition}`}>
+          <h2 className={`impactPicture__title impactPicture__title${horisontalPosition}`}>{title}</h2>
+          <div className={`impactPicture__text impactPicture__text${horisontalPosition}`}>{text}</div>
+          {...this.props.extraModules}
+        </div>
         <PictureFetcher
           cropHeight={viewport => viewport.height}
           cropIf={viewport => viewport.width < 400}
           cropWidth={viewport => viewport.width}
           focalX={0.6}
           pictures={this.props.pictures}
-          name="Tanzania market in token">
-          <Picture src={''} classes="token-image__left"/>
+          name={pictureName}>
+          <Picture src={''} classes={`token-image token-image${horisontalPosition}`}/>
         </PictureFetcher>
+
       </div>
     );
   }
 }
 
-export default Mission;
+export default ImpactPicture;

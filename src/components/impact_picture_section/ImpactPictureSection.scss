@@ -7,36 +7,67 @@
     height: 860px;
     position: relative;
     text-align: right;
-    padding-top: 220px;
     max-width: 1070px;
+  }
+  .column-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &__left {
+      align-items: flex-end;
+    }
+    &__right {
+      align-items: flex-start;
+    }
+    &__top {
+      justify-content: flex-start;
+    }
+    &__center {
+      justify-content: center;
+    }
+    &__bottom {
+      justify-content: flex-end;
+    }
   }
   .token-image{
     display: none;
-    &__left {
-      @include min-breakpoint(1200px){
-        display: block;
-        background-size: auto 100%;
-        background-repeat: no-repeat;
-        background-position: left center;
-        width: 1060px;
-        height: 1000px;
-        position: absolute;
+    @include min-breakpoint(1200px){
+      display: block;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position: left center;
+      width: 950px;
+      height: 1000px;
+      position: absolute;
+      top: 0px;
+      z-index: -1;
+
+      &__left {
         left: -400px;
-        top: -187px;
-        z-index: -1;
+      }
+      &__right {
+        right: -400px;
       }
     }
-    &__right {
-
-    }
-
-
   }
   &__title {
     font-size: 34px;
+    max-width: 500px;
+    &__left {
+      text-align: right;
+    }
+    &__right {
+      text-align: left;
+    }
   }
   &__text {
     max-width: 200px;
+    &__left {
+      text-align: right;
+    }
+    &__right {
+      text-align: left;
+    }
   }
   @include min-breakpoint(400px) {
     &__title {
@@ -55,7 +86,6 @@
   @include min-breakpoint(1200px) {
     &__text {
       font-size: 26px;
-      text-align: right;
       display: inline-block;
     }
   }
