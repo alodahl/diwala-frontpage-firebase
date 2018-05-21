@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { slide as BurgerMenu } from 'react-burger-menu';
 import Scrollchor from 'react-scrollchor';
+import { withRouter } from 'react-router';
 
-export default class MainBox extends React.Component {
+class Menu extends React.Component {
   animationSpeed: number;
   state: {
     menuOpen: boolean
@@ -24,9 +25,9 @@ export default class MainBox extends React.Component {
     this.setState({menuOpen: false});
   }
 
-  render () {
+  getMainMenu = () => {
     return (
-      <BurgerMenu isOpen={this.state.menuOpen} onStateChange={this.handleStateChange} right={true}>
+      <>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#home" animate={{duration: this.animationSpeed}}>Home</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#benefits" animate={{duration: this.animationSpeed}}>Benefits</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#mission" animate={{ duration: this.animationSpeed}}>Our mission</Scrollchor>
@@ -35,8 +36,39 @@ export default class MainBox extends React.Component {
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#team" animate={{ duration: this.animationSpeed}}>Team</Scrollchor>
         <a href="https://medium.com/diwala" target="_blank">Blog</a>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#footer" animate={{ duration: this.animationSpeed}}>Contact</Scrollchor>
-      </BurgerMenu>
+      </>
     );
   }
 
+  getCertificateMenu = () => {
+    return (
+      <>
+        <a href="/">Home</a>
+        <a href="https://medium.com/diwala" target="_blank">Blog</a>
+      </>
+    );
+  }
+
+  render () {
+    const getMenuPoints = (props: any) => {
+      console.log(props);
+      if (props.location.pathname === '/') {
+        return this.getMainMenu();
+      } else if (props.location.pathname === '/certificates') {
+        return this.getCertificateMenu();
+      } else {
+        return this.getMainMenu();
+      }
+    };
+
+    return (
+      <BurgerMenu isOpen={this.state.menuOpen} onStateChange={this.handleStateChange} right={true}>
+        <div className="flex-list">
+          {getMenuPoints.bind(this, this.props)()}
+        </div>
+      </BurgerMenu>
+    );
+  }
 }
+
+export default withRouter(Menu);
