@@ -11,6 +11,7 @@ import Section from '../section/Section';
 import ImpactPicture from '../impact_picture_section/ImpactPictureSection';
 import CertificateHome from './CertificateHome';
 import TextFetcher from '../text_fetcher/TextFetcher';
+import LabeledScrollToButton from '../buttons/labeledScrollToButton/LabeledScrollToButton';
 
 const emptyText: TextData = { id: 'empty', value: [] };
 
@@ -29,6 +30,20 @@ class MainBox extends React.Component {
   }
 
   public render() {
+    const ChildButton = (texts: TextData[]) => {
+      return (
+        <TextFetcher key="1" id="certificates-impact-picture" texts={texts}>
+          <LabeledScrollToButton
+            text={emptyText}
+            textId="button"
+            labelId="button-label"
+            id="#footer"
+            verticalPosition="center"
+          />
+        </TextFetcher>
+      );
+    };
+
     return (
       <div className="Certificates">
         <Section name="home" fullHeight={true}>
@@ -37,8 +52,15 @@ class MainBox extends React.Component {
           </TextFetcher>
         </Section>
         <Section name="home" fullHeight={true}>
-          <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
-            <ImpactPicture text={emptyText} pictures={this.props.pictures} />
+          <TextFetcher id="certificates-impact-picture" texts={this.props.texts}>
+            <ImpactPicture
+              text={emptyText}
+              pictures={this.props.pictures}
+              picturePosition="right"
+              pictureName="Tanzania market in token"
+              textVerticalAlignement="top"
+              extraModules={[ChildButton(this.props.texts)]}
+            />
           </TextFetcher>
         </Section>
       </div>
