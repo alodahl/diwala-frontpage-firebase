@@ -1,6 +1,5 @@
 import * as React from 'react';
 const diwalaIcon = require('../../graphics/Diwala_Logo-08.png');
-import NewsletterSignup from '../newsletter_signup/NewsletterSignup';
 
 export default function BuyCertificates(props: any) {
 
@@ -14,7 +13,6 @@ export default function BuyCertificates(props: any) {
             <div>2</div>
             <div>3</div>
           </div>
-          <NewsletterSignup />
         </div>
       </div>
   );

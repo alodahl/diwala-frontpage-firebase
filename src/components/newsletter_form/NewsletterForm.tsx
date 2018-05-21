@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Form, Text } from 'react-form';
 import { connect } from 'react-redux';
-import postPerson from '../../api/mailform';
+import { postPerson } from '../../api/mailform';
 import { sendPerson, updateFormStatus } from '../../actions/mailform';
 import ResponseNewsletterForm from './DesignedResponse';
 import Loader from '../loader/Loader';
 
 class FormBox extends React.Component {
   props: {
-    sendPerson: (action: any, values: any) => void,
+    postPerson: (action: any, values: any) => void,
     injectedClasses: string,
     form: {
       action: string,
@@ -18,7 +18,7 @@ class FormBox extends React.Component {
   };
 
   submitForm = (values: any, event: any) => {
-    this.props.sendPerson(sendPerson, values);
+    this.props.postPerson(sendPerson, values);
   }
 
   restartForm = () => {
@@ -75,7 +75,7 @@ class FormBox extends React.Component {
 
 const mapApiToState = (dispatch: any) => {
   return {
-    sendPerson: (action: any, values: any) => postPerson.bind({}, dispatch, action, values)(),
+    postPerson: (action: any, values: any) => postPerson.bind({}, dispatch, action, values)(),
     restartForm: (action: any) => dispatch(action)
   };
 };
@@ -91,5 +91,5 @@ interface StateFromProps {
 }
 
 interface DispatchFromProps {
-  sendPerson: (action: any, values: any) => void;
+  postPerson: (action: any, values: any) => void;
 }
