@@ -16,7 +16,10 @@
   }
   &__logo {
     align-items: center;
-    background-image: url("../../../graphics/DIwala_Token2.png");
+    background-image: url("../../../graphics/Diwala_Token2.png");
+    &.purple{
+      background-image: url("../../../graphics/Diwala_Token.png");
+    }
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
