@@ -9,6 +9,7 @@ import getPictures, { PictureData } from '../../api/pictures';
 import { loadPictures } from '../../actions/pictures';
 import Section from '../section/Section';
 import ImpactPicture from '../impact_picture_section/ImpactPictureSection';
+import Statement from '../statement/Statement';
 import CertificateHome from './CertificateHome';
 import TextFetcher from '../text_fetcher/TextFetcher';
 import LabeledScrollToButton from '../buttons/labeledScrollToButton/LabeledScrollToButton';
@@ -44,14 +45,16 @@ class MainBox extends React.Component {
       );
     };
 
+    const parentClass = 'Certificates';
+
     return (
-      <div className="Certificates">
-        <Section name="home" fullHeight={true}>
+      <div className={parentClass}>
+        <Section name="home" fullHeight={true} parentClass={parentClass}>
           <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
             <CertificateHome text={emptyText}/>
           </TextFetcher>
         </Section>
-        <Section name="home" fullHeight={true}>
+        <Section name="ngo" fullHeight={true} parentClass={parentClass}>
           <TextFetcher id="certificates-impact-picture" texts={this.props.texts}>
             <ImpactPicture
               text={emptyText}
@@ -60,6 +63,16 @@ class MainBox extends React.Component {
               pictureName="Tanzania market in token"
               textVerticalAlignement="top"
               extraModules={[ChildButton(this.props.texts)]}
+            />
+          </TextFetcher>
+        </Section>
+        <Section name="statement" parentClass={parentClass}>
+          <TextFetcher id="statement-opportunities" texts={this.props.texts}>
+            <Statement
+              pictures={this.props.pictures}
+              text={emptyText}
+              pictureNames={['statement-man', 'statement-woman']}
+              textVerticalAlignement="top"
             />
           </TextFetcher>
         </Section>

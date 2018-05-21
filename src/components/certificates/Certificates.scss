@@ -12,9 +12,7 @@
 
 .Certificates {
   &__section {
-    //padding: 0 $base-space-size * 2;
-    min-height: 100vh;
-
+    min-height: 60vh;
     &--full-width {
       padding: 0;
       width: 100%;
@@ -25,6 +23,24 @@
     }
 
     &--home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint('xs'){
+        flex-flow: row wrap;
+      }
+    }
+
+    &--ngo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint('xs'){
+        flex-flow: row wrap;
+      }
+    }
+
+    &--statement {
       display: flex;
       align-items: center;
       justify-content: center;

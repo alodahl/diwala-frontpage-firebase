@@ -1,0 +1,72 @@
+@import "../../core/styles/utilities";
+@import "../../core/styles/containers";
+
+.statement {
+  width: 100%;
+  position: relative;
+  height: 500px;
+  max-width: 1070px;
+  
+  .pictureColumn {
+    position: absolute;
+    top: 0px;
+    left: 23%;
+  }
+  .statement-man {
+
+  }
+  .statement-woman {
+    margin-top: -72px;
+    margin-right: -287px;
+  }
+  .column-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-right: 50px;
+    &__left {
+      align-items: flex-end;
+    }
+    &__right {
+      align-items: flex-start;
+    }
+    &__top {
+      justify-content: flex-start;
+    }
+    &__center {
+      justify-content: center;
+    }
+    &__bottom {
+      justify-content: flex-end;
+    }
+  }
+  &__text {
+    max-width: 200px;
+    &__left {
+      text-align: left;
+    }
+    &__right {
+      text-align: right;
+    }
+  }
+  @include min-breakpoint(400px) {
+    &__title {
+      font-size: $font-size-title-h1;
+    }
+    &__text {
+      max-width: 350px;
+    }
+  }
+  @include min-breakpoint(500px) {
+    &__text {
+      max-width: 430px;
+      font-size: $font-size-title-h5;
+    }
+  }
+  @include min-breakpoint(1200px) {
+    &__text {
+      font-size: 26px;
+      display: inline-block;
+    }
+  }
+}
