@@ -12,6 +12,7 @@
 
 .Certificates {
   .subscriptionSignupForm {
+    margin-top: -50px;
     width: 300px;
     height: 100%;
     display: flex;
@@ -35,11 +36,15 @@
     .button-label {
       width: 150px;
       text-align: center;
-      margin: 15px auto;
+      margin: -100px auto;
       font-weight: bold;
       opacity: 1;
     }
     .button-label.open {
+      display: none;
+    }
+
+    .button.closed {
       display: none;
     }
   }
