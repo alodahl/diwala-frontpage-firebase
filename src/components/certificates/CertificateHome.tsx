@@ -11,9 +11,9 @@ class Home extends React.Component {
   public render() {
     return (
       <>
-        <Hero text={this.props.text} textId="hero"/>
+        <Hero text={this.props.text} textId="hero" tokenVersion="purple"/>
         <div className="website-hero__buttons">
-          <ScrollToButton id="#footer" text={this.props.text} textId="sign_up"/>
+          <ScrollToButton id="#signup" text={this.props.text} offset={-500} textId="sign_up"/>
           <ScrollToButton id="#footer" text={this.props.text} textId="question" invert/>
         </div>
       </>
