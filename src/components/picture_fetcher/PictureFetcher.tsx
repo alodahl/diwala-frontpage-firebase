@@ -10,9 +10,9 @@ const builder = imageUrlBuilder(sanityClient);
 class PictureFetcher extends React.Component<any> {
   public props: {
     children: ReactElement<any>;
-    cropHeight: (viewport: ViewportData) => number;
-    cropIf: (viewport: ViewportData) => boolean;
-    cropWidth: (viewport: ViewportData) => number;
+    cropHeight?: (viewport: ViewportData) => number;
+    cropIf?: (viewport: ViewportData) => boolean;
+    cropWidth?: (viewport: ViewportData) => number;
     focalX?: number;
     focalY?: number;
     pictures: PictureData[];
@@ -32,11 +32,11 @@ class PictureFetcher extends React.Component<any> {
     }
     let src: string;
     let viewportData = getViewportData();
-    const height = this.props.cropHeight(viewportData);
-    const width = this.props.cropWidth(viewportData);
+    const height = this.props.cropHeight ? this.props.cropHeight(viewportData) : 0;
+    const width = this.props.cropWidth ? this.props.cropWidth(viewportData) : 0;
     const focalX = this.props.focalX || 0.5;
     const focalY = this.props.focalY || 0.5;
-    if (this.props.cropIf(viewportData)) {
+    if (this.props.cropIf && this.props.cropIf(viewportData)) {
       src = builder
         .image(picture.image)
         .size(width, height)
