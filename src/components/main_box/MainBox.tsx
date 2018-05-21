@@ -41,20 +41,20 @@ class MainBox extends React.Component {
   }
 
   public render() {
-
+    const parentClass = 'MainBox';
     return (
-      <div className="MainBox">
-        <Section name="home" fullHeight={true}>
+      <div className={parentClass}>
+        <Section name="home" fullHeight={true} parentClass={parentClass}>
           <TextFetcher id="hero-text" texts={this.props.texts}>
             <Home text={emptyText}/>
           </TextFetcher>
         </Section>
-        <Section name="benefits">
+        <Section name="benefits" parentClass={parentClass}>
           <TextFetcher id="benefits" texts={this.props.texts}>
             <Benefits text={emptyText} pictures={this.props.pictures}/>
           </TextFetcher>
         </Section>
-        <Section name="picture" fullWidth={true}>
+        <Section name="picture" fullWidth={true} parentClass={parentClass}>
           <PictureFetcher
             cropHeight={viewport => viewport.height}
             cropIf={viewport => viewport.width < 400}
@@ -68,7 +68,7 @@ class MainBox extends React.Component {
               width={0}/>
           </PictureFetcher>
         </Section>
-        <Section name="missionAndPartners">
+        <Section name="missionAndPartners" parentClass={parentClass}>
           <div id="mission">
             <TextFetcher id="frontpage-missionstatement" texts={this.props.texts}>
               <Mission  pictures={this.props.pictures} text={emptyText}/>
@@ -80,12 +80,12 @@ class MainBox extends React.Component {
             </Filter>
           </div>
         </Section>
-        <Section name="support">
+        <Section name="support" parentClass={parentClass}>
           <div id="support">
             <DonationSection />
           </div>
         </Section>
-        <Section name="team">
+        <Section name="team" parentClass={parentClass}>
           <Filter if={this.props.team}>
             <Team team={this.props.team}/>
           </Filter>
