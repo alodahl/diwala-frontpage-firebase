@@ -12,7 +12,7 @@ import ImpactPicture from '../impact_picture_section/ImpactPictureSection';
 import Statement from '../statement/Statement';
 import CertificateHome from './CertificateHome';
 import TextFetcher from '../text_fetcher/TextFetcher';
-import LabeledScrollToButton from '../buttons/labeledScrollToButton/LabeledScrollToButton';
+import SubscriptionSignup from './subscription_signup/SubscriptionSignup';
 
 const emptyText: TextData = { id: 'empty', value: [] };
 
@@ -31,16 +31,10 @@ class MainBox extends React.Component {
   }
 
   public render() {
-    const ChildButton = (texts: TextData[]) => {
+    const SignupButton = (texts: TextData[]) => {
       return (
         <TextFetcher key="1" id="certificates-impact-picture" texts={texts}>
-          <LabeledScrollToButton
-            text={emptyText}
-            textId="button"
-            labelId="button-label"
-            id="#footer"
-            verticalPosition="center"
-          />
+          <SubscriptionSignup text={emptyText} />
         </TextFetcher>
       );
     };
@@ -62,7 +56,7 @@ class MainBox extends React.Component {
               picturePosition="right"
               pictureName="Tanzania market in token"
               textVerticalAlignement="top"
-              extraModules={[ChildButton(this.props.texts)]}
+              extraModules={[SignupButton(this.props.texts)]}
             />
           </TextFetcher>
         </Section>

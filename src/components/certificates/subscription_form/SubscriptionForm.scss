@@ -1,0 +1,79 @@
+@import "../../../core/styles/utilities";
+
+.subscription_form {
+  transition-property: all;
+	transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  overflow: hidden;
+}
+.subscription_form.closed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.subscription_form.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.subscription_form input,
+.subscription_form input[type="text"],
+.subscription_form input[type="date"],
+.subscription_form input[type="datetime"],
+.subscription_form input[type="email"],
+.subscription_form input[type="number"],
+.subscription_form input[type="search"],
+.subscription_form input[type="time"],
+.subscription_form input[type="url"],
+.subscription_form input[type="password"],
+.subscription_form textarea,
+.subscription_form select
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+
+.subscription_form button {
+  @include button;
+  width: 150px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: $base-space-size * 2;
+}
+
+.response-form {
+  text-align: center;
+}
+
+.response-form button {
+  margin: 0 auto;
+  @include button;
+
+}
+
+.response-form + .button{
+  display: none;
+}
+
+.emoji {
+  font-size: 30px;
+}
+
+.message {
+  font-size: 15px;
+  margin-bottom: 35px;
+}
