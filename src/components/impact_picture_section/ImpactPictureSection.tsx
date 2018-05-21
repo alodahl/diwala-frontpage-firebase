@@ -9,6 +9,9 @@ class ImpactPicture extends React.Component {
     pictures: any,
     picturePosition?: string,
     pictureName: string,
+    pictureHeight?: number,
+    pictureWidth?: number,
+    scalePicture?: boolean,
     textVerticalAlignement?: string,
     extraModules?: any
   };
@@ -34,9 +37,9 @@ class ImpactPicture extends React.Component {
           {...this.props.extraModules}
         </div>
         <PictureFetcher
-          cropHeight={viewport => viewport.height}
-          cropIf={viewport => viewport.width < 400}
-          cropWidth={viewport => viewport.width}
+          cropHeight={viewport => this.props.pictureHeight || viewport.height}
+          cropIf={viewport => this.props.scalePicture || viewport.width < 2000}
+          cropWidth={viewport => this.props.pictureWidth || viewport.width}
           focalX={0.6}
           pictures={this.props.pictures}
           name={pictureName}>

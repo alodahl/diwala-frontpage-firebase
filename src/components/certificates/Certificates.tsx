@@ -49,12 +49,17 @@ class MainBox extends React.Component {
           </TextFetcher>
         </Section>
         <Section name="ngo" fullHeight={true} parentClass={parentClass}>
+          <div id="signup" />
           <TextFetcher id="certificates-impact-picture" texts={this.props.texts}>
+
             <ImpactPicture
               text={emptyText}
               pictures={this.props.pictures}
               picturePosition="right"
-              pictureName="Tanzania market in token"
+              pictureName="student-token-pic"
+              pictureWidth={950}
+              pictureHeight={905}
+              scalePicture={true}
               textVerticalAlignement="top"
               extraModules={[SignupButton(this.props.texts)]}
             />
