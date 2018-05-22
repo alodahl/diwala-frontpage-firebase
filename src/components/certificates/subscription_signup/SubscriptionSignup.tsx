@@ -47,8 +47,8 @@ class SignupComponent extends React.Component {
     return (
       <div className="subscriptionSignupForm">
         <SubscriptionForm injectedClasses={formClasses}/>
-        <SubscriptionFormButton onClick={toggleForm} buttonText={buttonText} injectedClasses={formClasses}/>
         <Label text={labelText} injectedClasses={formClasses}/>
+        <SubscriptionFormButton onClick={toggleForm} buttonText={buttonText} injectedClasses={formClasses}/>
       </div>
     );
   }

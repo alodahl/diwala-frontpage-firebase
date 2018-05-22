@@ -12,7 +12,6 @@
 
 .Certificates {
   .subscriptionSignupForm {
-    margin-top: -50px;
     @include breakpoint(1200px){
       margin-top: 0px;
     }
@@ -39,7 +38,7 @@
     .button-label {
       width: 150px;
       text-align: center;
-      margin: -100px auto;
+      margin: 15px auto;
       font-weight: bold;
       opacity: 1;
     }
