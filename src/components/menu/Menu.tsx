@@ -28,6 +28,7 @@ class Menu extends React.Component {
   getMainMenu = () => {
     return (
       <>
+        <a href="/certificates">Certificates</a>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#home" animate={{duration: this.animationSpeed}}>Home</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#benefits" animate={{duration: this.animationSpeed}}>Benefits</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#mission" animate={{ duration: this.animationSpeed}}>Our mission</Scrollchor>

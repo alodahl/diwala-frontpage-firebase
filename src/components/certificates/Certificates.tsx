@@ -14,6 +14,9 @@ import CertificateHome from './CertificateHome';
 import TextFetcher from '../text_fetcher/TextFetcher';
 import SubscriptionSignup from './subscription_signup/SubscriptionSignup';
 
+import PictureFetcher from '../picture_fetcher/PictureFetcher';
+import StaticPicture from '../static_picture/StaticPicture';
+
 const emptyText: TextData = { id: 'empty', value: [] };
 
 class MainBox extends React.Component {
@@ -48,10 +51,23 @@ class MainBox extends React.Component {
             <CertificateHome text={emptyText}/>
           </TextFetcher>
         </Section>
+        <Section name="picture" fullWidth={true} parentClass={parentClass}>
+          <PictureFetcher
+            cropHeight={viewport => viewport.height}
+            cropIf={viewport => viewport.width < 400}
+            cropWidth={viewport => viewport.width}
+            focalX={0.6}
+            pictures={this.props.pictures}
+            name="Tanzania marked">
+            <StaticPicture
+              height={0}
+              src={'test'}
+              width={0}/>
+          </PictureFetcher>
+        </Section>
         <Section name="ngo" fullHeight={true} parentClass={parentClass}>
           <div id="signup" />
           <TextFetcher id="certificates-impact-picture" texts={this.props.texts}>
-
             <ImpactPicture
               text={emptyText}
               pictures={this.props.pictures}
