@@ -18,10 +18,18 @@
 @import "menu-styles";
 
 // component styles
+@import "../../components/certificates/subscription_form/SubscriptionForm.scss";
+
 @import "../../components/benefits/Benefits.scss";
 @import "../../components/buttons/collaboration/Collaboration.scss";
 @import "../../components/buttons/newsletter/NewsletterButton.scss";
+@import "../../components/buttons/scrollToButton/ScrollToButton.scss";
+@import "../../components/buttons/labeledScrollToButton/LabeledScrollToButton.scss";
 @import "../../components/footer/Footer.scss";
+@import "../../components/curious_to_learn_more/CuriousToLearnMore.scss";
+@import "../../components/impact_picture_section/ImpactPictureSection.scss";
+@import "../../components/statement/Statement.scss";
+@import "../../components/certificates/Certificates.scss";
 @import "../../components/header/Header.scss";
 @import "../../components/hero/Hero.scss";
 @import "../../components/loader/Loader.scss";

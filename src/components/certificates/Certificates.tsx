@@ -2,25 +2,20 @@ import * as React from 'react';
 import { loadTexts } from '../../actions/texts';
 import getTexts, { TextData } from '../../api/texts';
 import { connect } from 'react-redux';
-import Benefits from '../benefits/Benefits';
-import { loadPartners } from '../../actions/partners';
 import getPartners, { PartnerData } from '../../api/partners';
-import { loadTeam } from '../../actions/team';
 import getTeam from '../../api/team';
-
-import Partners from '../partners/Partners';
-import Team from '../team/Team';
 
 import getPictures, { PictureData } from '../../api/pictures';
 import { loadPictures } from '../../actions/pictures';
+import Section from '../section/Section';
+import ImpactPicture from '../impact_picture_section/ImpactPictureSection';
+import Statement from '../statement/Statement';
+import CertificateHome from './CertificateHome';
+import TextFetcher from '../text_fetcher/TextFetcher';
+import SubscriptionSignup from './subscription_signup/SubscriptionSignup';
+
 import PictureFetcher from '../picture_fetcher/PictureFetcher';
 import StaticPicture from '../static_picture/StaticPicture';
-import Section from '../section/Section';
-import Home from '../home/Home';
-import TextFetcher from '../text_fetcher/TextFetcher';
-import Mission from '../mission/Mission';
-import DonationSection from '../donation_section/DonationSection';
-import Filter from '../filter/Filter';
 
 const emptyText: TextData = { id: 'empty', value: [] };
 
@@ -35,23 +30,25 @@ class MainBox extends React.Component {
   constructor(props: any) {
     super(props);
     props.getTexts(loadTexts);
-    props.getPartners(loadPartners);
     props.getPictures(loadPictures);
-    props.getTeam(loadTeam);
   }
 
   public render() {
-    const parentClass = 'MainBox';
+    const SignupButton = (texts: TextData[]) => {
+      return (
+        <TextFetcher key="1" id="certificates-impact-picture" texts={texts}>
+          <SubscriptionSignup text={emptyText} />
+        </TextFetcher>
+      );
+    };
+
+    const parentClass = 'Certificates';
+
     return (
       <div className={parentClass}>
         <Section name="home" fullHeight={true} parentClass={parentClass}>
-          <TextFetcher id="hero-text" texts={this.props.texts}>
-            <Home text={emptyText}/>
-          </TextFetcher>
-        </Section>
-        <Section name="benefits" parentClass={parentClass}>
-          <TextFetcher id="benefits" texts={this.props.texts}>
-            <Benefits text={emptyText} pictures={this.props.pictures}/>
+          <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
+            <CertificateHome text={emptyText}/>
           </TextFetcher>
         </Section>
         <Section name="picture" fullWidth={true} parentClass={parentClass}>
@@ -61,34 +58,38 @@ class MainBox extends React.Component {
             cropWidth={viewport => viewport.width}
             focalX={0.6}
             pictures={this.props.pictures}
-            name="Tanzania marked">
+            name="student-rectangular-pic">
             <StaticPicture
               height={0}
               src={'test'}
               width={0}/>
           </PictureFetcher>
         </Section>
-        <Section name="missionAndPartners" parentClass={parentClass}>
-          <div id="mission">
-            <TextFetcher id="frontpage-missionstatement" texts={this.props.texts}>
-              <Mission  pictures={this.props.pictures} text={emptyText}/>
-            </TextFetcher>
-          </div>
-          <div id="partners">
-            <Filter if={this.props.partners}>
-              <Partners partners={this.props.partners}/>
-            </Filter>
-          </div>
+        <Section name="ngo" fullHeight={true} parentClass={parentClass}>
+          <div id="signup" />
+          <TextFetcher id="certificates-impact-picture" texts={this.props.texts}>
+            <ImpactPicture
+              text={emptyText}
+              pictures={this.props.pictures}
+              picturePosition="right"
+              pictureName="student-token-pic"
+              pictureWidth={950}
+              pictureHeight={905}
+              scalePicture={true}
+              textVerticalAlignement="top"
+              extraModules={[SignupButton(this.props.texts)]}
+            />
+          </TextFetcher>
         </Section>
-        <Section name="support" parentClass={parentClass}>
-          <div id="support">
-            <DonationSection />
-          </div>
-        </Section>
-        <Section name="team" parentClass={parentClass}>
-          <Filter if={this.props.team}>
-            <Team team={this.props.team}/>
-          </Filter>
+        <Section name="statement" parentClass={parentClass}>
+          <TextFetcher id="statement-opportunities" texts={this.props.texts}>
+            <Statement
+              pictures={this.props.pictures}
+              text={emptyText}
+              pictureNames={['statement-man', 'statement-woman']}
+              textVerticalAlignement="top"
+            />
+          </TextFetcher>
         </Section>
       </div>
     );

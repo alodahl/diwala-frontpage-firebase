@@ -20,7 +20,7 @@ class Home extends React.Component {
     const color = '#5d05a7';
     return (
       <>
-        <Hero text={this.props.text}/>
+        <Hero text={this.props.text} textId="header"/>
         <div className="website-hero__buttons">
           <div className="website-hero__social-icons">
             <SocialIcons urls={urls} color={color}/>

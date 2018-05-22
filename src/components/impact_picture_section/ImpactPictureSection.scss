@@ -1,0 +1,89 @@
+@import "../../core/styles/utilities";
+@import "../../core/styles/containers";
+
+.impactPicture {
+  width: 100%;
+  @include min-breakpoint(1200px){
+    height: 860px;
+    position: relative;
+    text-align: right;
+    max-width: 1070px;
+  }
+  .column-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &__left {
+      align-items: flex-end;
+    }
+    &__right {
+      align-items: flex-start;
+    }
+    &__top {
+      justify-content: flex-start;
+    }
+    &__center {
+      justify-content: center;
+    }
+    &__bottom {
+      justify-content: flex-end;
+    }
+  }
+  .token-image{
+    display: none;
+    @include min-breakpoint(1200px){
+      display: block;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position: left center;
+      width: 950px;
+      height: 1000px;
+      position: absolute;
+      top: 0px;
+      z-index: -1;
+
+      &__left {
+        left: -400px;
+      }
+      &__right {
+        right: -400px;
+      }
+    }
+  }
+  &__title {
+    font-size: 30px;
+    max-width: 500px;
+    &__left {
+      text-align: right;
+    }
+    &__right {
+      text-align: left;
+    }
+  }
+  &__text {
+    max-width: 200px;
+    &__left {
+      text-align: right;
+    }
+    &__right {
+      text-align: left;
+    }
+  }
+  @include min-breakpoint(400px) {
+    &__text {
+      max-width: 350px;
+    }
+  }
+  @include min-breakpoint(500px) {
+    &__text {
+      max-width: 430px;
+      font-size: $font-size-title-h5;
+    }
+  }
+  @include min-breakpoint(1200px) {
+    &__text {
+      font-size: 26px;
+      display: inline-block;
+    }
+  }
+}

@@ -10,7 +10,6 @@ class Mission extends React.Component {
   };
 
   render() {
-    console.log(this.props.pictures);
     return (
       <div className="mission">
         <h2 className="mission__title">{this.props.text.value[ 0 ].label}</h2>

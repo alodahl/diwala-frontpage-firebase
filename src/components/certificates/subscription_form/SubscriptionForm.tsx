@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Form, Text } from 'react-form';
 import { connect } from 'react-redux';
-import { postPerson } from '../../api/mailform';
-import { sendPerson, updateFormStatus } from '../../actions/mailform';
+import { postSubscriptionInterest } from '../../../api/mailform';
+import { sendPerson, updateFormStatus } from '../../../actions/mailform';
 import ResponseNewsletterForm from './DesignedResponse';
-import Loader from '../loader/Loader';
+import Loader from '../../loader/Loader';
 
 class FormBox extends React.Component {
   props: {
-    postPerson: (action: any, values: any) => void,
+    postSubscriptionInterest: (action: any, values: any) => void,
     injectedClasses: string,
     form: {
       action: string,
@@ -18,7 +18,7 @@ class FormBox extends React.Component {
   };
 
   submitForm = (values: any, event: any) => {
-    this.props.postPerson(sendPerson, values);
+    this.props.postSubscriptionInterest(sendPerson, values);
   }
 
   restartForm = () => {
@@ -42,7 +42,7 @@ class FormBox extends React.Component {
   }
 
   getForm () {
-    const classes = 'newsletter_form ' + this.props.injectedClasses;
+    const classes = 'subscription_form ' + this.props.injectedClasses;
     return (
       <Form onSubmit={this.submitForm}>
         {(formApi: any) => (
@@ -51,12 +51,12 @@ class FormBox extends React.Component {
               id="form1"
               className={classes}
             >
+              <Text placeholder="Company" field="company" id="last" autoComplete="company"/>
               <Text placeholder="Email" field="email" id="email" autoComplete="email"/>
               <Text placeholder="Firstname" field="firstname" id="first" autoComplete="given-name"/>
               <Text placeholder="Lastname" field="lastname" id="last" autoComplete="family-name"/>
               <div className="flex-btn-group">
                 {this.buttonOrLoading()}
-
               </div>
             </form>
           )}
@@ -75,7 +75,7 @@ class FormBox extends React.Component {
 
 const mapApiToState = (dispatch: any) => {
   return {
-    postPerson: (action: any, values: any) => postPerson.bind({}, dispatch, action, values)(),
+    postSubscriptionInterest: (action: any, values: any) => postSubscriptionInterest.bind({}, dispatch, action, values)(),
     restartForm: (action: any) => dispatch(action)
   };
 };
@@ -91,5 +91,5 @@ interface StateFromProps {
 }
 
 interface DispatchFromProps {
-  postPerson: (action: any, values: any) => void;
+  postSubscriptionInterest: (action: any, values: any) => void;
 }
