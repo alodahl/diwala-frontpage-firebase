@@ -2,6 +2,7 @@ import * as React from 'react';
 import { TextData } from '../../api/texts';
 import Hero from '../hero/Hero';
 import ScrollToButton from '../buttons/scrollToButton/ScrollToButton';
+import LinkButton from '../buttons/linkNoBlank/LinkButton';
 import { getViewportWidth } from '../../core/utilities/viewport.functions';
 
 class Home extends React.Component {
@@ -18,7 +19,11 @@ class Home extends React.Component {
         <Hero text={this.props.text} textId="hero" tokenVersion="purple"/>
         <div className="website-hero__buttons">
           <ScrollToButton id="#signup" text={this.props.text} offset={offset} textId="sign_up"/>
-          <ScrollToButton id="#footer" text={this.props.text} textId="question" invert/>
+          <LinkButton
+            classes="button invert"
+            url="/"
+            text="Read more about Diwala here"
+          />
         </div>
       </>
     );
