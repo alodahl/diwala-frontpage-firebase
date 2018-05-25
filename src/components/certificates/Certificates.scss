@@ -22,13 +22,23 @@
     justify-content: center;
 
     .subscription-signup-button{
-      margin: 0;
+      margin: 0 auto;
       -webkit-transition: all 0.2s ease-in-out;
       -moz-transition: all 0.2s ease-in-out;
       -ms-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
     }
+
+    .closed ~ .subscription-signup-button {
+      margin: 0;
+    }
+
+    .open ~ .subscription-signup-button {
+      @include invert_button;
+      width: 150px;
+    }
+
     .subscription-signup-button.displayed{
       opacity: 1;
     }
