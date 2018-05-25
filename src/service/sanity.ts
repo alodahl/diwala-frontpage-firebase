@@ -3,7 +3,7 @@ import SanityClient from '@sanity/client';
 export const sanityClient = SanityClient({
   // Find your project ID and dataset in `sanity.json` in your studio project
   projectId: 'jgfkj4nx',
-  dataset: 'production'
+  dataset: 'certificates-dev'
 });
 
 export default async function (query: any) {
