@@ -18,9 +18,9 @@ class Home extends React.Component {
       <>
         <Hero text={this.props.text} textId="hero" tokenVersion="purple"/>
         <div className="website-hero__buttons">
-          <ScrollToButton id="#signup" text={this.props.text} offset={offset} textId="sign_up"/>
+          <ScrollToButton id="#signup" text={this.props.text} offset={offset} textId="sign_up" classes="button button--join"/>
           <LinkButton
-            classes="button invert"
+            classes="button--invert button--collaborate"
             url="/"
             text="Read more about Diwala here"
           />

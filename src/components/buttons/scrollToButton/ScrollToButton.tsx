@@ -9,6 +9,7 @@ interface ScrollButtonProps {
   offset?: number;
   duration?: number;
   invert?: any;
+  classes?: any;
 }
 
 const ScrollToButton: React.SFC<ScrollButtonProps> = (props) => {
@@ -19,7 +20,7 @@ const ScrollToButton: React.SFC<ScrollButtonProps> = (props) => {
   const buttonText = textObj ? textObj.value : '';
   return (
     <Scrollchor to={props.id} animate={{offset: props.offset, duration: props.duration}}>
-      <div className={`${invertButton}`}>{buttonText}</div>
+      <div className={`${invertButton} ${props.classes}`}>{buttonText}</div>
     </Scrollchor>
   );
 };
