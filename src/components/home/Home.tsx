@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TextData } from '../../api/texts';
 import Hero from '../hero/Hero';
-import CollaborationButton from '../buttons/collaboration/Collaboration';
+import LinkButton from '../buttons/linkNoBlank/LinkButton';
 import SlackButton from '../slack_button/SlackButton';
 import { SocialIcons } from 'react-social-icons';
 
@@ -26,7 +26,11 @@ class Home extends React.Component {
             <SocialIcons urls={urls} color={color}/>
           </div>
           <SlackButton/>
-          <CollaborationButton/>
+          <LinkButton
+            classes="button--invert button--collaborate"
+            url="/certificates"
+            text="Want to sponsor a student?"
+          />
         </div>
       </>
     );
