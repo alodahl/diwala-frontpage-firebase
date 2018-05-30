@@ -27,6 +27,8 @@ class ImpactPicture extends React.Component {
     const pictureName = this.props.pictureName;
     const title = this.findRightText(this.props.text, 'title');
     const text1 = this.findRightText(this.props.text, 'subtext-first');
+    const boldText1 = text1.split(/\s+/).slice(0, 5).join(' ');
+    const regularText1 = text1.toString().slice(boldText1.length, -1);
     const text2 = this.findRightText(this.props.text, 'subtext-second');
     const horisontalPosition = this.props.picturePosition ? `__${this.props.picturePosition}` : '__left';
     const verticalPosition = this.props.textVerticalAlignement ? `__${this.props.textVerticalAlignement}` : '__center';
@@ -34,7 +36,7 @@ class ImpactPicture extends React.Component {
       <div className="impactPicture">
         <div className={`column-flex column-flex${horisontalPosition} column-flex${verticalPosition}`}>
           <h2 className={`impactPicture__title impactPicture__title${horisontalPosition}`}>{title}</h2>
-          <div className={`impactPicture__text impactPicture__text${horisontalPosition}`}>{text1}</div>
+          <div className={`impactPicture__text impactPicture__text${horisontalPosition}`}><span className={`impactPicture__text__bold`}>{boldText1}</span>{regularText1}</div>
           <div className={`impactPicture__text impactPicture__text${horisontalPosition}`}>{text2}</div>
           {...this.props.extraModules}
         </div>

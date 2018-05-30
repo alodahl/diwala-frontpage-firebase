@@ -45,7 +45,7 @@ class SignupComponent extends React.Component {
     const labelText = findRightText(this.props.text, sanityButtonLabelId);
 
     return (
-      <div className="subscriptionSignupForm">
+      <div className={`subscriptionSignupForm subscriptionSignupForm__${formClasses}`}>
         <SubscriptionForm injectedClasses={formClasses}/>
         <Label text={labelText} injectedClasses={formClasses}/>
         <SubscriptionFormButton onClick={toggleForm} buttonText={buttonText} injectedClasses={formClasses}/>
