@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { SocialIcons } from 'react-social-icons';
 const logo = require('../../graphics/Diwala_Logo_258x108px_1.png');
-import CuriousToLearnMore from '../curious_to_learn_more/CuriousToLearnMore';
 import { withRouter } from 'react-router';
-
-const returnFooterComponent = (props: any) => {
-    return <CuriousToLearnMore />;
-};
 
 const Footer = function(props: any) {
   const urls = [
@@ -17,11 +12,10 @@ const Footer = function(props: any) {
   ];
 
   const color = '#5d05a7';
-  const ExtraFooterComponent = returnFooterComponent(props);
 
   return (
       <footer className="Footer" id="footer">
-        {ExtraFooterComponent}
+        {props.children}
         <div className="Footer__bottom">
           <div className="Footer__social-icons">
             <SocialIcons urls={urls} color={color}/>
