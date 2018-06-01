@@ -57,7 +57,7 @@
       @include min-breakpoint(700px){
         height: 80vh;
       }
-      @include min-breakpoint(1200px){
+      @include min-breakpoint(768px){
         min-height: auto;
         display: none;
       }
@@ -88,10 +88,15 @@
           height: 400px;
           width: 180px;
         }
-        @include min-breakpoint(900px) {
+        @include min-breakpoint(768px) {
+          background-size: 400px;
+          height: 400px;
+          top: 380px;
+          width: 100px;
+        }
+        @include min-breakpoint(1080px) {
           background-size: 550px;
           height: 550px;
-          width: 255px;
         }
         @include min-breakpoint(1200px) {
           background-size: 550px;
