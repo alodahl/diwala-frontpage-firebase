@@ -9,4 +9,7 @@
   @include iPhone() {
     background-attachment: scroll;
   }
+  @include iPad() {
+    background-attachment: scroll;
+  }
 }
