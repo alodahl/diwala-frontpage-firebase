@@ -2,6 +2,7 @@
 @import "../../core/styles/base";
 
 .Footer {
+  background-color: white;
   background-image: url('../../../graphics/footer/Webpage_Diwala_Mobile.png');
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -24,6 +25,14 @@
     background-image: url('../../../graphics/footer/Bubble_rightside-06.png');
     background-position: right bottom;
     background-size: auto;
+  }
+  &__container {
+    background-color: white;
+    display: flex;
+    @include min-breakpoint(768px) {
+      background-color: rgba(0,0,0,0);
+      display: static;
+    }
   }
   &__diwala-icon {
     width: 120px;
@@ -131,7 +140,7 @@
     }
   }
   // icon moving around
-  margin-top: 190px;
+  margin-top: 42px;
   position: relative;
   &:before {
     background-image: url("../../../graphics/Diwala_Logo-13.png");

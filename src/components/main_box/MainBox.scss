@@ -11,6 +11,15 @@
 }
 
 .MainBox {
+  &__container {
+    background-color: white;
+    padding: 1px 0;  // Added to prevent margin collapse
+    @include min-breakpoint(768px) {
+      background-color: rgba(0,0,0,0);
+      padding: 0;
+    }
+  }
+
   &__section {
     //padding: 0 $base-space-size * 2;
     min-height: 100vh;
@@ -39,7 +48,7 @@
 
     &--picture{
       position: relative;
-      height: 100vh;
+      height: 400px;
       min-height: auto;
       overflow: hidden;
       &:after{
@@ -54,8 +63,8 @@
         right: 5px;
         top: 5px;
       }
-      @include min-breakpoint(700px){
-        height: 80vh;
+      @include min-breakpoint(600px){
+        height: 60vh;
       }
       @include min-breakpoint(768px){
         min-height: auto;
