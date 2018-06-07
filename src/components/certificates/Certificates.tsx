@@ -46,7 +46,7 @@ class MainBox extends React.Component {
 
     return (
       <div className={parentClass}>
-        <div className="MainBox__container">
+        <div className="Certificates__container">
           <Section name="home" fullHeight={true} parentClass={parentClass}>
             <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
               <CertificateHome text={emptyText}/>
@@ -83,7 +83,7 @@ class MainBox extends React.Component {
             />
           </TextFetcher>
         </Section>
-        <div className="MainBox__container">
+        <div className="Certificates__container">
           <Section name="statement" parentClass={parentClass}>
             <TextFetcher id="statement-opportunities" texts={this.props.texts}>
               <Statement

@@ -29,7 +29,7 @@
   &__container {
     background-color: white;
     display: flex;
-    @include min-breakpoint(768px) {
+    @include min-breakpoint(1200px) {
       background-color: rgba(0,0,0,0);
       display: static;
     }

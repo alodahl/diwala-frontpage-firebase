@@ -13,9 +13,22 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
 
-  @include min-breakpoint(768px) {
-    position: static;
-    height: inherit;
+.MainBox {
+  .static-picture {
+    @include min-breakpoint(768px) {
+      position: static;
+      height: inherit;
+    }
+  }
+}
+
+.Certificates {
+  .static-picture {
+    @include min-breakpoint(1200px) {
+      position: static;
+      height: inherit;
+    }
   }
 }
