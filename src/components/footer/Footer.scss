@@ -140,8 +140,11 @@
     }
   }
   // icon moving around
-  margin-top: 42px;
+  margin-top: 190px;
   position: relative;
+  @include min-breakpoint(490px) {
+    margin-top: 42px;
+  }
   &:before {
     background-image: url("../../../graphics/Diwala_Logo-13.png");
     background-position: left top;
