@@ -9,7 +9,6 @@ import getPictures, { PictureData } from '../../api/pictures';
 import { loadPictures } from '../../actions/pictures';
 import Section from '../section/Section';
 import ImpactPicture from '../impact_picture_section/ImpactPictureSection';
-import Statement from '../statement/Statement';
 import CertificateHome from './CertificateHome';
 import TextFetcher from '../text_fetcher/TextFetcher';
 import SubscriptionSignup from './subscription_signup/SubscriptionSignup';
@@ -78,16 +77,6 @@ class MainBox extends React.Component {
               scalePicture={true}
               textVerticalAlignement="top"
               extraModules={[SignupButton(this.props.texts)]}
-            />
-          </TextFetcher>
-        </Section>
-        <Section name="statement" parentClass={parentClass}>
-          <TextFetcher id="statement-opportunities" texts={this.props.texts}>
-            <Statement
-              pictures={this.props.pictures}
-              text={emptyText}
-              pictureNames={['statement-man', 'statement-woman']}
-              textVerticalAlignement="top"
             />
           </TextFetcher>
         </Section>
