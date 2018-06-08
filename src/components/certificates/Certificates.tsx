@@ -73,8 +73,8 @@ class MainBox extends React.Component {
               pictures={this.props.pictures}
               picturePosition="right"
               pictureName="student-token-pic"
-              pictureWidth={1040}
-              pictureHeight={960}
+              pictureWidth={1150}
+              pictureHeight={1050}
               scalePicture={true}
               textVerticalAlignement="top"
               extraModules={[SignupButton(this.props.texts)]}
