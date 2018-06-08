@@ -45,11 +45,13 @@ class MainBox extends React.Component {
 
     return (
       <div className={parentClass}>
-        <Section name="home" fullHeight={true} parentClass={parentClass}>
-          <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
-            <CertificateHome text={emptyText}/>
-          </TextFetcher>
-        </Section>
+        <div className="Certificates__container">
+          <Section name="home" fullHeight={true} parentClass={parentClass}>
+            <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
+              <CertificateHome text={emptyText}/>
+            </TextFetcher>
+          </Section>
+        </div>
         <Section name="picture" fullWidth={true} parentClass={parentClass}>
           <PictureFetcher
             cropHeight={viewport => viewport.height}
@@ -72,8 +74,8 @@ class MainBox extends React.Component {
               pictures={this.props.pictures}
               picturePosition="right"
               pictureName="student-token-pic"
-              pictureWidth={950}
-              pictureHeight={905}
+              pictureWidth={1150}
+              pictureHeight={1050}
               scalePicture={true}
               textVerticalAlignement="top"
               extraModules={[SignupButton(this.props.texts)]}

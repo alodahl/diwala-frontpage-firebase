@@ -14,18 +14,21 @@ const Footer = function(props: any) {
   const color = '#5d05a7';
 
   return (
-      <footer className="Footer" id="footer">
-        {props.children}
-        <div className="Footer__bottom">
-          <div className="Footer__social-icons">
-            <SocialIcons urls={urls} color={color}/>
+      <div className="Footer__container">
+        <footer className="Footer" id="footer">
+          {props.children}
+          <div className="Footer__bottom">
+            <div className="Footer__social-icons">
+              <SocialIcons urls={urls} color={color}/>
+            </div>
+            <img className="Footer__logo" src={logo} alt="Diwala"/>
+            <div className="Footer__copyright">
+              Copyright © by Diwala. All rights reserved
+            </div>
           </div>
-          <img className="Footer__logo" src={logo} alt="Diwala"/>
-          <div className="Footer__copyright">
-            Copyright © by Diwala. All rights reserved
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
+      
   );
 };
 

@@ -11,6 +11,15 @@
 }
 
 .Certificates {
+  &__container {
+    background-color: white;
+    padding: 1px 0;  // Added to prevent margin collapse
+    @include min-breakpoint(1200px) {
+      background-color: rgba(0,0,0,0);
+      padding: 0;
+    }
+  }
+
   .subscriptionSignupForm {
     @include breakpoint(1200px){
       margin-top: 0px;
@@ -85,16 +94,20 @@
     }
 
     &--ngo {
+      min-height: 90vh;
+      background-color: white;
       display: flex;
       @include min-breakpoint(1200px){
+        background-color: rgba(0,0,0,0);
         justify-content: center;
         align-items: center;
         min-height: 60vh;
+        overflow: hidden;
       }
       @include min-breakpoint(700px){
-        justify-content: center;
+        justify-content: left;
         min-height: 60vh;
-        padding-left: 100px;
+        padding-left: 6%;
       }
       @include breakpoint(1199px){
         padding-left: 10%;
@@ -113,7 +126,7 @@
 
     &--picture{
       position: relative;
-      height: 100vh;
+      height: 400px;
       min-height: auto;
       overflow: hidden;
       &:after{
@@ -125,7 +138,7 @@
         top: 5px;
       }
       @include min-breakpoint(700px){
-        height: 80vh;
+        height: 60vh;
       }
       @include min-breakpoint(1200px){
         min-height: auto;

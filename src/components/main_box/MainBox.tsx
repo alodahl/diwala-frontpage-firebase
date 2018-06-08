@@ -43,16 +43,18 @@ class MainBox extends React.Component {
     const parentClass = 'MainBox';
     return (
       <div className={parentClass}>
-        <Section name="home" fullHeight={true} parentClass={parentClass}>
-          <TextFetcher id="hero-text" texts={this.props.texts}>
-            <Home text={emptyText}/>
-          </TextFetcher>
-        </Section>
-        <Section name="benefits" parentClass={parentClass}>
-          <TextFetcher id="benefits" texts={this.props.texts}>
-            <Benefits text={emptyText} pictures={this.props.pictures}/>
-          </TextFetcher>
-        </Section>
+        <div className="MainBox__container">
+          <Section name="home" fullHeight={true} parentClass={parentClass}>
+            <TextFetcher id="hero-text" texts={this.props.texts}>
+              <Home text={emptyText}/>
+            </TextFetcher>
+          </Section>
+          <Section name="benefits" parentClass={parentClass}>
+            <TextFetcher id="benefits" texts={this.props.texts}>
+              <Benefits text={emptyText} pictures={this.props.pictures}/>
+            </TextFetcher>
+          </Section>
+        </div>
         <Section name="picture" fullWidth={true} parentClass={parentClass}>
           <PictureFetcher
             cropHeight={viewport => viewport.height}
@@ -67,23 +69,25 @@ class MainBox extends React.Component {
               width={0}/>
           </PictureFetcher>
         </Section>
-        <Section name="missionAndPartners" parentClass={parentClass}>
-          <div id="mission">
-            <TextFetcher id="frontpage-missionstatement" texts={this.props.texts}>
-              <Mission  pictures={this.props.pictures} text={emptyText}/>
-            </TextFetcher>
-          </div>
-          <div id="partners">
-            <Filter if={this.props.partners}>
-              <Partners partners={this.props.partners}/>
+        <div className="MainBox__container">
+          <Section name="missionAndPartners" parentClass={parentClass}>
+            <div id="mission">
+              <TextFetcher id="frontpage-missionstatement" texts={this.props.texts}>
+                <Mission  pictures={this.props.pictures} text={emptyText}/>
+              </TextFetcher>
+            </div>
+            <div id="partners">
+              <Filter if={this.props.partners}>
+                <Partners partners={this.props.partners}/>
+              </Filter>
+            </div>
+          </Section>
+          <Section name="team" parentClass={parentClass}>
+            <Filter if={this.props.team}>
+              <Team team={this.props.team}/>
             </Filter>
-          </div>
-        </Section>
-        <Section name="team" parentClass={parentClass}>
-          <Filter if={this.props.team}>
-            <Team team={this.props.team}/>
-          </Filter>
-        </Section>
+          </Section>
+        </div>
       </div>
     );
   }
