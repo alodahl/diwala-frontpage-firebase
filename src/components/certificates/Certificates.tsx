@@ -46,11 +46,13 @@ class MainBox extends React.Component {
 
     return (
       <div className={parentClass}>
-        <Section name="home" fullHeight={true} parentClass={parentClass}>
-          <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
-            <CertificateHome text={emptyText}/>
-          </TextFetcher>
-        </Section>
+        <div className="Certificates__container">
+          <Section name="home" fullHeight={true} parentClass={parentClass}>
+            <TextFetcher id="certificates-hero-text" texts={this.props.texts}>
+              <CertificateHome text={emptyText}/>
+            </TextFetcher>
+          </Section>
+        </div>
         <Section name="picture" fullWidth={true} parentClass={parentClass}>
           <PictureFetcher
             cropHeight={viewport => viewport.height}
@@ -81,16 +83,18 @@ class MainBox extends React.Component {
             />
           </TextFetcher>
         </Section>
-        <Section name="statement" parentClass={parentClass}>
-          <TextFetcher id="statement-opportunities" texts={this.props.texts}>
-            <Statement
-              pictures={this.props.pictures}
-              text={emptyText}
-              pictureNames={['statement-man', 'statement-woman']}
-              textVerticalAlignement="top"
-            />
-          </TextFetcher>
-        </Section>
+        <div className="Certificates__container">
+          <Section name="statement" parentClass={parentClass}>
+            <TextFetcher id="statement-opportunities" texts={this.props.texts}>
+              <Statement
+                pictures={this.props.pictures}
+                text={emptyText}
+                pictureNames={['statement-man', 'statement-woman']}
+                textVerticalAlignement="top"
+              />
+            </TextFetcher>
+          </Section>
+        </div>
       </div>
     );
   }
