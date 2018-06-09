@@ -64,7 +64,7 @@
   @include button;
 }
 
-.App .Certificates .subscriptionSignupForm .open ~ .subscription-signup-button {
+.App .Certificates .subscriptionSignupForm .response-form ~ .subscription-signup-button {
   display: none;
 }
 
@@ -75,4 +75,8 @@
 .message {
   font-size: 15px;
   margin-bottom: 35px;
+}
+
+.response-form .restart-button {
+  max-width: 200px;
 }
