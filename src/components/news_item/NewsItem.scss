@@ -1,0 +1,34 @@
+@import "../../core/styles/utilities";
+
+.newsitem {
+  width: 270px;
+  height: 320px;
+  border: 1px solid $diwala-detail-gray;
+  border-radius: 3px;
+  margin: 10px;
+  background-color: white;
+  overflow-y: scroll;
+
+  &__section {
+    height: 50%;
+    padding: 30px;
+  }
+
+  &__logo {
+    margin: 0 auto;
+    text-align: center;
+    height: 100px;
+  }
+
+  &__quote {
+      text-align: left;
+      font-size: 16px;
+      font-family: "Roboto", sans-serif;
+      color: #333;
+      height: 50%;
+      &:before, &:after {
+        content:" \" ";
+      }
+      margin: 0;
+    }
+}
