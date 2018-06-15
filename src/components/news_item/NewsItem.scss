@@ -6,7 +6,7 @@
   border: 1px solid $diwala-detail-gray;
   border-radius: 3px;
   margin: 10px;
-  background-color: white;
+  background-color: $diwala-background;
   overflow-y: scroll;
 
   &__section {
@@ -22,9 +22,9 @@
 
   &__quote {
       text-align: left;
-      font-size: 16px;
-      font-family: "Roboto", sans-serif;
-      color: #333;
+      font-size: $font-size-base;
+      font-family: $font-family-simple;
+      color: $diwala-gray-text;
       height: 50%;
       &:before, &:after {
         content:" \" ";
