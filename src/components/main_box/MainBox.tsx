@@ -10,7 +10,6 @@ import getTeam from '../../api/team';
 
 import Partners from '../partners/Partners';
 import Team from '../team/Team';
-import NewsItem from '../news_item/NewsItem';
 
 import getPictures, { PictureData } from '../../api/pictures';
 import { loadPictures } from '../../actions/pictures';
@@ -50,10 +49,6 @@ class MainBox extends React.Component {
               <Home text={emptyText}/>
             </TextFetcher>
           </Section>
-          <NewsItem
-            logoUrl="https://www.freelogodesign.org/img/logo-ex-7.png"
-            quote="Vero eoucimus qui blanditiis praesentium vol deleniti atqu"
-          />
           <Section name="benefits" parentClass={parentClass}>
             <TextFetcher id="benefits" texts={this.props.texts}>
               <Benefits text={emptyText} pictures={this.props.pictures}/>
