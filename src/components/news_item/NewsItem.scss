@@ -21,14 +21,14 @@
   }
 
   &__quote {
-      text-align: left;
-      font-size: $font-size-base;
-      font-family: $font-family-simple;
-      color: $diwala-gray-text;
-      height: 50%;
-      &:before, &:after {
-        content:" \" ";
-      }
-      margin: 0;
+    text-align: left;
+    font-size: $font-size-base;
+    font-family: $font-family-simple;
+    color: $diwala-gray-text;
+    height: 50%;
+    &:before, &:after {
+      content:" \" ";
     }
+    margin: 0;
+  }
 }
