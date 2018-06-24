@@ -18,7 +18,7 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   return (
     <div className="website-hero" onMouseOver={() => playVideo()} onMouseOut={() => stopVideo()} >
       <video className="website-hero__video" loop preload="true">
-        <source src={videoToken} type="video/mp4" />
+        <source src={videoToken + '#t=00:00:00.5'} type="video/mp4" />
       </video>
       <div className={`website-hero__logo ${props.tokenVersion}`}>
         <div className="website-hero__text">
