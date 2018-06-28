@@ -8,7 +8,11 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   const tokenText = tokenTextObj ? tokenTextObj.value : '';
   const videoTokenLg = require('../../graphics/diwala_token_large.mp4');
   const videoTokenSm = require('../../graphics/diwala_token_small.mp4');
-  const v = document.getElementsByTagName('video')[0];
+
+  function findVideo() {
+    return document.getElementsByTagName('video')[0];
+  }
+  let video = findVideo();
 
   function videoUrl() {
     let videoToken;
@@ -25,21 +29,21 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   }
 
   function playVideo() {
-    if (v) {
-      v.play();
-    } else {
-      setTimeout(playVideo(), 100);
+    if (!video) {
+      setTimeout(findVideo(), 200);
+      // playVideo();
     }
+    video.play();
   }
 
   function stopVideo() {
-      v.pause();
+      video.pause();
   }
 
   return (
     <div className="website-hero" onMouseOver={() => playVideo()} onMouseOut={() => stopVideo()} >
       <video className="website-hero__video" loop playsInline autoPlay preload="true">
-        <source src={videoUrl()} type="video/mp4" />
+        <source className="website-hero__video-source" src={videoUrl()} type="video/mp4" />
       </video>
       <div className={`website-hero__logo ${props.tokenVersion}`}>
         <div className="website-hero__text">

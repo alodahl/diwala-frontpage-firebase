@@ -1,5 +1,5 @@
 @import "../../core/styles/utilities";
-$horizontal-device: max-height 700px;
+$horizontal-device: max-height 800px;
 
 .website-hero {
   position: absolute;
@@ -68,7 +68,7 @@ $horizontal-device: max-height 700px;
       margin-left: 5%;
     }
     @include breakpoint($horizontal-device){
-      background-image: url("#");
+      display: none;
     }
   }
 
