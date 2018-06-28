@@ -6,23 +6,32 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
     return text.label === props.textId;
   });
   const tokenText = tokenTextObj ? tokenTextObj.value : '';
-  const videoToken = require('../../graphics/diwala_token.mp4');
+  const videoTokenLg = require('../../graphics/diwala_token_large.mp4');
+  const videoTokenSm = require('../../graphics/diwala_token_small.mp4');
   const v = document.getElementsByTagName('video')[0];
+
   function videoUrl() {
+    let videoToken;
+    if (window.innerWidth < 1200) {
+      videoToken = videoTokenSm;
+    } else {
+      videoToken = videoTokenLg;
+    }
     if (props.tokenVersion === 'purple') {
       return videoToken + '#t=00:00:00.5';
     } else {
       return videoToken;
     }
   }
-  async function playVideo() {
+
+  function playVideo() {
     if (v) {
       v.play();
     } else {
       setTimeout(playVideo(), 100);
     }
-    console.log(props);
   }
+
   function stopVideo() {
       v.pause();
   }
