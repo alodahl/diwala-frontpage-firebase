@@ -1,5 +1,4 @@
 @import "../../core/styles/utilities";
-$horizontal-device: max-height 800px;
 
 .website-hero {
   position: absolute;
@@ -15,7 +14,7 @@ $horizontal-device: max-height 800px;
     width: 100%;
     margin: 120px 0 0px;
   }
-  &__logo, &__video {
+  &__logo, &__video, &__background-image {
     align-items: center;
     position: absolute;
     background-position: center center;
@@ -47,16 +46,16 @@ $horizontal-device: max-height 800px;
   }
 
   &__video {
-    &::-webkit-media-controls {
-        display:none !important;
-    }
+    -o-object-fit: contain;
+    object-fit: contain;
+    margin-top: 10vh;
     background-image: url("../../../graphics/Diwala_Token3.png");
     &.purple{
       background-image: url("../../../graphics/Diwala_Token.png");
     }
-    -o-object-fit: contain;
-    object-fit: contain;
-    margin-top: 10vh;
+    &::-webkit-media-controls {
+        display:none !important;
+    }
     @include breakpoint(1200px){
       margin-top: 20vh;
     }
@@ -67,8 +66,18 @@ $horizontal-device: max-height 800px;
       width: 90%;
       margin-left: 5%;
     }
-    @include breakpoint($horizontal-device){
-      display: none;
+    @media only screen and (max-height: 800px){
+      visibility: hidden;
+    }
+  }
+
+  &__background-image {
+    background-image: url("../../../graphics/Diwala_Token3.png");
+    &.purple{
+      background-image: url("../../../graphics/Diwala_Token.png");
+    }
+    @media only screen and (min-height: 800px){
+      visibility: hidden;
     }
   }
 

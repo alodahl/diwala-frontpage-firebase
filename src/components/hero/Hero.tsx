@@ -10,9 +10,11 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   const videoTokenSm = require('../../graphics/diwala_token_small.mp4');
 
   function findVideo() {
-    return document.getElementsByTagName('video')[0];
+    document.getElementsByTagName('video');
   }
-  let video = findVideo();
+
+  let video = document.getElementsByTagName('video')[0];
+  let playing = true;
 
   function videoUrl() {
     let videoToken;
@@ -29,15 +31,21 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   }
 
   function playVideo() {
-    if (!video) {
-      setTimeout(findVideo(), 200);
-      // playVideo();
+    if (video.readyState > 1) {
+      if (!video) {
+        setTimeout(findVideo(), 300);
+        video = document.getElementsByTagName('video')[0];
+      }
+      video.play();
+      playing = true;
     }
-    video.play();
   }
 
   function stopVideo() {
+    if ((video.readyState > 1) && (playing)) {
       video.pause();
+      playing = false;
+    }
   }
 
   return (
@@ -45,6 +53,7 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
       <video className="website-hero__video" loop playsInline autoPlay preload="true">
         <source className="website-hero__video-source" src={videoUrl()} type="video/mp4" />
       </video>
+      <div className="website-hero__background-image"/>
       <div className={`website-hero__logo ${props.tokenVersion}`}>
         <div className="website-hero__text">
           {tokenText}
