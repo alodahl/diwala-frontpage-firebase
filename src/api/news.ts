@@ -9,4 +9,5 @@ export interface NewsData extends SanityData {
   source: string;
   logo: SanityImageData;
   url: string;
+  quote: string;
 }
