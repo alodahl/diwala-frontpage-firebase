@@ -7,6 +7,8 @@ import { loadPartners } from '../../actions/partners';
 import getPartners, { PartnerData } from '../../api/partners';
 import { loadTeam } from '../../actions/team';
 import getTeam from '../../api/team';
+import { loadNews } from '../../actions/news';
+import getNews, { NewsData } from '../../api/news';
 
 import Partners from '../partners/Partners';
 import Team from '../team/Team';
@@ -27,8 +29,9 @@ class MainBox extends React.Component {
   public props: {
     texts: TextData[],
     partners: PartnerData[],
-    pictures: PictureData[];
-    team: any
+    pictures: PictureData[],
+    team: any,
+    news: NewsData[]
   };
 
   constructor(props: any) {
@@ -37,6 +40,7 @@ class MainBox extends React.Component {
     props.getPartners(loadPartners);
     props.getPictures(loadPictures);
     props.getTeam(loadTeam);
+    props.getNews(loadNews);
   }
 
   public render() {
@@ -82,6 +86,11 @@ class MainBox extends React.Component {
               </Filter>
             </div>
           </Section>
+          <Section name="news" parentClass={parentClass}>
+            <Filter if={this.props.news}>
+              {/* <MediaSlider news={this.props.news}/> */}
+            </Filter>
+          </Section>
           <Section name="team" parentClass={parentClass}>
             <Filter if={this.props.team}>
               <Team team={this.props.team}/>
@@ -99,6 +108,7 @@ const mapApiToState = (dispatch: any) => {
     getTexts: (action: any) => getTexts(dispatch, action),
     getPartners: (action: any) => getPartners(dispatch, action),
     getTeam: (action: any) => getTeam(dispatch, action),
+    getNews: (action: any) => getNews(dispatch, action),
   };
 };
 
