@@ -1,38 +1,30 @@
 import * as React from 'react';
+import { NewsData } from '../../api/news';
 
-export default function NewsItem() {
+export default function NewsItem(props: {news: NewsData[]}) {
 
-  // let newsItems = props.map((news: any[]) => {
-  //   return (
-  //     <li key={partner._id} className="news__list-item">
-  //       <a href={props.url}>
-  //         <div className="newsitem__section">
-  //           <img className="newsitem__logo" src={props.logo}/>
-  //         </div>
-  //         <div className="newsitem__section">
-  //           <blockquote className="newsitem__quote">{props.quote}</blockquote>
-  //         </div>
-  //       </a>
-  //     </li>
-  //   );
-  // });
+  const newsItems = props.news.map((newsItem, key) => {
+   return (
+     <li key={newsItem._id} className="newsItem__list-item">
+         <div className="newsItem__section">
+           <a href={newsItem.url}>
+             <img className="newsItem__logo" src={newsItem.logo}/>
+           </a>
+         </div>
+         <div className="newsItem__section">
+           <a href={newsItem.url}>
+             <blockquote className="newsItem__quote">{newsItem.quote}</blockquote>
+           </a>
+         </div>
+     </li>
+    );
+  });
 
   return (
-    <div className="newsitem">
-      <li className="newsitem__list-item">
-        {/* key={partner._id} */}
-          <div className="newsitem__section">
-            <a href="google.com">
-              <img className="newsitem__logo" src="http://www.pngall.com/wp-content/uploads/2016/06/Superman-Logo-Free-Download-PNG.png"/>
-            </a>
-          </div>
-          <div className="newsitem__section">
-            <a href="google.com">
-              <blockquote className="newsitem__quote">jkbfvk kjdbfkl vjbw; kbjv kjwdvk lkjd uehvkljwbv. kjdbfkl vjbw; kbjv kjwdvk lkjd uehvkljwbv</blockquote>
-            </a>
-          </div>
-      </li>
-      {/* {newsItems} */}
+    <div className="newsItem">
+      <ul>
+      {newsItems}
+      </ul>
     </div>
   );
 

@@ -11,7 +11,7 @@ import { loadNews } from '../../actions/news';
 import getNews, { NewsData } from '../../api/news';
 
 import Partners from '../partners/Partners';
-import MediaSlider from '../media_slider/MediaSlider';
+import News from '../news/News';
 import Team from '../team/Team';
 
 import getPictures, { PictureData } from '../../api/pictures';
@@ -89,7 +89,7 @@ class MainBox extends React.Component {
           </Section>
           <Section name="news" parentClass={parentClass}>
             <Filter if={this.props.news}>
-              {/* <MediaSlider news={this.props.news}/> */}
+              <News news={this.props.news}/>
             </Filter>
           </Section>
           <Section name="team" parentClass={parentClass}>

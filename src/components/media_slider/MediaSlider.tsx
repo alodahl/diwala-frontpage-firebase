@@ -1,8 +1,9 @@
 import * as React from 'react';
 import Slider from 'react-slick';
 import NewsItem from '../news_item/NewsItem';
+import { NewsData } from '../../api/news';
 
-export default function MediaSlider() {
+export default function MediaSlider(props: {news: NewsData[]}) {
 
     var settings = {
       dots: true,
@@ -24,18 +25,7 @@ export default function MediaSlider() {
 
     return (
       <Slider className="media-slider" {...settings}>
-        <div>
-          <NewsItem key="1"/>
-        </div>
-        <div>
-          <NewsItem key="2"/>
-        </div>
-        <div>
-          <NewsItem key="3"/>
-        </div>
-        <div>
-          <NewsItem key="4"/>
-        </div>
+          <NewsItem news={props.news}/>
       </Slider>
     );
 
