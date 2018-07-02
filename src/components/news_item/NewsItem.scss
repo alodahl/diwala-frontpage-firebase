@@ -7,7 +7,15 @@
   border-radius: 3px;
   margin: 10px;
   background-color: $diwala-background;
-  overflow-y: scroll;
+  color: transparent;
+
+  :first-child {
+    // background-color: $diwala-gray-background;
+  }
+
+  &__list-item {
+     height: 100%;
+   }
 
   &__section {
     height: 50%;
