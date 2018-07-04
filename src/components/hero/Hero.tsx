@@ -6,8 +6,8 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
     return text.label === props.textId;
   });
   const tokenText = tokenTextObj ? tokenTextObj.value : '';
-  const videoTokenLg = require('../../graphics/diwala_token_large.mp4');
-  const videoTokenSm = require('../../graphics/diwala_token_small.mp4');
+  const videoTokenLg = require('../../graphics/Diwala_Animation_5M.mp4');
+  const videoTokenSm = require('../../graphics/Diwala_Animation_840K.mp4');
 
   function findVideo() {
     document.getElementsByTagName('video');
