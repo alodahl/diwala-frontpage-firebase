@@ -22,12 +22,13 @@ export default function NewsItem(props: {news: NewsData[]}) {
       );
   });
 
-  return (
-    <div className="newsItem">
-      <ul>
-      {newsItems}
-      </ul>
-    </div>
-  );
+  return newsItems;
+  // return (
+  //   <div className="newsItem">
+  //     <ul>
+  //     {newsItems}
+  //     </ul>
+  //   </div>
+  // );
 
 }
