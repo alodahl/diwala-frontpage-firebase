@@ -18,7 +18,7 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
 
   function videoUrl() {
     let videoToken;
-    if (window.innerWidth < 1200) {
+    if (window.innerWidth < 1081) {
       videoToken = videoTokenSm;
     } else {
       videoToken = videoTokenLg;
@@ -31,7 +31,7 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   }
 
   function playVideo() {
-    if (video.readyState > 1) {
+    if (video && (video.readyState > 1)) {
       if (!video) {
         setTimeout(findVideo(), 300);
         video = document.getElementsByTagName('video')[0];
@@ -42,7 +42,7 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   }
 
   function stopVideo() {
-    if ((video.readyState > 1) && (playing)) {
+    if (video && (video.readyState > 1) && (playing)) {
       video.pause();
       playing = false;
     }
@@ -53,8 +53,8 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
       <video className="website-hero__video" loop playsInline autoPlay preload="true">
         <source className="website-hero__video-source" src={videoUrl()} type="video/mp4" />
       </video>
-      <div className="website-hero__background-image"/>
-      <div className={`website-hero__logo ${props.tokenVersion}`}>
+      <div className={`website-hero__background-image ${props.tokenVersion}`}/>
+      <div className="website-hero__logo">
         <div className="website-hero__text">
           {tokenText}
         </div>
