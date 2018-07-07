@@ -9,23 +9,21 @@
   background-color: $diwala-background;
   color: transparent;
 
-  :first-child {
-    // background-color: $diwala-gray-background;
-  }
-
   &__list-item {
-     height: 100%;
+     height: 320px;
    }
 
   &__section {
-    height: 50%;
+    height: 130px;
     padding: 30px;
+    text-overflow: ellipsis;
   }
 
   &__logo {
     margin: 0 auto;
     text-align: center;
-    height: 100px;
+    max-height: 100%;
+    max-width: 80%;
   }
 
   &__quote {
@@ -34,9 +32,9 @@
     font-family: $font-family-simple;
     color: $diwala-gray-text;
     height: 50%;
-    &:before, &:after {
-      content:" \" ";
-    }
+    // &:before, &:after {
+    //   content:" \" ";
+    // }
     margin: 0;
   }
 }

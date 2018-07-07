@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Slider from 'react-slick';
-import NewsItems from '../news_item/NewsItem';
+import NewsItem from '../news_item/NewsItem';
 import { NewsData } from '../../api/news';
 
 export default function MediaSlider(props: {news: NewsData[]}) {
@@ -10,8 +10,11 @@ export default function MediaSlider(props: {news: NewsData[]}) {
       dotsClass: 'slick-dots',
       centerMode: true,
       centerPadding: '20px',
-      speed: 300,
-      slidesToShow: 3,
+      speed: 200,
+      slidesToShow: 5,
+      // if there are less than 5 slides, the infinite scroll
+      // doesnt function the way we want, so the slides in <Slider>
+      // are doubled to prevent that.  5 or more works normally.
       slidesToScroll: 1,
       infinite: true,
       multipleItems: true,
@@ -23,9 +26,15 @@ export default function MediaSlider(props: {news: NewsData[]}) {
       mobileFirst: true
     };
 
+    const newsItems = props.news.map((newsItem, index) => {
+            console.log(newsItem);
+            return (<NewsItem news={newsItem} key={index} />);
+    });
+
     return (
       <Slider className="media-slider" {...settings}>
-          {NewsItems}
+          {newsItems}
+          {(newsItems.length < 5) ? newsItems : null}
       </Slider>
     );
 

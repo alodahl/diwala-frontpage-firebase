@@ -124,7 +124,9 @@
       margin: 0 auto;
       position: relative;
       overflow: hidden;
-      @extend .logo-container;
+      .news-container .title {
+        @extend .logo-container;
+      }
     }
 
     &--support {

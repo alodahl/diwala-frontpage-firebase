@@ -2,19 +2,24 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 .media-slider {
-  width: 950px;
+  width: 1600px;
   position: absolute;
   left: -9999px;
   right: -9999px;
   margin: 0 auto;
-  padding-left: 10px;
+  padding-left: 40px;
+  padding-right: 30px;
   :focus {
     outline: none;
   }
 }
 
+.slick-active.slick-center .newsItem {
+  background-color: $diwala-gray-background;
+}
+
 .slick-dots {
-  padding-right: 23px;
+  padding-right: 80px;
   li.slick-active button:before {
     font-size:0;
     content: url('../../../graphics/Diwala_Token3_Icon.png');

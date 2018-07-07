@@ -1,34 +1,23 @@
 import * as React from 'react';
 import { urlFor } from '../../core/utilities/image-builder.functions';
-import { NewsData } from '../../api/news';
 
-export default function NewsItem(props: {news: NewsData[]}) {
+export default function NewsItem(props: any) {
+  
+  const logoUrl = urlFor(props.news.logo).url();
 
-  const newsItems = props.news.map((newsItem, key) => {
-    const url = urlFor(newsItem.logo).url();
-    return (
-       <li key={newsItem._id} className="newsItem__list-item">
-           <div className="newsItem__section">
-             <a href={newsItem.url}>
-               <img className="newsItem__logo" src={url}/>
-             </a>
-           </div>
-           <div className="newsItem__section">
-             <a href={newsItem.url}>
-               <blockquote className="newsItem__quote">{newsItem.quote}</blockquote>
-             </a>
-           </div>
-       </li>
-      );
-  });
-
-  return newsItems;
-  // return (
-  //   <div className="newsItem">
-  //     <ul>
-  //     {newsItems}
-  //     </ul>
-  //   </div>
-  // );
+  return (
+  <li key={props.news.key} className="newsItem newsItem__list-item">
+      <div className="newsItem__section">
+        <a href={props.news.url}>
+          <img className="newsItem__logo" src={logoUrl}/>
+        </a>
+      </div>
+      <div className="newsItem__section">
+        <a href={props.news.url}>
+          <blockquote className="newsItem__quote">{props.news.quote}</blockquote>
+        </a>
+      </div>
+  </li>
+  );
 
 }
