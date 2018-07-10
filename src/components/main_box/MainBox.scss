@@ -119,13 +119,16 @@
     }
 
     &--news {
-      min-height: 600px;
+      min-height: 530px;
       text-align: left;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
       .news-container .title {
         @extend .logo-container;
+      }
+      @include min-breakpoint(1200px) {
+        min-height: 580px;
       }
     }
 
