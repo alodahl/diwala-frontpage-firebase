@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { TextData } from '../../api/texts';
+const videoBkgrd = require('../../graphics/Diwala_Token3.png');
 
 export default function Hero(props: { text: TextData, textId: string, tokenVersion?: string }) {
   const tokenTextObj = props.text.value.find((text: any) => {
@@ -52,6 +53,7 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
     <div className="website-hero" onMouseOver={() => playVideo()} onMouseOut={() => stopVideo()} >
       <video className="website-hero__video" loop playsInline autoPlay preload="true">
         <source className="website-hero__video-source" src={videoUrl()} type="video/mp4" />
+        <img src={videoBkgrd} title="Your browser does not support the <video> tag"/>
       </video>
       <div className={`website-hero__background-image ${props.tokenVersion}`}/>
       <div className="website-hero__logo">
