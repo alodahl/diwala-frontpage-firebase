@@ -86,11 +86,11 @@ class MainBox extends React.Component {
               </Filter>
             </div>
           </Section>
-          <Section name="news" parentClass={parentClass}>
+          {/* <Section name="news" parentClass={parentClass}>
             <Filter if={this.props.news}>
-              {/* <MediaSlider news={this.props.news}/> */}
+              <MediaSlider news={this.props.news}/>
             </Filter>
-          </Section>
+          </Section> */}
           <Section name="team" parentClass={parentClass}>
             <Filter if={this.props.team}>
               <Team team={this.props.team}/>

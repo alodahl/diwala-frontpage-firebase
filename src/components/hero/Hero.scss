@@ -62,7 +62,7 @@
       width: 90%;
       margin-left: 5%;
     }
-    @media only screen and (max-height: 800px){
+    @media only screen and (max-height: 600px){
       visibility: hidden;
     }
   }
@@ -72,8 +72,20 @@
     &.purple{
       background-image: url("../../../graphics/Diwala_Token.png");
     }
-    @media only screen and (min-height: 800px){
+    @media only screen and (max-height: 600px){
+      background-size: 290px auto;
+    }
+    @media only screen and (min-height: 601px){
       visibility: hidden;
+      margin-top: 10vh;
+    }
+  }
+
+  &__logo {
+    @media only screen and (min-height: 601px){
+      @include breakpoint(1200px){
+        margin-top: 20vh;
+      }
     }
   }
 
@@ -96,10 +108,20 @@
     @include breakpoint(700px){
       font-size: 26px;
       max-width: 350px;
+      margin-top: -40vh;
     }
     @include breakpoint('xs'){
       font-size: 20px;
       max-width: 263px;
+      margin-top: 3vh;
+      @media only screen and (min-height: 601px){
+        margin-top: -40vh;
+      }
+    }
+    @media only screen and (max-height: 600px){
+      font-size: 20px;
+      max-width: 263px;
+      margin-top: 0vh;
     }
   }
 
