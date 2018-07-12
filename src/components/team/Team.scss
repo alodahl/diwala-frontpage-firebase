@@ -33,6 +33,13 @@
   }
 }
 
+.team__person-social-icons {
+  .social-icon {
+    height: 25px !important;
+    width: 25px !important;
+  }
+}
+
 .team--core {
   .team__person-image {
     max-width: 200px;

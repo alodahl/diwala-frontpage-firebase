@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { urlFor } from '../../core/utilities/image-builder.functions';
+import { SocialIcons } from 'react-social-icons';
 // import { getViewportWidth } from '../../core/utilities/viewport.functions';
 
 export default function Team(props: any) {
@@ -13,6 +14,8 @@ export default function Team(props: any) {
     .sort((a: any, b: any) => a.order - b.order);
 
   // const imageWidth = Math.round(getViewportWidth() / 4);
+
+  const socialIconColor = '#898989';
   
   const TeamCore = () => {
     if (teamCore.length > 0) {
@@ -24,6 +27,9 @@ export default function Team(props: any) {
               <img className="team__person-image" src={url}/>
               <div className="team__person-name">{person.name}</div>
               <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
+              <div className="team__person-social-icons">
+                <SocialIcons urls={person.linkedin ? [person.linkedin] : []} color={socialIconColor}/>
+              </div>
             </a>
           </li>
         );
@@ -42,6 +48,9 @@ export default function Team(props: any) {
             <img className="team__person-image" src={url}/>
             <div className="team__person-name">{person.name}</div>
             <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
+            <div className="team__person-social-icons">
+              <SocialIcons urls={person.linkedin ? [person.linkedin] : []} color={socialIconColor}/>
+            </div>
           </li>
         );
       });
