@@ -14,36 +14,75 @@
     width: 100%;
     margin: 120px 0 0px;
   }
-  &__logo {
+  &__logo, &__video, &__background-image {
     align-items: center;
-    background-image: url("../../../graphics/Diwala_Token3.png");
-    &.purple{
-      background-image: url("../../../graphics/Diwala_Token.png");
-    }
+    position: absolute;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;
-    height: 80vh;
+    height: 80%;
     justify-content: center;
-    margin-top: 10vh;
     text-align: center;
     vertical-align: center;
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
     @include breakpoint(1200px){
       height: 60vh;
       margin-top: 20vh;
     }
     @include breakpoint(1000px) {
       background-size: 500px auto;
-      height: 100%;
-      margin-top: 0;
+      height: 60vh;
     }
     @include breakpoint(700px){
       background-size: 400px auto;
+      height: 100%;
+      margin-top: 0;
     }
     @include breakpoint('xs'){
       background-size: 290px auto;
+    }
+  }
+
+  &__video {
+    -o-object-fit: contain;
+    object-fit: contain;
+    margin-top: 10vh;
+    &::-webkit-media-controls {
+        display:none !important;
+    }
+    @include breakpoint(1200px){
+      margin-top: 20vh;
+    }
+    @include breakpoint(700px) {
+      margin-top: 0;
+    }
+    @include breakpoint(365px){
+      width: 90%;
+      margin-left: 5%;
+    }
+    @media only screen and (max-height: 600px){
+      visibility: hidden;
+    }
+  }
+
+  &__background-image {
+    background-image: url("../../../graphics/Diwala_Token3.png");
+    @media only screen and (max-height: 600px){
+      background-size: 290px auto;
+    }
+    @media only screen and (min-height: 601px){
+      visibility: hidden;
+      margin-top: 10vh;
+    }
+  }
+
+  &__logo {
+    @media only screen and (min-height: 601px){
+      @include breakpoint(1200px){
+        margin-top: 20vh;
+      }
     }
   }
 
@@ -53,9 +92,11 @@
     max-width: 458px;
     font-size: 36px;
     margin: 0;
+    margin-top: 20vh;
     @include breakpoint(1200px) {
       font-size: 32px;
       max-width: 420px;
+      margin-top: 0;
     }
     @include breakpoint(1000px) {
       font-size: 30px;
@@ -64,10 +105,20 @@
     @include breakpoint(700px){
       font-size: 26px;
       max-width: 350px;
+      margin-top: -40vh;
     }
     @include breakpoint('xs'){
       font-size: 20px;
       max-width: 263px;
+      margin-top: 3vh;
+      @media only screen and (min-height: 601px){
+        margin-top: -40vh;
+      }
+    }
+    @media only screen and (max-height: 600px){
+      font-size: 20px;
+      max-width: 263px;
+      margin-top: 0vh;
     }
   }
 
@@ -148,5 +199,27 @@
       width: 30px !important;
       margin: 0 5px;
     }
+  }
+
+}
+
+.website-hero.purple {
+  .website-hero__logo {
+    background-image: url("../../../graphics/Diwala_Token.png");
+      @include breakpoint(700px){
+        margin-top: 0vh;
+      }
+      @include min-breakpoint(700px){
+        margin-top: 10vh;
+        @include breakpoint(1200px){
+          margin-top: 20vh;
+        }
+      }
+  }
+  .website-hero__text {
+    margin-top: 0vh;
+  }
+  video, .website-hero__background-image {
+      display: none;
   }
 }
