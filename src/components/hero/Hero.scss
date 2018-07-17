@@ -69,9 +69,6 @@
 
   &__background-image {
     background-image: url("../../../graphics/Diwala_Token3.png");
-    &.purple{
-      background-image: url("../../../graphics/Diwala_Token.png");
-    }
     @media only screen and (max-height: 600px){
       background-size: 290px auto;
     }
@@ -204,4 +201,25 @@
     }
   }
 
+}
+
+.website-hero.purple {
+  .website-hero__logo {
+    background-image: url("../../../graphics/Diwala_Token.png");
+      @include breakpoint(700px){
+        margin-top: 0vh;
+      }
+      @include min-breakpoint(700px){
+        margin-top: 10vh;
+        @include breakpoint(1200px){
+          margin-top: 20vh;
+        }
+      }
+  }
+  .website-hero__text {
+    margin-top: 0vh;
+  }
+  video, .website-hero__background-image {
+      display: none;
+  }
 }

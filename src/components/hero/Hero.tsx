@@ -8,7 +8,7 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   });
   const tokenText = tokenTextObj ? tokenTextObj.value : '';
   const videoTokenLg = require('../../graphics/Diwala_Animation_5M.mp4');
-  const videoTokenSm = require('../../graphics/Diwala_Animation_840K.mp4');
+  const videoTokenSm = require('../../graphics/Diwala_Animation_1M.mp4');
 
   function findVideo() {
     document.getElementsByTagName('video');
@@ -24,11 +24,7 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
     } else {
       videoToken = videoTokenLg;
     }
-    if (props.tokenVersion === 'purple') {
-      return videoToken + '#t=00:00:00.5';
-    } else {
-      return videoToken;
-    }
+    return videoToken;
   }
 
   function playVideo() {
@@ -50,13 +46,13 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   }
 
   return (
-    <div className="website-hero" onMouseOver={() => playVideo()} onMouseOut={() => stopVideo()} >
-      <video className="website-hero__video" loop playsInline autoPlay preload="true">
+    <div className={`website-hero ${props.tokenVersion}`} onMouseOver={() => playVideo()} onMouseOut={() => stopVideo()} >
+      <video className={`website-hero__video`} loop playsInline autoPlay preload="true">
         <source className="website-hero__video-source" src={videoUrl()} type="video/mp4" />
         <img src={videoBkgrd} title="Your browser does not support the <video> tag"/>
       </video>
-      <div className={`website-hero__background-image ${props.tokenVersion}`}/>
-      <div className="website-hero__logo">
+      <div className={`website-hero__background-image`}/>
+      <div className={`website-hero__logo`}>
         <div className="website-hero__text">
           {tokenText}
         </div>
