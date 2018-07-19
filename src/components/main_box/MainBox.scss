@@ -127,8 +127,8 @@
       .news-container .title {
         @extend .logo-container;
       }
-      @include min-breakpoint(1200px) {
-        min-height: 580px;
+      @include breakpoint(402px) {
+        min-height: 644px;
       }
     }
 

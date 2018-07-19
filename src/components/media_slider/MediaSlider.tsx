@@ -9,22 +9,15 @@ export default function MediaSlider(props: {news: NewsData[]}) {
       dots: true,
       dotsClass: 'slick-dots',
       centerMode: true,
-      // centerPadding: '20px',
       speed: 200,
       slidesToShow: 3,
-      // if there are less than 5 slides, the infinite scroll
-      // doesnt function the way we want, so the slides in <Slider>
-      // are doubled to prevent that.  5 or more works normally.
-      slidesToScroll: 1,
-      infinite: true,
       variableWidth: true,
       multipleItems: true,
       focusOnSelect: true,
       focusOnChange: true,
-      accessibility: true,
-      draggable: true,
       touchMove: true,
-      mobileFirst: true
+      mobileFirst: true,
+      touchThreshold: 8
     };
 
     const newsItems = props.news.map((newsItem, index) => {
@@ -34,7 +27,7 @@ export default function MediaSlider(props: {news: NewsData[]}) {
     return (
       <Slider className="media-slider" {...settings}>
           {newsItems}
-          {(newsItems.length < 5) ? newsItems : null}
+          {(newsItems.length < 3) ? newsItems : null}
       </Slider>
     );
 

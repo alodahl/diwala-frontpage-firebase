@@ -1,8 +1,8 @@
 @import "../../core/styles/utilities";
 
 .newsItem {
-  width: 250px;
-  height: 300px;
+  width: 280px;
+  height: 330px;
   border: 1px solid $diwala-detail-gray;
   border-radius: 3px;
   margin: 15px;
@@ -11,11 +11,11 @@
   text-overflow: clip;
 
   &__list-item {
-     height: 300px;
+     height: 330px;
    }
 
   &__section {
-    height: 125px;
+    height: 130px;
     padding: 30px;
   }
 
@@ -28,7 +28,7 @@
 
   &__quote {
     text-align: left;
-    font-size: $font-size-small;
+    font-size: $font-size-base;
     font-family: $font-family-simple;
     color: $diwala-gray-text;
     height: 50%;
