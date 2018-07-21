@@ -29,6 +29,7 @@ export default function Team(props: any) {
               <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
               <div className="team__person-social-icons">
                 <SocialIcons urls={person.linkedin ? [person.linkedin] : []} color={socialIconColor}/>
+                <SocialIcons urls={person.email ? [`mailto:${person.email}`] : []} color={socialIconColor}/>
               </div>
             </a>
           </li>
@@ -50,6 +51,7 @@ export default function Team(props: any) {
             <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
             <div className="team__person-social-icons">
               <SocialIcons urls={person.linkedin ? [person.linkedin] : []} color={socialIconColor}/>
+              <SocialIcons urls={person.email ? [`mailto:${person.email}`] : []} color={socialIconColor}/>
             </div>
           </li>
         );

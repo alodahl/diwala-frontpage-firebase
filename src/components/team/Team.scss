@@ -34,8 +34,11 @@
 }
 
 .team__person-social-icons {
+  display: flex;
+  justify-content: center;
   .social-icon {
     height: 25px !important;
+    margin: 0 5px;
     width: 25px !important;
   }
 }
