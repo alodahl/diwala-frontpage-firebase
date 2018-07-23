@@ -1,23 +1,29 @@
 @import "../../core/styles/utilities";
 
-.newsitem {
-  width: 270px;
-  height: 320px;
+.newsItem {
+  width: 280px;
+  height: 330px;
   border: 1px solid $diwala-detail-gray;
   border-radius: 3px;
-  margin: 10px;
+  margin: 15px;
   background-color: $diwala-background;
-  overflow-y: scroll;
+  color: transparent;
+  text-overflow: clip;
+
+  &__list-item {
+     height: 330px;
+   }
 
   &__section {
-    height: 50%;
+    height: 130px;
     padding: 30px;
   }
 
   &__logo {
     margin: 0 auto;
     text-align: center;
-    height: 100px;
+    max-height: 100%;
+    max-width: 80%;
   }
 
   &__quote {
@@ -26,9 +32,6 @@
     font-family: $font-family-simple;
     color: $diwala-gray-text;
     height: 50%;
-    &:before, &:after {
-      content:" \" ";
-    }
     margin: 0;
   }
 }

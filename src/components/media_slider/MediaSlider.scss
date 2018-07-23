@@ -1,0 +1,36 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import "../../core/styles/colors.scss";
+
+.media-slider {
+  width: 970px;
+  height: 360px;
+  position: absolute;
+  left: -9999px;
+  right: -9999px;
+  margin: 10px auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  :focus {
+    outline: none;
+  }
+}
+
+.slick-active.slick-center .newsItem {
+  background-color: $diwala-gray-background;
+}
+
+.slick-track {
+  height: 500px;
+}
+
+.slick-dots {
+  padding-right: 60px;
+  li.slick-active button:before {
+    font-size:0;
+    content: url('../../../graphics/Diwala_Token3_Icon.png');
+  }
+  li button:before {
+    font-size: 12px;
+  }
+}
