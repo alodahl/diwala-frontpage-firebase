@@ -124,7 +124,7 @@
       margin: 0 auto;
       position: relative;
       overflow: hidden;
-      .news-container .title {
+      .news-container {
         @extend .logo-container;
       }
       @include breakpoint(402px) {
