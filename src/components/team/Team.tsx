@@ -15,7 +15,7 @@ export default function Team(props: any) {
 
   // const imageWidth = Math.round(getViewportWidth() / 4);
 
-  const socialIconColor = '#898989';
+  const socialIconColor = '#580394';
   
   const TeamCore = () => {
     if (teamCore.length > 0) {

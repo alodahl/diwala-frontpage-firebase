@@ -117,6 +117,10 @@
       min-height: 3em;
     }
   }
+  .social-icon {
+    height: 18px !important;
+    width: 18px !important;
+  }
   @media (min-width: $item-width * 3 + $base-space-size * 5) {
     .team__title {
       height: auto;
