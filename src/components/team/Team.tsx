@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { urlFor } from '../../core/utilities/image-builder.functions';
 import { SocialIcons } from 'react-social-icons';
+import styles from './Team';
 // import { getViewportWidth } from '../../core/utilities/viewport.functions';
 
 export default function Team(props: any) {
@@ -15,7 +16,8 @@ export default function Team(props: any) {
 
   // const imageWidth = Math.round(getViewportWidth() / 4);
 
-  const socialIconColor = '#580394';
+  // const socialIconColor = '#580394';
+  const socialIconColor:string = styles.diwalaIconPurple;
   
   const TeamCore = () => {
     if (teamCore.length > 0) {
