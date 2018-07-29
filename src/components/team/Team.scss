@@ -2,6 +2,10 @@
 @import "../../core/styles/containers";
 @import "../../core/styles/colors";
 
+:export {
+  diwalaIconPurple: $diwalaIconPurple;
+}
+
 .team__title {
   &--core {
     @include typography-title-h1;

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { urlFor } from '../../core/utilities/image-builder.functions';
 import { SocialIcons } from 'react-social-icons';
-import styles from './Team';
-// import { getViewportWidth } from '../../core/utilities/viewport.functions';
+
+const styles = require('./Team.scss');
 
 export default function Team(props: any) {
   const team: any[] = props.team;
@@ -14,11 +14,8 @@ export default function Team(props: any) {
     .filter( teamMember => teamMember.type !== 'core')
     .sort((a: any, b: any) => a.order - b.order);
 
-  // const imageWidth = Math.round(getViewportWidth() / 4);
+  const socialIconColor = styles.diwalaIconPurple;
 
-  // const socialIconColor = '#580394';
-  const socialIconColor:string = styles.diwalaIconPurple;
-  
   const TeamCore = () => {
     if (teamCore.length > 0) {
       return teamCore.map((person: any, key: any) => {
