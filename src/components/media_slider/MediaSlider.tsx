@@ -24,6 +24,21 @@ export default function MediaSlider(props: {news: NewsData[]}) {
             return (<NewsItem news={newsItem} key={index} />);
     });
 
+    async function showMenuToken() {
+      try {
+        await document.getElementsByClassName('slick-dots')[0].childNodes[2];
+        const centerDot =  await document.getElementsByClassName('slick-dots')[0].childNodes[2].childNodes[0] as HTMLElement;
+        await centerDot.classList.add('showToken');
+        await document.getElementsByClassName('media-slider')[0].addEventListener('click', () => { centerDot.classList.remove('showToken'); });
+        console.log(centerDot);
+        return;
+      } catch (err) {
+        console.log('Error: ', err.message);
+      }
+    }
+
+    setTimeout(showMenuToken(), 1000);
+
     return (
       <Slider className="media-slider" {...settings}>
           {newsItems}
