@@ -30,7 +30,9 @@ export default function MediaSlider(props: {news: NewsData[]}) {
         await document.getElementsByClassName('slick-dots')[0].childNodes[2];
         const centerDot =  await document.getElementsByClassName('slick-dots')[0].childNodes[2] as HTMLElement;
         await centerDot.classList.add('default-active');
-        await document.getElementsByClassName('media-slider')[0].addEventListener('change', () => { centerDot.classList.remove('default-active'); });
+        let hideDefaultToken = function () {centerDot.classList.remove('default-active'); };
+        await document.getElementsByClassName('media-slider')[0].addEventListener('change', hideDefaultToken);
+        await document.getElementsByClassName('slick-dots')[0].addEventListener('click', hideDefaultToken);
         return;
       } catch (err) {
         console.log('Error: ', err.message);
