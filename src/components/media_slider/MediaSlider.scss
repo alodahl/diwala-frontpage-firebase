@@ -32,12 +32,12 @@
   @media screen and (max-width: 1080px) {
     padding-right: 60px;
   }
-  li.slick-active button, li button.showToken {
+  li.slick-active button, li.default-active button {
     position: absolute;
     right: 3px;
     top: 5px;
   }
-  li.slick-active button:before, li button.showToken:before {
+  li.slick-active button:before, li.default-active button:before {
     content: url('../../../graphics/Diwala_Token3_Icon.png');
     transform: scale(.45);
     opacity: 1;

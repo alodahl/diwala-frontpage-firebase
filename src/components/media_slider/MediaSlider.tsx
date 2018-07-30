@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import Slider from 'react-slick';
 import NewsItem from '../news_item/NewsItem';
@@ -27,17 +28,24 @@ export default function MediaSlider(props: {news: NewsData[]}) {
     async function showMenuToken() {
       try {
         await document.getElementsByClassName('slick-dots')[0].childNodes[2];
-        const centerDot =  await document.getElementsByClassName('slick-dots')[0].childNodes[2].childNodes[0] as HTMLElement;
-        await centerDot.classList.add('showToken');
-        await document.getElementsByClassName('media-slider')[0].addEventListener('click', () => { centerDot.classList.remove('showToken'); });
-        console.log(centerDot);
+        const centerDot =  await document.getElementsByClassName('slick-dots')[0].childNodes[2] as HTMLElement;
+        await centerDot.classList.add('default-active');
+        await document.getElementsByClassName('media-slider')[0].addEventListener('change', () => { centerDot.classList.remove('default-active'); });
         return;
       } catch (err) {
         console.log('Error: ', err.message);
       }
     }
 
-    setTimeout(showMenuToken(), 1000);
+    async function tryLoadingToken() {
+      if (document.getElementsByClassName('slick-dots').length > 0) {
+        showMenuToken();
+      } else {
+        setTimeout(() => showMenuToken(), 1000);
+      }
+    }
+
+    tryLoadingToken();
 
     return (
       <Slider className="media-slider" {...settings}>
