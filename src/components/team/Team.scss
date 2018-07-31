@@ -1,5 +1,10 @@
 @import "../../core/styles/utilities";
 @import "../../core/styles/containers";
+@import "../../core/styles/colors";
+
+:export {
+  diwalaIconPurple: $diwalaIconPurple;
+}
 
 .team__title {
   &--core {
@@ -30,6 +35,16 @@
     &--others .team__title--others {
       display: none;
     }
+  }
+}
+
+.team__person-social-icons {
+  display: flex;
+  justify-content: center;
+  .social-icon {
+    height: 25px !important;
+    margin: 0 5px;
+    width: 25px !important;
   }
 }
 
@@ -106,6 +121,10 @@
     .team__person-title {
       min-height: 3em;
     }
+  }
+  .social-icon {
+    height: 18px !important;
+    width: 18px !important;
   }
   @media (min-width: $item-width * 3 + $base-space-size * 5) {
     .team__title {

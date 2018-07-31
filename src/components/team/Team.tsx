@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { urlFor } from '../../core/utilities/image-builder.functions';
-// import { getViewportWidth } from '../../core/utilities/viewport.functions';
+import { SocialIcons } from 'react-social-icons';
+
+const styles = require('../../compiled_css/components/team/Team.css');
 
 export default function Team(props: any) {
   const team: any[] = props.team;
@@ -12,19 +14,21 @@ export default function Team(props: any) {
     .filter( teamMember => teamMember.type !== 'core')
     .sort((a: any, b: any) => a.order - b.order);
 
-  // const imageWidth = Math.round(getViewportWidth() / 4);
-  
+  const socialIconColor = styles.diwalaIconPurple;
+
   const TeamCore = () => {
     if (teamCore.length > 0) {
       return teamCore.map((person: any, key: any) => {
         const url = person.image ? urlFor(person.image).url() : '';
         return (
           <li key={person._id} className={`team__person team__person--role-${person.type}`}>
-            <a href={person.linkedin ? person.linkedin : 'javascript:void(0)'} target="_blank">
-              <img className="team__person-image" src={url}/>
-              <div className="team__person-name">{person.name}</div>
-              <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
-            </a>
+            <img className="team__person-image" src={url}/>
+            <div className="team__person-name">{person.name}</div>
+            <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
+            <div className="team__person-social-icons">
+              <SocialIcons urls={person.linkedin ? [person.linkedin] : []} color={socialIconColor}/>
+              <SocialIcons urls={person.email ? [`mailto:${person.email}`] : []} color={socialIconColor}/>
+            </div>
           </li>
         );
       });
@@ -42,6 +46,10 @@ export default function Team(props: any) {
             <img className="team__person-image" src={url}/>
             <div className="team__person-name">{person.name}</div>
             <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
+            <div className="team__person-social-icons">
+              <SocialIcons urls={person.linkedin ? [person.linkedin] : []} color={socialIconColor}/>
+              <SocialIcons urls={person.email ? [`mailto:${person.email}`] : []} color={socialIconColor}/>
+            </div>
           </li>
         );
       });
