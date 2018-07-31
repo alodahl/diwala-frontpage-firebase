@@ -2,7 +2,7 @@ import * as React from 'react';
 import { urlFor } from '../../core/utilities/image-builder.functions';
 import { SocialIcons } from 'react-social-icons';
 
-const styles = require('./Team.scss');
+const styles = require('../../compiled_css/components/team/Team.css');
 
 export default function Team(props: any) {
   const team: any[] = props.team;
@@ -22,15 +22,13 @@ export default function Team(props: any) {
         const url = person.image ? urlFor(person.image).url() : '';
         return (
           <li key={person._id} className={`team__person team__person--role-${person.type}`}>
-            <a href={person.linkedin ? person.linkedin : 'javascript:void(0)'} target="_blank">
-              <img className="team__person-image" src={url}/>
-              <div className="team__person-name">{person.name}</div>
-              <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
-              <div className="team__person-social-icons">
-                <SocialIcons urls={person.linkedin ? [person.linkedin] : []} color={socialIconColor}/>
-                <SocialIcons urls={person.email ? [`mailto:${person.email}`] : []} color={socialIconColor}/>
-              </div>
-            </a>
+            <img className="team__person-image" src={url}/>
+            <div className="team__person-name">{person.name}</div>
+            <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
+            <div className="team__person-social-icons">
+              <SocialIcons urls={person.linkedin ? [person.linkedin] : []} color={socialIconColor}/>
+              <SocialIcons urls={person.email ? [`mailto:${person.email}`] : []} color={socialIconColor}/>
+            </div>
           </li>
         );
       });
