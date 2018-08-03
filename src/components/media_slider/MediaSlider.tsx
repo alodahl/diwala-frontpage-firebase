@@ -18,7 +18,7 @@ export default function MediaSlider(props: {news: NewsData[]}) {
       focusOnChange: true,
       touchMove: true,
       mobileFirst: true,
-      touchThreshold: 8
+      touchThreshold: 10
     };
 
     const newsItems = props.news.map((newsItem, index) => {
@@ -27,12 +27,18 @@ export default function MediaSlider(props: {news: NewsData[]}) {
 
     async function showMenuToken() {
       try {
-        await document.getElementsByClassName('slick-dots')[0].childNodes[2];
-        const centerDot =  await document.getElementsByClassName('slick-dots')[0].childNodes[2] as HTMLElement;
-        await centerDot.classList.add('default-active');
-        let hideDefaultToken = function () {centerDot.classList.remove('default-active'); };
-        await document.getElementsByClassName('media-slider')[0].addEventListener('change', hideDefaultToken);
-        await document.getElementsByClassName('slick-dots')[0].addEventListener('click', hideDefaultToken);
+        const newsItemList = await document.getElementsByClassName('newsItem');
+        const dotList = await document.getElementsByClassName('slick-dots')[0].childNodes;
+        const defaultDot =  dotList[dotList.length - 3] as HTMLElement;
+        await defaultDot.classList.add('default-active');
+        let hideDefaultToken = function () {defaultDot.classList.remove('default-active'); };
+
+        for (let i = 0; i < document.getElementsByClassName('newsItem').length; i++) {
+          newsItemList[i].addEventListener('click', hideDefaultToken);
+          dotList[i].addEventListener('click', hideDefaultToken);
+          newsItemList[i].addEventListener('touchend', hideDefaultToken);
+          dotList[i].addEventListener('touchend', hideDefaultToken);
+        }
         return;
       } catch (err) {
         console.log('Error: ', err.message);
