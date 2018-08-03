@@ -32,6 +32,7 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
       if (!video) {
         setTimeout(findVideo(), 300);
         video = document.getElementsByTagName('video')[0];
+        video.removeAttribute( 'controls' );
       }
       video.play();
       playing = true;
