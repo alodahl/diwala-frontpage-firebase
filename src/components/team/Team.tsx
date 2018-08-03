@@ -6,6 +6,7 @@ const styles = require('../../compiled_css/components/team/Team.css');
 
 export default function Team(props: any) {
   const team: any[] = props.team;
+  console.log(team);
   const teamCore = team
     .filter( teamMember => teamMember.type === 'core')
     .sort((a: any, b: any) => a.order - b.order);

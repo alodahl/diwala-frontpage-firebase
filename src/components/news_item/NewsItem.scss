@@ -9,6 +9,7 @@
   background-color: $diwala-background;
   color: transparent;
   text-overflow: clip;
+  text-indent: 0;
 
   &__list-item {
      height: 330px;
@@ -28,6 +29,7 @@
 
   &__quote {
     text-align: left;
+    text-indent: 0;
     font-size: $font-size-base;
     font-family: $font-family-simple;
     color: $diwala-gray-text;

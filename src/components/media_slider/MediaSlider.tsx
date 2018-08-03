@@ -27,12 +27,23 @@ export default function MediaSlider(props: {news: NewsData[]}) {
 
     async function showMenuToken() {
       try {
-        await document.getElementsByClassName('slick-dots')[0].childNodes[2];
-        const centerDot =  await document.getElementsByClassName('slick-dots')[0].childNodes[2] as HTMLElement;
-        await centerDot.classList.add('default-active');
-        let hideDefaultToken = function () {centerDot.classList.remove('default-active'); };
-        await document.getElementsByClassName('media-slider')[0].addEventListener('change', hideDefaultToken);
-        await document.getElementsByClassName('slick-dots')[0].addEventListener('click', hideDefaultToken);
+        await document.getElementsByClassName('slick-dots')[0].childNodes[0];
+        const slickDotsList = await document.getElementsByClassName('slick-dots')[0].childNodes;
+        const activeDot =  await document.getElementsByClassName('slick-active')[0] as HTMLElement;
+        const initialDot =  slickDotsList[slickDotsList.length - 3] as HTMLElement;
+        await initialDot.classList.add('default-active');
+        let hideDefaultToken = function () {
+          // if (initialDot !== activeDot) {
+            initialDot.classList.remove('default-active');
+          // }
+        };
+        if (initialDot === activeDot) {
+          hideDefaultToken();
+        }
+
+        // await document.getElementsByClassName('media-slider')[0].addEventListener('change', hideDefaultToken);
+        // await document.getElementsByClassName('newsItem')[0].addEventListener('change', hideDefaultToken);
+        // await document.getElementsByClassName('slick-dots')[0].addEventListener('click', hideDefaultToken);
         return;
       } catch (err) {
         console.log('Error: ', err.message);
