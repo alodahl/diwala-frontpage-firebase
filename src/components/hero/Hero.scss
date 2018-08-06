@@ -52,6 +52,18 @@
     &::-webkit-media-controls {
         display:none !important;
     }
+    &::-webkit-media-controls-panel {
+      display: none!important;
+      -webkit-appearance: none;
+    }
+    &::-webkit-media-controls-play-button {
+      display: none!important;
+      -webkit-appearance: none;
+    }
+    &::-webkit-media-controls-start-playback-button {
+      display: none!important;
+      -webkit-appearance: none;
+    }
     @include breakpoint(1200px){
       margin-top: 20vh;
     }
@@ -68,7 +80,7 @@
   }
 
   &__background-image {
-    background-image: url("../../../graphics/Diwala_Token3.png");
+    background-image: url("../../../graphics/Diwala_Animation_still.png");
     @media only screen and (max-height: 600px){
       background-size: 290px auto;
     }
