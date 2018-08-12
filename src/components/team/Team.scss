@@ -7,32 +7,16 @@
 }
 
 .team__title {
-  &--core {
-    @include typography-title-h1;
-  }
-  &--others {
-    @include typography-title-h2;
-  }
+  @include typography-title-h2;
 }
 
 .team__title-container {
   @extend .logo-container;
-  &--core .team__title--others {
-    display: none;
-  }
   @include min-breakpoint(450px) {
     text-align: left;
   }
   @include min-breakpoint(getLogoContainerWidth(4)) {
-    &--core .team__title--core {
-      margin-bottom: 0;
-    }
-    &--core .team__title--others {
-      @include typography-title-h3;
-      display: inherit;
-      margin-top: 0;
-    }
-    &--others .team__title--others {
+    & .team__title {
       display: none;
     }
   }
@@ -48,45 +32,7 @@
   }
 }
 
-.team--core {
-  .team__person-image {
-    max-width: 200px;
-  }
-  .team__list {
-    margin: $base-space-size * 2 auto;
-  }
-  .team__person {
-    padding: $base-space-size;
-  }
-  @media (min-width: 450px) {
-    .team__person-image {
-      max-width: 100px;
-    }
-    .team__list {
-      display: flex;
-      justify-content: center;
-      max-width: 450px;
-    }
-  }
-  @media (min-width: 600px) {
-    .team__person-image {
-      max-width: 150px;
-    }
-    .team__list {
-      max-width: 600px;
-    }
-  }
-  @media (min-width: 750px) {
-    .team__person-image {
-      max-width: 200px;
-    }
-    .team__list {
-      max-width: 750px;
-    }
-  }
-}
-
-.team--others {
+.team {
   $item-height: 115px; // magic number - requested by Marina ^_^
   $item-width: 150px;
   .team__title {
@@ -192,20 +138,6 @@
 .team__list {
   list-style: none;
   padding-left: 0;
-}
-
-.team__list--others {
-  //display: grid;
-  .team__person {
-    //width: 50%;
-    &:first-child {
-      //margin-top: 100px;
-    }
-  }
-}
-
-.team__person {
-  //margin-bottom: $base-space-size * 2;
 }
 
 .team__person-name {
