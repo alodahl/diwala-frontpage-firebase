@@ -14,7 +14,7 @@ export default function NewsItem(props: any) {
       </div>
       <div className="newsItem__section">
         <a href={props.news.url} target="_blank">
-          <blockquote className="newsItem__quote">{props.news.quote}</blockquote>
+          <blockquote className="newsItem__quote"><br/>{props.news.quote}</blockquote>
         </a>
       </div>
   </li>
