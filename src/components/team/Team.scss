@@ -15,11 +15,6 @@
   @include min-breakpoint(450px) {
     text-align: left;
   }
-  @include min-breakpoint(getLogoContainerWidth(4)) {
-    & .team__title {
-      display: none;
-    }
-  }
 }
 
 .team__person-social-icons {
