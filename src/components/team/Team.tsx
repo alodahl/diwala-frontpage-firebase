@@ -7,21 +7,22 @@ const styles = require('../../compiled_css/components/team/Team.css');
 export default function Team(props: any) {
   const team: any[] = props.team;
 
-  const teamTeam = team
-    .filter( teamMember => teamMember.type === 'core' || teamMember.type === 'tech-team' || teamMember.type === 'contributor')
-    .sort((a: any, b: any) => a.order - b.order);
-
-  const teamAmbassador = team
-    .filter( teamMember => teamMember.type === 'ambassador')
-    .sort((a: any, b: any) => a.order - b.order);
-
-  const teamMentor = team
-    .filter( teamMember => teamMember.type === 'mentor')
-    .sort((a: any, b: any) => a.order - b.order);
+  const getTeamByType = (listOfTypes: string[]) => {
+    let accumulatorArray: any[] = [];
+    if ( team.length > 0 ) {
+      listOfTypes.forEach( typeOfMember => {
+        accumulatorArray = accumulatorArray.concat(team.filter(teamMember => teamMember.type === typeOfMember));
+      }
+      );
+      accumulatorArray = accumulatorArray.sort((a: any, b: any) => a.order - b.order);
+    } 
+    return accumulatorArray;
+  };
 
   const socialIconColor = styles.diwalaIconPurple;
 
-  const getTeam = (choosenTeam: any) => {
+  const getTeam = (listOfTypes: string[]) => {
+    const choosenTeam = getTeamByType(listOfTypes);
     if (choosenTeam.length > 0) {
       return choosenTeam.map((person: any, key: any) => {
         const url = person.image ? urlFor(person.image).url() : '';
@@ -42,11 +43,9 @@ export default function Team(props: any) {
     }
   };
 
-  const TeamTeam = getTeam(teamTeam);
-
-  const TeamAmbassador = getTeam(teamAmbassador);
-
-  const TeamMentor = getTeam(teamMentor);
+  const TeamTeam = getTeam(['core', 'tech-team', 'contributor']);
+  const TeamAmbassador = getTeam(['ambassador']);
+  const TeamMentor = getTeam(['mentor']);
 
   return (
     <>
