@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-// import BlogItem from '../blog-item/BlogItem';
 import { loadBlog } from '../../actions/blog';
+import BlogItem from '../blog-item/BlogItem';
 import getBlog, { BlogData } from '../../api/blog';
 
 class MainBox extends React.Component {
@@ -17,9 +17,9 @@ class MainBox extends React.Component {
   public render() {
 
     const parentClass = 'Blog';
-    // const blogList = this.props.blog.map((blogItem, index) => {
-    //         return (<BlogItem {...blogItem } key={index}/>);
-    // });
+    const blogList = this.props.blog.map((blogItem, index) => {
+            return (<BlogItem {...blogItem } key={index}/>);
+    });
     console.log(this.props);
 
     return (
@@ -28,7 +28,7 @@ class MainBox extends React.Component {
           <h2 className="blog__title--h1 title">
             Diwala Blog
           </h2>
-          {/* {blogList} */}
+          {blogList}
         </div>
       </div>
     );
