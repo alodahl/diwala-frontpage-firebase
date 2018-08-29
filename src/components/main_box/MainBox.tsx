@@ -45,7 +45,7 @@ class MainBox extends React.Component {
     props.getPictures(loadPictures);
     props.getTeam(loadTeam);
     props.getNews(loadNews);
-    props.getblog(loadBlog);
+    props.getBlog(loadBlog);
   }
 
   public render() {
