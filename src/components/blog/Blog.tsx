@@ -1,20 +1,49 @@
 import * as React from 'react';
-import BlogItem from '../blog-item/BlogItem';
-import { BlogData } from '../../api/blog';
+import { connect } from 'react-redux';
+// import BlogItem from '../blog-item/BlogItem';
+import { loadBlog } from '../../actions/blog';
+import getBlog, { BlogData } from '../../api/blog';
 
-export default function Blog(props: {blog: BlogData[]}) {
+class MainBox extends React.Component {
+  public props: {
+    blog: BlogData[]
+  };
 
-  const blogList = props.blog.map((blogItem, index) => {
-          return (<BlogItem { ...blogItem } />);
-  });
+  constructor(props: any) {
+    super(props);
+    props.getBlog(loadBlog);
+  }
 
-  return (
-    <div className="blog-container">
-      <h2 className="blog__title--h1 title">
-        Blog
-      </h2>
-      {blogList}
-    </div>
-  );
+  public render() {
 
+    const parentClass = 'Blog';
+    // const blogList = this.props.blog.map((blogItem, index) => {
+    //         return (<BlogItem {...blogItem } key={index}/>);
+    // });
+    console.log(this.props);
+
+    return (
+      <div className={parentClass}>
+        <div className="blog-container">
+          <h2 className="blog__title--h1 title">
+            Diwala Blog
+          </h2>
+          {/* {blogList} */}
+        </div>
+      </div>
+    );
+  }
 }
+
+const mapApiToState = (dispatch: any) => {
+  return {
+    getBlog: (action: any) => getBlog(dispatch, action),
+  };
+};
+
+const ConnectedMainBox = connect(
+  state => state,
+  mapApiToState
+)(MainBox);
+
+export default ConnectedMainBox;
