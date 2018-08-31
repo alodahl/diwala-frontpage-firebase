@@ -15,10 +15,10 @@ class MainBox extends React.Component {
   }
 
   public render() {
-
+    console.log(this.props);
     const parentClass = 'Blog';
     const blogList = this.props.blog.map((blogItem, index) => {
-            return (<BlogItem {...blogItem } key={index}/>);
+            return (<BlogItem {...blogItem} key={index}/>);
     });
     console.log(this.props);
 
