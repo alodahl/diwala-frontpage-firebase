@@ -3,16 +3,19 @@
 @import "../../core/styles/colors.scss";
 
 .media-slider {
-  width: 970px;
+  width: 1000px;
   height: 360px;
   position: absolute;
-  left: -9999px;
-  right: -9999px;
   margin: 10px auto;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 100px;
   :focus {
     outline: none;
+  }
+  @media screen and (max-width: 1080px) {
+    left: -9999px;
+    right: -9999px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -25,10 +28,19 @@
 }
 
 .slick-dots {
-  padding-right: 60px;
-  li.slick-active button:before {
-    font-size:0;
+  padding-right: 90px;
+  @media screen and (max-width: 1080px) {
+    padding-right: 60px;
+  }
+  li.slick-active button, li.default-active button {
+    position: absolute;
+    right: 3px;
+    top: 5px;
+  }
+  li.slick-active button:before, li.default-active button:before {
     content: url('../../../graphics/Diwala_Token3_Icon.png');
+    transform: scale(.45);
+    opacity: 1;
   }
   li button:before {
     font-size: 12px;
