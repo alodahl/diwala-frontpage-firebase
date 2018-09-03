@@ -1,9 +1,9 @@
 import * as React from 'react';
-import BlockContent from '@sanity/block-content-to-react';
+import * as BlockContent from '@sanity/block-content-to-react';
 import { sanityClient } from '../../service/sanity';
 import { BlogData } from '../../api/blog';
 
-export default function BlogItem(props: BlogData[]) {
+export default function BlogItem(props: BlogData) {
   console.log(props);
   return (
   <div className="blog-item">

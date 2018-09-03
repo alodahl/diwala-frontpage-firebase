@@ -8,6 +8,7 @@ export default function getBlog(dispatch: any, action: any) {
 export interface BlogData extends SanityData {
   title: string;
   author: string;
+  body: any;
   type: 'array';
   of: [{type: 'block'}];
 }

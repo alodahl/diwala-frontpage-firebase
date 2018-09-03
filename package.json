@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.4",
     "@sanity/client": "^0.123.0",
     "@sanity/image-url": "^0.125.8",
     "@types/core-js": "^2.5.0",
