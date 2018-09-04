@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as BlockContent from '@sanity/block-content-to-react';
+// const BlockContent = require('@sanity/block-content-to-react');
 import { sanityClient } from '../../service/sanity';
 import { BlogData } from '../../api/blog';
 
@@ -13,7 +14,8 @@ export default function BlogItem(props: BlogData) {
     <BlockContent
       blocks={props.body}
       projectId={sanityClient.projectId}
-      dataset={sanityClient.dataset}/>
+      dataset={sanityClient.dataset}
+    />
   </div>
   );
 
