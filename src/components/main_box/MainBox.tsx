@@ -45,7 +45,6 @@ class MainBox extends React.Component {
   }
 
   public render() {
-    console.log(this.props);
     const parentClass = 'MainBox';
     return (
       <div className={parentClass}>
