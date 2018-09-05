@@ -9,8 +9,6 @@ import { loadTeam } from '../../actions/team';
 import getTeam from '../../api/team';
 import { loadNews } from '../../actions/news';
 import getNews, { NewsData } from '../../api/news';
-import { loadBlog } from '../../actions/blog';
-import getBlog, { BlogData } from '../../api/blog';
 
 import Partners from '../partners/Partners';
 import News from '../news/News';
@@ -35,7 +33,6 @@ class MainBox extends React.Component {
     pictures: PictureData[],
     team: any,
     news: NewsData[],
-    blog: BlogData[]
   };
 
   constructor(props: any) {
@@ -45,7 +42,6 @@ class MainBox extends React.Component {
     props.getPictures(loadPictures);
     props.getTeam(loadTeam);
     props.getNews(loadNews);
-    props.getBlog(loadBlog);
   }
 
   public render() {
@@ -114,7 +110,6 @@ const mapApiToState = (dispatch: any) => {
     getPartners: (action: any) => getPartners(dispatch, action),
     getTeam: (action: any) => getTeam(dispatch, action),
     getNews: (action: any) => getNews(dispatch, action),
-    getBlog: (action: any) => getBlog(dispatch, action),
   };
 };
 
