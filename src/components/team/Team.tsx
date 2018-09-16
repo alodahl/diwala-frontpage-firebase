@@ -57,7 +57,7 @@ export default function Team(props: any) {
         {TeamTeam}
         </ul>
       </div>
-      <div key="team-ambassadors" className="team team">
+      <div key="team-ambassadors" className="team">
         <div className="team__title-container team__title-container">
           <h3 className="team__title team__title--ambassadors">Ambassadors</h3>
         </div>
@@ -65,7 +65,7 @@ export default function Team(props: any) {
           {TeamAmbassador}
         </ul>
       </div>
-      <div key="team-mentors" className="team team">
+      <div key="team-mentors" className="team">
         <div className="team__title-container team__title-container">
           <h3 className="team__title team__title--mentors">Mentors &amp; Advisors</h3>
         </div>

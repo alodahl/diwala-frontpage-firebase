@@ -55,11 +55,11 @@
     padding: 50px 0;
     .team__person {
       height: $item-height;
-      margin-left: $item-width;
+      margin-left: 0;
+      margin-right: $item-width;
       width: $item-width;
       &:nth-child(2n) {
-        margin-left: 0;
-        margin-right: $item-width;
+        margin-left: $item-width;
       }
     }
     .team__person-title {
@@ -80,6 +80,8 @@
       max-width: $item-width * 3;
       padding: 0;
       .team__person {
+        margin-left: $item-width;
+        margin-right: 0;
         &:nth-child(2n) {
           margin-left: $item-width;
           margin-right: 0;
