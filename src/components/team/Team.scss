@@ -30,6 +30,7 @@
 .team {
   $item-height: 115px; // magic number - requested by Marina ^_^
   $item-width: 150px;
+  margin-top: 208px;
   .team__title {
     @include typography-title-h4;
     height: $item-height;

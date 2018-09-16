@@ -49,7 +49,7 @@ export default function Team(props: any) {
 
   return (
     <>
-      <div key="team-team" className="team team">
+      <div key="team-team" className="team">
         <div className="team__title-container team__title-container">
           <h3 className="team__title team__title--team">Team</h3>
         </div>
