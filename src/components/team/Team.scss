@@ -28,8 +28,8 @@
 }
 
 .team {
-  $item-height: 115px; // magic number - requested by Marina ^_^
-  $item-width: 150px;
+  $item-height: 140px; // magic number - requested by Marina ^_^
+  $item-width: 140px;
   margin-top: 208px;
   .team__title {
     @include typography-title-h4;
@@ -45,7 +45,7 @@
     }
   }
   .team__person-image {
-    max-width: 100px;
+    max-width: 120px;
   }
   .team__list {
     display: flex;
