@@ -9,8 +9,9 @@ export interface BlogData extends SanityData {
   title: string;
   author: string;
   date: string;
-  menuphoto: 'image'; 
+  menuphoto: 'image';
   body: any;
   type: 'array';
   of: [{type: 'block'}];
+  path: string;
 }
