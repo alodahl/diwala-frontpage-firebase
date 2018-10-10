@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { urlFor } from '../../core/utilities/image-builder.functions';
-import { SocialIcons } from 'react-social-icons';
-
-const styles = require('../../compiled_css/components/team/Team.css');
+import SocialIcons from '../social_icons/SocialIcons';
 
 export default function Team(props: any) {
   const team: any[] = props.team;
@@ -19,7 +17,16 @@ export default function Team(props: any) {
     return accumulatorArray;
   };
 
-  const socialIconColor = styles.diwalaIconPurple;
+  const socialIconsUrls = (person: any) => {
+    const urls = [];
+    if (person.linkedin) {
+      urls.push(person.linkedin);
+    }    
+    if (person.email) {
+      urls.push(`mailto:${person.email}`);
+    }
+    return urls;
+  };
 
   const getTeam = (listOfTypes: string[]) => {
     const choosenTeam = getTeamByType(listOfTypes);
@@ -32,8 +39,7 @@ export default function Team(props: any) {
             <div className="team__person-name">{person.name}</div>
             <div className="team__person-title" dangerouslySetInnerHTML={{__html: person.title}} />
             <div className="team__person-social-icons">
-              <SocialIcons urls={person.linkedin ? [person.linkedin] : []} color={socialIconColor}/>
-              <SocialIcons urls={person.email ? [`mailto:${person.email}`] : []} color={socialIconColor}/>
+              <SocialIcons urls={socialIconsUrls(person)} />
             </div>
           </li>
         );
