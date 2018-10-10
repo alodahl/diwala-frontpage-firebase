@@ -9,7 +9,6 @@ export default function Hero(props: { text: TextData, textId: string, tokenVersi
   const tokenText = tokenTextObj ? tokenTextObj.value : '';
   const videoTokenLg = require('../../graphics/Diwala_Animation_5M.mp4');
   const videoTokenSm = require('../../graphics/Diwala_Animation_1M.mp4');
-
   function findVideo() {
     document.getElementsByTagName('video');
   }
