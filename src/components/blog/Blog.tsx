@@ -6,11 +6,27 @@ import BlogItem from '../blog-item/BlogItem';
 import BlogPost from '../blog-post/BlogPost';
 import getBlog, { BlogData } from '../../api/blog';
 
-class Blog extends React.Component<any, any> {
+interface IPropsFromState {
+    blog?: IBlogData[];
+}
 
-  public props: {
-    blog: BlogData[]
-  };
+interface IState {
+    blogPost?: string;
+    cardClicked: boolean;
+}
+
+interface IBlogData {
+  title: string;
+  author: string;
+  date: string;
+  menuphoto: 'image';
+  body: any;
+  type: 'array';
+  of: [{type: 'block'}];
+  path: string;
+}
+
+class Blog extends React.Component<IPropsFromState, IState> {
 
   constructor(props: any) {
     super(props);
