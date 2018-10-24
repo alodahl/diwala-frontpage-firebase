@@ -6,25 +6,25 @@ import BlogItem from '../blog-item/BlogItem';
 import BlogPost from '../blog-post/BlogPost';
 import getBlog, { BlogData } from '../../api/blog';
 
-interface IPropsFromState {
-    blog?: IBlogData[];
-}
+// interface IPropsFromState {
+//     blog?: IBlogData[];
+// }
 
 interface IState {
     blogPost?: string;
     cardClicked: boolean;
 }
 
-interface IBlogData {
-  title: string;
-  author: string;
-  date: string;
-  menuphoto: 'image';
-  body: any;
-  type: 'array';
-  of: [{type: 'block'}];
-  path: string;
-}
+// interface IBlogData {
+//   title: string;
+//   author: string;
+//   date: string;
+//   menuphoto: 'image';
+//   body: any;
+//   type: 'array';
+//   of: [{type: 'block'}];
+//   path: string;
+// }
 
 class Blog extends React.Component<IPropsFromState, IState> {
 
