@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@sanity/client": "^0.123.0",
-    "@sanity/image-url": "^0.125.8",
+    "@sanity/client": "^0.135.3",
+    "@sanity/image-url": "^0.135.0",
     "@types/react-burger-menu": "^2.2.0",
     "@types/react-form": "^2.12.1",
     "@types/react-helmet": "^5.0.5",
@@ -56,11 +56,11 @@
     "@types/react-dom": "^16.0.4",
     "@types/react-redux": "^5.0.15",
     "@types/react-router-dom": "^4.2.4",
-    "react-scripts-ts": "^2.13.0",
+    "react-scripts-ts": "^3.1.0",
     "react-social-icons": "^3.0.0",
-    "ts-loader": "^4.0.1",
-    "typescript": "^2.7.2",
-    "webpack": "^4.1.0",
-    "webpack-cli": "^2.0.10"
+    "ts-loader": "^5.3.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   }
 }
