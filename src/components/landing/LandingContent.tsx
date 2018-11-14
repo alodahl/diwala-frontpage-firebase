@@ -1,8 +1,8 @@
-import * as React from "react";
-import { TextData } from "../../api/texts";
+import * as React from 'react';
+import { TextData } from '../../api/texts';
 
-const tokenImage = require("../../graphics/landing_token.svg");
-const mobileImage = require("../../graphics/landing_phone.png");
+const tokenImage = require('../../graphics/landing_token.svg');
+const mobileImage = require('../../graphics/landing_phone.png');
 
 export default function LandingContent(props: {
   text: TextData[];

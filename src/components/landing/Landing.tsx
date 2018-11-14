@@ -1,8 +1,8 @@
-import * as React from "react";
-import { loadTexts } from "../../actions/texts";
-import getTexts, { TextData } from "../../api/texts";
-import { connect } from "react-redux";
-import LandingContent from "../landing/LandingContent";
+import * as React from 'react';
+import { loadTexts } from '../../actions/texts';
+import getTexts, { TextData } from '../../api/texts';
+import { connect } from 'react-redux';
+import LandingContent from '../landing/LandingContent';
 
 class Landing extends React.Component {
   public props: {
