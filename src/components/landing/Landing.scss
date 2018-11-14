@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 .App {
   background-image: none !important;
 }
@@ -35,21 +33,21 @@
     .landing-header {
       padding-top: 100px;
       text-align: left;
-      font-size: 1.6em;
+      font-size: 33px;
       letter-spacing: 0.6px;
       line-height: 1.3em;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Proxima Nova Regular';
       p {
         margin: 0;
       }
     }
     .landing-description {
       text-align: left;
-      font-size: 1.1em;
+      font-size: 19px;
       letter-spacing: 0.34px;
       line-height: 1.3em;
       color: #39353D;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Proxima Nova Regular';
     }
     .join-now-btn-container {
       display: flex;
@@ -59,11 +57,12 @@
         width: 160px;
         height: 50px;
         border-radius: 30px;
-        font-size: 1.2em;
-        font-weight: bold;
+        font-size: 22px;
         letter-spacing: 0.59px;
-        line-height: 50px;
-        color: #46047C; // -webkit-box-shadow: 1px 4px 11px 0 rgba(92, 20, 160, 0.54);
+        line-height: 52px;
+        color: #46047C; 
+        font-family: 'Proxima Nova Bold'
+        // -webkit-box-shadow: 1px 4px 11px 0 rgba(92, 20, 160, 0.54);
         // box-shadow: 1px 4px 11px 0 rgba(92, 20, 160, 0.54);
       }
     }
@@ -94,15 +93,17 @@
       }
     }
     .landing-header-container {
-      // .landing-header {
-      //   font-size: 1.3em;
-      // }
-      // .landing-description { 
-      //   font-size: 1em;
-      // }
+      .landing-header {
+        font-size: 28px;
+      }
+      .landing-description { 
+        font-size: 18px;
+      }
       .join-now-btn-container {
-        // margin-top: -5px;
         justify-content: left;
+        .join-now-btn {
+          font-size: 18px;
+        }
       }
     }
   }
@@ -123,11 +124,11 @@
     }
     .landing-header-container {
       .landing-header {
-        width: 400px;
-        font-size: 2em;
+        width: 450px;
+        font-size: 44px;
       }
       .landing-description {
-        font-size: 1.4em;
+        font-size: 20px;
       }
       .join-now-btn-container {
         justify-content: left;
@@ -181,10 +182,10 @@
       margin-top: 10%;
       .landing-header {
         width: unset;
-        font-size: 2.5em;
+        font-size: 44px;
       }
       .landing-description {
-        font-size: 1.5em;
+        font-size: 20px;
       }
     }
   }
@@ -207,13 +208,13 @@
     .landing-header-container {
       .landing-header {
         width: 500px;
-        font-size: 3em;
+        font-size: 44px;
       }
       .landing-description {
-        font-size: 1.6em;
+        font-size: 20px;
       }
       .join-now-btn-container {
-        font-size: 1.3em;
+        // font-size: 1.3em;
         justify-content: left;
         .join-now-btn {
           width: 180px;
@@ -233,6 +234,19 @@
   }
   .landing-container {
     max-width: calc(100vw - 10vw);
+    .landing-header-container {
+      .landing-header {
+        font-size: 48px;
+      }
+      .landing-description {
+        font-size: 23px;
+      }
+      .join-now-btn-container {
+        .join-now-btn {
+          font-size: 20px;
+        }
+      }
+    }
     .landing-secondary-container {
       .mobile {
         width: 40%;

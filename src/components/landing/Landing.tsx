@@ -1,15 +1,12 @@
-import * as React from 'react';
-import { loadTexts } from '../../actions/texts';
-import getTexts, { TextData } from '../../api/texts';
-import { connect } from 'react-redux';
-import TextFetcher from '../text_fetcher/TextFetcher';
-
-import LandingContent from '../landing/LandingContent';
-const emptyText: TextData = { id: 'empty', value: [] };
+import * as React from "react";
+import { loadTexts } from "../../actions/texts";
+import getTexts, { TextData } from "../../api/texts";
+import { connect } from "react-redux";
+import LandingContent from "../landing/LandingContent";
 
 class Landing extends React.Component {
   public props: {
-    texts: TextData[]
+    texts: TextData[];
   };
 
   constructor(props: any) {
@@ -18,17 +15,13 @@ class Landing extends React.Component {
   }
 
   public render() {
-    return (
-      <TextFetcher id="landing-text" texts={this.props.texts}>
-        <LandingContent text={emptyText} />
-      </TextFetcher>
-    );
+    return <LandingContent id="landing-text" text={this.props.texts} />;
   }
 }
 
 const mapApiToState = (dispatch: any) => {
   return {
-    getTexts: (action: any) => getTexts(dispatch, action),
+    getTexts: (action: any) => getTexts(dispatch, action)
   };
 };
 
