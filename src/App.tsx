@@ -6,6 +6,7 @@ import NoMatch from './components/no_match/NoMatch';
 import Certificates from './components/certificates/Certificates';
 import CuriousToLearnMore from './components/curious_to_learn_more/CuriousToLearnMore';
 import Menu from './components/menu/Menu';
+import Landing from './components/landing/Landing';
 import './compiled_css/App.css';
 import './compiled_css/fonts/font-faces.css';
 import {
@@ -28,6 +29,7 @@ const App = () => (
         <Switch>
           <Route exact={true} path="/" component={MainBox}/>
           <Route exact={true} path="/certificates" component={Certificates}/>
+          <Route exact={true} path="/landing" component={Landing}/>
           <Route component={NoMatch}/>
         </Switch>
         <Footer>
