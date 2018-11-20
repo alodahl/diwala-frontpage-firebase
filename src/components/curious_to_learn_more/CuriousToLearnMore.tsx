@@ -12,7 +12,7 @@ export default function CuriousToLearnMore(props: any) {
         <div className="Curious__buttons flex-btn-group">
           <LinkButton
             classes="button invert-button"
-            url="mailto:hello@diwala.org"
+            url="mailto:hello@diwala.com"
             text="Send us an email"
           />
           <LinkButton
