@@ -30,10 +30,7 @@ const App = () => (
         <Switch>
           {/* <Route exact={true} path="/" component={MainBox}/> */}
           <Route exact={true} path="/certificates" component={Certificates}/>
-<<<<<<< HEAD
           <Route exact={true} path="/landing" component={Landing}/>
-=======
->>>>>>> 66e1279308e9cc6c914a5d46598acd6988ba3a21
           <Route exact={true} path="/blog" component={Blog}/>
           <Route component={NoMatch}/>
         </Switch>
