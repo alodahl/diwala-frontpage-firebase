@@ -4,29 +4,19 @@ import { connect } from 'react-redux';
 import { loadBlog } from '../../actions/blog';
 import BlogItem from '../blog-item/BlogItem';
 import BlogPost from '../blog-post/BlogPost';
-import getBlog, { BlogData } from '../../api/blog';
+import getBlog from '../../api/blog';
+import { SanityBlogData } from '../../api/sanity';
 
-// interface IPropsFromState {
-//     blog?: IBlogData[];
-// }
+interface PropsFromState {
+    blog?: SanityBlogData[];
+}
 
-interface IState {
+interface State {
     blogPost?: string;
     cardClicked: boolean;
 }
 
-// interface IBlogData {
-//   title: string;
-//   author: string;
-//   date: string;
-//   menuphoto: 'image';
-//   body: any;
-//   type: 'array';
-//   of: [{type: 'block'}];
-//   path: string;
-// }
-
-class Blog extends React.Component<IPropsFromState, IState> {
+class Blog extends React.Component<PropsFromState, State> {
 
   constructor(props: any) {
     super(props);
@@ -41,17 +31,16 @@ class Blog extends React.Component<IPropsFromState, IState> {
     e.preventDefault();
     console.log('showBlogPost', blogInfo);
     this.setState({
+      blogPost: blogInfo,
       cardClicked: true,
-      blogPost: blogInfo
     });
   }
 
   public render() {
-    console.log(this.props);
     const parentClass = 'Blog';
     const blogList = this.props.blog.map((postInfo, index) => {
             return (
-              <Link key={index} to={`/blog/${postInfo.path}`} >
+              <Link className="blog-link" key={index} to={`/blog/${postInfo.path}`} >
                 <BlogItem {...postInfo} key={index} onClick={(e: Event) => this.showBlogPost(e, postInfo)} />
               </Link>);
     });
@@ -59,9 +48,7 @@ class Blog extends React.Component<IPropsFromState, IState> {
     return (
       <div className={parentClass}>
         <div className="blog-container">
-          <h2 className="blog__title--h1 title">
-            Diwala Blog
-          </h2>
+          {this.state.cardClicked ? <BlogPost {...this.state.blogPost} /> : blogList}
           {this.state.cardClicked ? <BlogPost {...this.state.blogPost} /> : blogList}
         </div>
       </div>
