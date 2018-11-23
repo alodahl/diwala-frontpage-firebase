@@ -52,7 +52,6 @@ class Menu extends React.Component {
 
   render () {
     const getMenuPoints = (props: any) => {
-      console.log(props);
       if (props.location.pathname === '/') {
         return this.getMainMenu();
       } else if (props.location.pathname === '/certificates') {
