@@ -37,7 +37,7 @@ export default function LandingContent(props: {
               <p>{renderDataObj.description}</p>
             </div>
             <div className="join-now-btn-container">
-              <a className="join-now-btn" href="https://dev.cert.diwala.io/">
+              <a className="join-now-btn" href="https://cert.diwala.io/">
                 {renderDataObj.joinBtnTxt}
               </a>
             </div>
