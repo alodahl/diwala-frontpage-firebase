@@ -3,6 +3,8 @@ import { TextData } from '../../api/texts';
 
 const tokenImage = require('../../graphics/landing_token.svg');
 const mobileImage = require('../../graphics/landing_phone.png');
+const appStoreImage = require('../../graphics/app_store.png');
+const googlePlayImage = require('../../graphics/google_play.png');
 
 export default function LandingContent(props: {
   text: TextData[];
@@ -21,12 +23,11 @@ export default function LandingContent(props: {
     return createdObj;
   }
   renderDataObj = createRenderDataObj(filteredData);
-  console.log(renderDataObj);
 
   return (
     <div className="landing">
       <img className="token-bg" src={tokenImage} />
-      <div className="container landing-container">
+      <div className="container landing-container-student">
         <div className="row landing-container-row">
           <div className="col-sm-6 col-md-6 landing-header-container">
             <div className="landing-header">
@@ -37,11 +38,18 @@ export default function LandingContent(props: {
             <div className="landing-description">
               <p>{renderDataObj.description}</p>
             </div>
-            <div className="join-now-btn-container">
-              <a className="join-now-btn" href={renderDataObj.joinBtnLink}>
-                {renderDataObj.joinBtnTxt}
-              </a>
-            </div>
+            <div className="row justify-content-around app-button-group">
+              <div className="google-play-btn-container">
+                <a target="_blank" href={renderDataObj.googlePlayStoreLink}>
+                  <img className="google-play" src={googlePlayImage} />
+                </a>
+              </div>
+              <div className="app-store-btn-container">
+                <a target="_blank" href={renderDataObj.appleAppStoreLink}>
+                  <img className="app-store" src={appStoreImage} />
+                </a>
+              </div>
+            </div> 
           </div>
           <div className="col-sm-6 col-md-6 landing-secondary-container">
             <img className="mobile" src={mobileImage} />
