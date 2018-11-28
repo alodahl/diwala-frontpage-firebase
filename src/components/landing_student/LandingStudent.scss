@@ -67,6 +67,10 @@
   }
 }
 
+.custom-button-group {
+  justify-content: space-around;
+}
+
 @media only screen and (min-width: 500px) {
   .token-bg {
     width: 100%;
@@ -177,6 +181,12 @@
       .landing-description {
         font-size: 20px;
       }
+    }
+  }
+  .custom-button-group {
+    justify-content: left;
+    .google-play-btn-container {
+      margin: 0 10px;
     }
   }
 }
