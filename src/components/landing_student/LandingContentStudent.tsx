@@ -38,7 +38,7 @@ export default function LandingContent(props: {
             <div className="landing-description">
               <p>{renderDataObj.description}</p>
             </div>
-            <div className="row justify-content-around app-button-group">
+            <div className="row app-button-group custom-button-group">
               <div className="google-play-btn-container">
                 <a target="_blank" href={renderDataObj.googlePlayStoreLink}>
                   <img className="google-play" src={googlePlayImage} />
