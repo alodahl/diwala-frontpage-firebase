@@ -55,6 +55,7 @@ class Menu extends React.Component {
       if (props.location.pathname === '/') {
         return this.getMainMenu();
       } else if (props.location.pathname === '/certificates' || props.location.pathname === '/blog') {
+        //show alternate sidebar menu if on a non-main page
         return this.getCertificateMenu();
       } else {
         return this.getMainMenu();

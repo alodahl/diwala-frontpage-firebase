@@ -1,3 +1,7 @@
+// While developing, I commented out footer, main, and curious for faster loading.
+// We were also seeing breaking errors in the footer at the time.
+// the Blog page can be seen at the url diwala.io/blog.
+
 import * as React from 'react';
 import Header from './components/header/Header';
 // import Footer from './components/footer/Footer';
